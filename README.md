@@ -96,6 +96,7 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
 ![Rock's GitHub Stats](https://github-readme-stats.vercel.app/api?username=rockenzo&show_icons=true&theme=cobalt)
 
 ## 🔗 Connect with Me 🕸️
+Thanks for stopping by! Feel free to check out my repositories and get in touch if you’re interested in collaborating on any projects.
 <p align="center">
   <a href="https://au.linkedin.com/in/gewanga1880714" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
@@ -105,8 +106,7 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge"/>
   </a>
 </p>
-       
-Thanks for stopping by! Feel free to check out my repositories and get in touch if you’re interested in collaborating on any projects.
+
 <p align="center">
   <img src="https://media.giphy.com/media/l0HUpt2s9Pclgt9Vm/giphy.gif" alt="Thanks for Stopping By" width="250" height="200">
 </p>
