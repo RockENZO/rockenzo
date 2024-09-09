@@ -1,8 +1,12 @@
 # 👋 Hi, I'm Rock (Ge) Wang! 🙋
 
 Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid foundation in web development, object-oriented programming, software development, and machine learning. I'm passionate about solving complex problems and building scalable, high-performance applications. I aim to contribute to impactful projects, collaborate with diverse teams, and continually enhance my skills in a fast-paced, innovative environment.
+<p align="center">
+  <img src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" alt="Rocket Launch" width="300" height="200">
+</p>
 
 ## 👨‍💻 Career Objective 👨‍💼
+
 I aim to leverage my expertise in object-oriented programming, data structures, and modern software development to thrive in a dynamic, forward-thinking technology environment. I'm excited about the potential to work on impactful projects and continually push the boundaries of what's possible in tech.
 
 ## 🎓 Education 📖
@@ -20,6 +24,7 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
 ## 🛠 Skills 🧰
 
 ### 1. 🔧 Software Development 📱
+
 - **Languages**:  
   <a href="https://isocpp.org/"><img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/></a> 
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/></a>
@@ -39,14 +44,15 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
 
 - **Backend**:  
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/></a>
-  <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/></a>
-  <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"/></a>
+  <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express.js-787878?style=for-the-badge&logo=express&logoColor=white"/></a> <!-- Changed color to gray -->
+  <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-0D6EFD?style=for-the-badge&logo=flask&logoColor=white"/></a> <!-- Changed color to blue -->
 
 - **Databases**:  
   <a href="https://www.mysql.com/"><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/></a>
   <a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/></a>
 
 ### 3. 🧠 Machine Learning 🤖
+
 - **Frameworks**:  
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/></a>
   <a href="https://scikit-learn.org/"><img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"/></a>
@@ -61,6 +67,7 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
 - **Experience**: Basic data manipulation and analysis for extracting insights.
 
 ### 5. 📋 Project Management 🗂️
+
 - **Methodologies**:  Agile, Scrum
 - **Experience**: Leading projects, meeting deadlines, and coordinating teams for faster development.
 
@@ -93,3 +100,6 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
 - **GitHub**: [GitHub Profile](https://github.com/yourusername)
 
 Thanks for stopping by! Feel free to check out my repositories and get in touch if you’re interested in collaborating on any projects.
+<p align="center">
+  <img src="https://media.giphy.com/media/l0HUpt2s9Pclgt9Vm/giphy.gif" alt="Thanks for Stopping By" width="250" height="200">
+</p>
