@@ -86,7 +86,7 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
   - Issued: September 2024
 
 ## 📈 GitHub Stats 📊
-![Rock's GitHub Stats](https://github-readme-stats.vercel.app/api?username=RockENZO&show_icons=true&theme=radical)
+![Rock's GitHub Stats](https://github-readme-stats.vercel.app/api?username=RockENZO&show_icons=true&theme=cobalt)
 
 ## 🔗 Connect with Me 🕸️
 - **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/yourprofile)
