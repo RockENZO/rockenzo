@@ -19,7 +19,7 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
 
 ## 🛠 Skills 🧰
 
-### 🔧 Software Development 📱
+### 1. 🔧 Software Development 📱
 - **Languages**:  
   <a href="https://isocpp.org/"><img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/></a> 
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/></a>
@@ -30,7 +30,7 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
   
 - **Experience**: Developing software solutions with a focus on efficiency and version control.
 
-### 🌐 Web Development 💻
+### 2. 🌐 Web Development 💻
 - **Frontend**:  
   <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white"/></a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/></a>
@@ -46,21 +46,21 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
   <a href="https://www.mysql.com/"><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/></a>
   <a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/></a>
 
-### 🧠 Machine Learning 🤖
+### 3. 🧠 Machine Learning 🤖
 - **Frameworks**:  
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/></a>
   <a href="https://scikit-learn.org/"><img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"/></a>
 
 - **Experience**: Neural network training, optimization, and traditional machine learning techniques for predictive modeling.
 
-### 📊 Data Analysis 🧐
+### 4. 📊 Data Analysis 🧐
 - **Libraries**:  
   <a href="https://pandas.pydata.org/"><img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/></a>
   <a href="https://numpy.org/"><img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/></a>
 
 - **Experience**: Basic data manipulation and analysis for extracting insights.
 
-### 📋 Project Management 🗂️
+### 5. 📋 Project Management 🗂️
 - **Methodologies**:  Agile, Scrum
 - **Experience**: Leading projects, meeting deadlines, and coordinating teams for faster development.
 
@@ -89,7 +89,6 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
 ![Rock's GitHub Stats](https://github-readme-stats.vercel.app/api?username=RockENZO&show_icons=true&theme=radical)
 
 ## 🔗 Connect with Me 🕸️
-- **Email**: [gewang2004@gmail.com](mailto:gewang2004@gmail.com)
 - **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/yourprofile)
 - **GitHub**: [GitHub Profile](https://github.com/yourusername)
 
