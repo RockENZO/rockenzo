@@ -1,6 +1,6 @@
 # 👋 Hi, I'm Rock (Ge) Wang! 🙋
 
-Welcome to my GitHub profile! I am an **Aspiring Software Engineer** with a solid foundation in computer science, object-oriented programming, and software development. I'm passionate about solving complex problems and building scalable, high-performance applications. My goal is to contribute to impactful projects, collaborate with diverse teams, and continually enhance my skills in a fast-paced, innovative environment.
+Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid foundation in web development, object-oriented programming, software development, and machine learning. I'm passionate about solving complex problems and building scalable, high-performance applications. I aim to contribute to impactful projects, collaborate with diverse teams, and continually enhance my skills in a fast-paced, innovative environment.
 
 ## 👨‍💻 Career Objective 👨‍💼
 I aim to leverage my expertise in object-oriented programming, data structures, and modern software development to thrive in a dynamic, forward-thinking technology environment. I'm excited about the potential to work on impactful projects and continually push the boundaries of what's possible in tech.
@@ -28,7 +28,7 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
   <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/></a> 
   <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/></a>
   
-- **Experience**: Developing software solutions with a focus on efficiency and version control.
+- **Experience**: Developing software solutions focusing on efficiency and version control.
 
 ### 2. 🌐 Web Development 💻
 - **Frontend**:  
