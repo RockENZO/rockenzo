@@ -1,6 +1,6 @@
 # 👋 Hi, I'm Rock (Ge) Wang! 🙋
 
-Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid foundation in web development, object-oriented programming, software development, and machine learning. I'm passionate about solving complex problems and building scalable, high-performance applications. I aim to contribute to impactful projects, collaborate with diverse teams, and continually enhance my skills in a fast-paced, innovative environment.
+Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid foundation in ___web development, software engineering, and machine learning___. I'm passionate about solving complex problems and building scalable, high-performance applications. I aim to contribute to impactful projects, collaborate with diverse teams, and continually enhance my skills in a fast-paced, innovative environment.
 <p align="center">
   <img src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" alt="Rocket Launch" width="300" height="200">
 </p>
@@ -16,10 +16,10 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
   - Artificial Intelligence Techniques  
   - Computer Systems  
   - Object-Oriented Programming  
-  - Programming for IT Specialists (Distinction)  
-  - Web & Database Computing (Distinction)  
-  - Introduction to Applied Programming (High Distinction)  
-  - Introduction to Computer Systems, Networks, and Security (High Distinction)
+  - Programming for IT Specialists (_Distinction_)  
+  - Web & Database Computing (_Distinction_)  
+  - Introduction to Applied Programming (_High Distinction_)  
+  - Introduction to Computer Systems, Networks, and Security (_High Distinction_)
 
 ## 🛠 Skills 🧰
 
@@ -33,7 +33,6 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
   <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/></a> 
   <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/></a>
   
-- **Experience**: Developing software solutions focusing on efficiency and version control.
 
 ### 2. 🌐 Web Development 💻
 - **Frontend**:  
@@ -93,7 +92,12 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
   - Issued: September 2024
 
 ## 📈 GitHub Stats 📊
-![Rock's GitHub Stats](https://github-readme-stats.vercel.app/api?username=rockenzo&show_icons=true&theme=cobalt)
+<p align = center>
+  <img align = center src = "https://github-readme-stats.vercel.app/api?username=rockenzo&show_icons=true&theme=cobalt">
+</p>
+<p align = center>
+ <img align = center src= "https://github-readme-stats.vercel.app/api/top-langs/?username=rockenzo&layout=compact&theme=cobalt" 
+</p>
 
 ## 🔗 Connect with Me 🕸️
 Thanks for stopping by! Feel free to check out my repositories and get in touch if you’re interested in collaborating on any projects.
