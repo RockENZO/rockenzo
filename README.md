@@ -67,19 +67,38 @@ Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid fo
 - **Experience**: Leading projects, meeting deadlines, and coordinating teams for faster development.
 
 ## 🛠 Project Experience 📑
+<div align="center">
+  <a href="https://github.com/RockENZO/Feed-the-world-web-app">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=Feed-the-world-web-app&theme=cobalt" alt="Feed-the-world-web-app"/>
+  </a>
+</div>
 
-### [Web Application Development for Volunteer Organizations](https://github.com/RockENZO/Feed-the-world-web-app.git): February 2024 - June 2024
-*University of Adelaide*
-- Designed and developed a web app to streamline administrative tasks and improve visibility for volunteer organizations.
-- Created user management modules for role-based access and efficient management of user roles.
-- Reduced development time by 20% by coordinating frontend and backend integration.
-- Conducted thorough testing and debugging for optimal performance and user experience.
+- Designed and developed a web application to enhance visibility and streamline administrative
+tasks for volunteer organizations, with features enabling users to sign up, join locations, view
+and create events, and manage profiles based on roles.
+- Led the creation of the user management module, focusing on database setup and frontend
+integration for efficient management of user roles and access privileges.
+- Integrated secure authentication using Argon2 for password hashing and Google OAuth for
+third-party login.
+- Coordinated with frontend and backend teams to achieve a 20% reduction in development
+time ahead of schedule.
+- Conducted testing and debugging to ensure optimal performance and user experience.
 
-### [Soccer Match Object Detection Using YOLO Framework](https://github.com/RockENZO/ML-object-detection-project.git): June 2024 – July 2024
-- Developed a model with the YOLO framework to detect soccer players and balls in video clips with 92% accuracy.
-- Collected and annotated over 1,000 video clips for training.
-- Implemented real-time processing to detect objects with 97.5% precision.
-- Reduced manual video analysis time by 85%.
+
+<div align="center">
+  <a href="https://github.com/RockENZO/ML-object-detection-project">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=ML-object-detection-project&theme=cobalt" alt="ML-object-detection-project"/>
+  </a>
+</div>
+
+
+- Developed a model for detecting football players in videos using the YOLOv5 framework for
+training and YOLOv8 for inference, achieving 92% accuracy.
+- Sourced a dataset of 663 annotated images from Roboflow and implemented pre-processing,
+augmentation, and model training for precise player detection.
+- Leveraged Google Colab’s GPU resources for efficient model training and tuning, achieving
+97.5% precision in generating real-time bounding boxes around detected players.
+- Reduced manual video analysis time by 85% through model performance optimizations.
 
 ## 📜 Certification 🏆
 - **[HackerRank Software Engineer Certificate](https://www.hackerrank.com/certificates/iframe/1d18ed03135b)**  
