@@ -74,16 +74,15 @@ Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid fo
 </div>
 
 - Designed and developed a web application to enhance visibility and streamline administrative
-tasks for volunteer organizations, with features enabling users to sign up, join locations, view
-and create events, and manage profiles based on roles.
+  tasks for volunteer organizations, with features enabling users to sign up, join locations, view
+  and create events, and manage profiles based on roles.
 - Led the creation of the user management module, focusing on database setup and frontend
-integration for efficient management of user roles and access privileges.
+  integration for efficient management of user roles and access privileges.
 - Integrated secure authentication using Argon2 for password hashing and Google OAuth for
-third-party login.
+  third-party login.
 - Coordinated with frontend and backend teams to achieve a 20% reduction in development
-time ahead of schedule.
+  time ahead of schedule.
 - Conducted testing and debugging to ensure optimal performance and user experience.
-
 
 <div align="center">
   <a href="https://github.com/RockENZO/ML-object-detection-project">
