@@ -19,7 +19,7 @@ Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid fo
 
 ## 🛠 Skills 👨‍💻
 
-### 1. 🔧 Software Development 📱
+### 1. &nbsp;🔧 Software Development 📱
 
 - **Languages**:  
   <a href="https://isocpp.org/"><img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/></a> 
@@ -30,7 +30,7 @@ Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid fo
   <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/></a>
   
 
-### 2. 🌐 Web Development 💻
+### 2. &nbsp;🌐 Web Development 💻
 - **Frontend**:  
   <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white"/></a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/></a>
@@ -46,7 +46,7 @@ Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid fo
   <a href="https://www.mysql.com/"><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/></a>
   <a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/></a>
 
-### 3. 🧠 Machine Learning 🤖
+### 3.&nbsp; 🧠 Machine Learning 🤖
 
 - **Frameworks**:  
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/></a>
@@ -54,14 +54,14 @@ Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid fo
 
 - **Experience**: Neural network training, optimization, and traditional machine learning techniques for predictive modeling.
 
-### 4. 📊 Data Analysis 🧐
+### 4. &nbsp;📊 Data Analysis 🧐
 - **Libraries**:  
   <a href="https://pandas.pydata.org/"><img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/></a>
   <a href="https://numpy.org/"><img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/></a>
 
 - **Experience**: Basic data manipulation and analysis for extracting insights.
 
-### 5. 📋 Project Management 🗂️
+### 5. &nbsp;📋 Project Management 🗂️
 
 - **Methodologies**:  Agile, Scrum
 - **Experience**: Leading projects, meeting deadlines, and coordinating teams for faster development.
