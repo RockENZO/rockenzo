@@ -98,6 +98,9 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
 <p align = center>
  <img align = center src= "https://github-readme-stats.vercel.app/api/top-langs/?username=rockenzo&hide_progress=true&layout=compact&theme=cobalt" 
 </p>
+<p align = center>
+ <img align = center src = "https://github-profile-trophy.vercel.app/?username=rockenzo&theme=dracula&column=3&margin-w=15&margin-h=15">
+</p>
 
 ## 🔗 Connect with Me 🕸️
 Thanks for stopping by! Feel free to check out my repositories and get in touch if you’re interested in collaborating on any projects.
