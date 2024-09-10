@@ -89,7 +89,7 @@ Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid fo
 
 ## 📈 GitHub Stats 📊
 <p align = center>
-  <img align = center src = "https://github-readme-stats.vercel.app/api?username=rockenzo&show_icons=true&rank_icon=github&theme=cobalt">
+  <img align = center src = "https://github-readme-stats.vercel.app/api?username=rockenzo&rank_icon=github&theme=cobalt">
 </p>
 <p align = center>
  <img align = center src= "https://github-readme-stats.vercel.app/api/top-langs/?username=rockenzo&hide_progress=true&layout=compact&theme=cobalt" 
