@@ -93,10 +93,10 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
 
 ## 📈 GitHub Stats 📊
 <p align = center>
-  <img align = center src = "https://github-readme-stats.vercel.app/api?username=rockenzo&show_icons=true&theme=cobalt">
+  <img align = center src = "https://github-readme-stats.vercel.app/api?username=rockenzo&show_icons=true&rank_icon=github&theme=cobalt">
 </p>
 <p align = center>
- <img align = center src= "https://github-readme-stats.vercel.app/api/top-langs/?username=rockenzo&layout=compact&theme=cobalt" 
+ <img align = center src= "https://github-readme-stats.vercel.app/api/top-langs/?username=rockenzo&hide_progress=true&layout=compact&theme=cobalt" 
 </p>
 
 ## 🔗 Connect with Me 🕸️
