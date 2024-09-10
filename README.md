@@ -1,13 +1,9 @@
 # 👋 Hi, I'm Rock (Ge) Wang! 🙋
 
-Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid foundation in ___web development, software engineering, and machine learning___. I'm passionate about solving complex problems and building scalable, high-performance applications. I aim to contribute to impactful projects, collaborate with diverse teams, and continually enhance my skills in a fast-paced, innovative environment.
+Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid foundation in ___web development, software engineering, and machine learning___. I'm passionate about solving complex problems and building scalable, high-performance applications. I aim to contribute to impactful projects, collaborate with diverse teams, and continually enhance my skills in a fast-paced, forward-thinking technology environment. I'm excited about the potential to work on impactful projects and continually push the boundaries of what's possible in tech.
 <p align="center">
   <img src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" alt="Rocket Launch" width="300" height="200">
 </p>
-
-## 👨‍💻 Career Objective 👨‍💼
-
-I aim to leverage my expertise in object-oriented programming, data structures, and modern software development to thrive in a dynamic, forward-thinking technology environment. I'm excited about the potential to work on impactful projects and continually push the boundaries of what's possible in tech.
 
 ## 🎓 Education 📖
 **Bachelor of Information Technology**: February 2023 – Present  
@@ -21,7 +17,7 @@ I aim to leverage my expertise in object-oriented programming, data structures, 
   - Introduction to Applied Programming (_High Distinction_)  
   - Introduction to Computer Systems, Networks, and Security (_High Distinction_)
 
-## 🛠 Skills 🧰
+## 🛠 Skills 👨‍💻
 
 ### 1. 🔧 Software Development 📱
 
