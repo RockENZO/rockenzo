@@ -113,7 +113,7 @@ augmentation, and model training for precise player detection.
 
 ## 📈 GitHub Stats 📊
 <p align = center>
-  <img align = center src = "https://github-readme-stats.vercel.app/api?username=rockenzo&rank_icon=github">
+  <img align = center src = "https://github-readme-stats.vercel.app/api?username=rockenzo&rank_icon=github&theme=cobalt">
 </p>
 <p align = center>
  <img align = center src= "https://github-readme-stats.vercel.app/api/top-langs/?username=rockenzo&hide_progress=true&layout=compact&theme=cobalt" 
