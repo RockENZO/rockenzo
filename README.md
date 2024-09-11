@@ -26,51 +26,29 @@ Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid fo
 ## 🛠 Skills 👨‍💻
 
 ### 1. &nbsp;🔧 Software Development 📱
-
-- **Languages**:  
-  <a href="https://isocpp.org/"><img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/></a> 
-  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/></a>
-  
-- **Tools**:  
-  <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/></a> 
-  <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/></a>
-  
+- **Languages**:  &nbsp; [![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](https://isocpp.org/)  &nbsp;[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+- **Tools**:  &nbsp; [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)  &nbsp;[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
 ### 2. &nbsp;🌐 Web Development 💻
-- **Frontend**:  
-  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white"/></a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/></a>
-  <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white"/></a>
-  <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/></a>
+- **Frontend**:  &nbsp;[![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML) &nbsp; [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  &nbsp;[![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/)  &nbsp;[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+  
+- **Backend**:  &nbsp;[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)  &nbsp;[![Express.js](https://img.shields.io/badge/Express.js-787878?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)  &nbsp;[![Flask](https://img.shields.io/badge/Flask-0D6EFD?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 
-- **Backend**:  
-  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/></a>
-  <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express.js-787878?style=for-the-badge&logo=express&logoColor=white"/></a> <!-- Changed color to gray -->
-  <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-0D6EFD?style=for-the-badge&logo=flask&logoColor=white"/></a> <!-- Changed color to blue -->
+- **Databases**:  &nbsp;[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)  &nbsp;[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 
-- **Databases**:  
-  <a href="https://www.mysql.com/"><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/></a>
-  <a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/></a>
+### 3. &nbsp;🧠 Machine Learning 🤖
+- **Frameworks**:  &nbsp; [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)  &nbsp;[![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 
-### 3.&nbsp; 🧠 Machine Learning 🤖
-
-- **Frameworks**:  
-  <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/></a>
-  <a href="https://scikit-learn.org/"><img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"/></a>
-
-- **Experience**: Neural network training, optimization, and traditional machine learning techniques for predictive modeling.
+- **Experience**: Neural network training, optimization, predictive modeling.
 
 ### 4. &nbsp;📊 Data Analysis 🧐
-- **Libraries**:  
-  <a href="https://pandas.pydata.org/"><img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/></a>
-  <a href="https://numpy.org/"><img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/></a>
+- **Libraries**:  &nbsp;[![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/) &nbsp; [![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
 
-- **Experience**: Basic data manipulation and analysis for extracting insights.
+- **Experience**: Data manipulation and analysis.
 
 ### 5. &nbsp;📋 Project Management 🗂️
-
-- **Methodologies**:  Agile, Scrum
-- **Experience**: Leading projects, meeting deadlines, and coordinating teams for faster development.
+- **Methodologies**: Agile, Scrum 
+- **Experience**: Leading projects, coordinating teams, meeting deadlines.
 
 ## 🛠 Project Experience 📑
 <div align="center">
