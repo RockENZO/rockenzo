@@ -93,9 +93,11 @@ augmentation, and model training for precise player detection.
 <p align = center>
   <img align = center src = "https://github-readme-stats.vercel.app/api?username=rockenzo&rank_icon=github&theme=cobalt">
 </p>
+
 <p align = center>
  <img align = center src= "https://github-readme-stats.vercel.app/api/top-langs/?username=rockenzo&hide_progress=true&layout=compact&theme=cobalt" 
 </p>
+  
 <!-- <p align = center>
  <img align = center src = "https://github-profile-trophy.vercel.app/?username=rockenzo&theme=dracula&column=3&margin-w=15&margin-h=15">
 </p> -->
