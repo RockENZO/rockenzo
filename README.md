@@ -95,7 +95,7 @@ augmentation, and model training for precise player detection.
 </p>
 
 <p align="center">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rockenzo&hide_progress=true&layout=compact&theme=cobalt" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rockenzo&hide_progress=true&layout=compact&theme=cobalt" /> />
 </p>
   
 <!-- <p align = center>
