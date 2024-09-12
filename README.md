@@ -5,11 +5,7 @@
 # 👋 Hi, I'm Rock! 🙋
 
 Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid foundation in ___web development, software engineering, and machine learning___. I'm passionate about solving complex problems and building scalable, high-performance applications. I aim to contribute to impactful projects, collaborate with diverse teams, and continually enhance my skills in a fast-paced, forward-thinking technology environment. I'm excited about the potential to work on impactful projects and continually push the boundaries of what's possible in tech.
-<!--
-<p align="center">
-  <img src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" alt="Rocket Launch" width="300" height="200">
-</p>
--->
+
 
 ## 🎓 Education 📖
 **Bachelor of Information Technology**: February 2023 – Present  
@@ -97,10 +93,6 @@ augmentation, and model training for precise player detection.
 <p align="center">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rockenzo&hide_progress=true&layout=compact&theme=cobalt" />
 </p>
-  
-<!-- <p align = center>
- <img align = center src = "https://github-profile-trophy.vercel.app/?username=rockenzo&theme=dracula&column=3&margin-w=15&margin-h=15">
-</p> -->
 
 ## 🔗 Connect with Me 🕸️
 Thanks for stopping by! Feel free to check out my repositories and get in touch if you’re interested in collaborating on any projects.
