@@ -2,9 +2,9 @@
   <img src="B1T1.png" alt="Description" width="100%">
 </p>
 
-# 👋 Hi, I'm Rock! 🙋
+# 👋 Hello there, I'm Rock! 🙋
 
-Welcome to my GitHub profile! I am an Aspiring Software Engineer with a solid foundation in ___web development, software engineering, and machine learning___. I'm passionate about solving complex problems and building scalable, high-performance applications. I aim to contribute to impactful projects, collaborate with diverse teams, and continually enhance my skills in a fast-paced, forward-thinking technology environment. I'm excited about the potential to work on impactful projects and continually push the boundaries of what's possible in tech.
+Welcome to my profile page! I am an Aspiring Software Engineer with a solid foundation in ___web development, software engineering, and machine learning___. I'm passionate about solving complex problems and building scalable, high-performance applications. I aim to contribute to impactful projects, collaborate with diverse teams, and continually enhance my skills in a fast-paced, forward-thinking technology environment. I'm excited about the potential to work on impactful projects and continually push the boundaries of what's possible in tech.
 
 
 ## 🎓 Education 📖
