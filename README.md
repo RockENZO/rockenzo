@@ -6,19 +6,6 @@
 
 Welcome to my profile page! I am an Aspiring Software Engineer with a solid foundation in ___web development, software engineering, and machine learning___. I'm passionate about solving complex problems and building scalable, high-performance applications. I aim to contribute to impactful projects, collaborate with diverse teams, and continually enhance my skills in a fast-paced, forward-thinking technology environment. I'm excited about the potential to work on impactful projects and continually push the boundaries of what's possible in tech.
 
-
-## 🎓 Education 📖
-**Bachelor of Information Technology**: February 2023 – Present  
-*University of Adelaide*  
-- **Relevant coursework**:  
-  - Artificial Intelligence Techniques  
-  - Computer Systems  
-  - Object-Oriented Programming  
-  - Programming for IT Specialists (_Distinction_)  
-  - Web & Database Computing (_Distinction_)  
-  - Introduction to Applied Programming (_High Distinction_)  
-  - Introduction to Computer Systems, Networks, and Security (_High Distinction_)
-
 ## 🛠 Skills 👨‍💻
 
 ### 1. &nbsp;🔧 Software Development 📱
@@ -78,6 +65,18 @@ augmentation, and model training for precise player detection.
 - Leveraged Google Colab’s GPU resources for efficient model training and tuning, achieving
 97.5% precision in generating real-time bounding boxes around detected players.
 - Reduced manual video analysis time by 85% through model performance optimizations.
+
+## 🎓 Education 📖
+**Bachelor of Information Technology**: February 2023 – Present  
+*University of Adelaide*  
+- **Relevant coursework**:  
+  - Artificial Intelligence Techniques  
+  - Computer Systems  
+  - Object-Oriented Programming  
+  - Programming for IT Specialists (_Distinction_)  
+  - Web & Database Computing (_Distinction_)  
+  - Introduction to Applied Programming (_High Distinction_)  
+  - Introduction to Computer Systems, Networks, and Security (_High Distinction_)
 
 ## 📜 Certification 🏆
 - **[HackerRank Software Engineer Certificate](https://www.hackerrank.com/certificates/iframe/1d18ed03135b)**  
