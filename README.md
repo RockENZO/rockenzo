@@ -4,7 +4,7 @@
 
 # 👋 Hello there, I'm Rock! 🙋
 
-Welcome to my profile! I'm an aspiring Software Engineer with a strong foundation in ___web development, software engineering, and machine learning___. I'm passionate about solving complex problems, building scalable applications, and collaborating with diverse teams. I'm eager to contribute to impactful projects and push the boundaries of tech.
+Welcome to my profile! As an aspiring Software Engineer with a solid foundation in ___web development, software engineering, and machine learning___, I have a passion for solving complex problems and building scalable applications. Eager to collaborate with diverse teams, I aim to contribute to impactful projects and push the boundaries of tech.
 
 ## 🛠 Skills 👨‍💻
 
