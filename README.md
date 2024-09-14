@@ -45,7 +45,7 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
 
 <div align="center">
   <a href="https://github.com/RockENZO/automatic-web-scraper">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=Automatic-web-scraper&theme=cobalt" alt="automatic-web-scraper"/>
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=Automatic-web-scraper-with-LLM-parsing&theme=cobalt" alt="automatic-web-scraper"/>
   </a>
 </div>
 
