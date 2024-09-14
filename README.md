@@ -49,12 +49,10 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
   </a>
 </div>
 
-- Designed and developed an automatic web scraper to parse the body content of web pages using **LLM Ollama 3.1**.
-- Built the user interface with **Streamlit** and implemented web scraping using **BeautifulSoup**, **Selenium**, and **lxml** to efficiently handle diverse content sources.
-- Led the development of core features, including cleaning web page content by removing scripts and styles, splitting the content into manageable chunks, and enabling users to parse content based on their descriptions.
-- Optimized the scraper to handle dynamic web pages and process large datasets, improving performance and reliability across a variety of web sources.
-- Integrated a streamlined UI to allow users to input URLs, scrape content, and parse it with ease through the **Streamlit** interface.
-- Ensured the application’s scalability and usability by conducting rigorous testing and debugging for seamless operation.
+- **Engineered** a web scraper leveraging **LLM** Ollama 3.1 for data parsing, extracting content from over **500** web pages on-premise with high precision.
+- **Developed** a user-friendly interface with **Streamlit**, allowing users to input URLs, start scraping, and parse data seamlessly.
+- **Employed BeautifulSoup, Selenium,** and **lxml** to manage various content sources, decreasing data extraction errors.
+- **Enhanced** and **tested** the application, reducing errors and bolstering overall reliability.
 
   
 <div align="center">
@@ -63,16 +61,18 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
   </a>
 </div>
 
-- Designed and developed a web application to enhance visibility and streamline administrative
-  tasks for volunteer organizations, with features enabling users to sign up, join locations, view
-  and create events, and manage profiles based on roles.
-- Led the creation of the user management module, focusing on database setup and frontend
-  integration for efficient management of user roles and access privileges.
-- Integrated secure authentication using Argon2 for password hashing and Google OAuth for
-  third-party login.
-- Coordinated with frontend and backend teams to achieve a 20% reduction in development
+- **Conceptualized** and built a web application to boost visibility and streamline administrative
+functions for volunteer groups, featuring user sign-ups, location management, event creation,
+and role-based profile management.
+- **Spearheaded** the **database schema design** and led the development of the user
+management module, ensuring efficient data storage, retrieval, and seamless frontend
+integration for effective role and access management.
+- **Implemented** secure authentication mechanisms using **Argon2** for password hashing and
+**Google OAuth** for third-party login.
+- **Coordinated** with frontend and backend teams to achieve a **20%** reduction in development
   time ahead of schedule.
-- Conducted testing and debugging to ensure optimal performance and user experience.
+- **Performed** comprehensive testing and debugging to ensure high performance and user
+satisfaction.
 
 <div align="center">
   <a href="https://github.com/RockENZO/ML-object-detection-project">
@@ -81,13 +81,13 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
 </div>
 
 
-- Developed a model for detecting football players in videos using the YOLOv5 framework for
-training and YOLOv8 for inference, achieving 92% accuracy.
-- Sourced a dataset of 663 annotated images from Roboflow and implemented pre-processing,
-augmentation, and model training for precise player detection.
-- Leveraged Google Colab’s GPU resources for efficient model training and tuning, achieving
-97.5% precision in generating real-time bounding boxes around detected players.
-- Reduced manual video analysis time by 85% through model performance optimizations.
+- **Created and honed** a model for detecting football players in videos with the **YOLOv5**
+framework for training and **YOLOv8** for inference, achieving **92%** accuracy.
+- **Sourced and pre-processed** a dataset of **663** annotated images from Roboflow, enhancing
+model precision.
+- **Leveraged** **Google Colab**’s GPU resources for efficient model training and tuning, reaching
+**97.5%** precision in generating real-time bounding boxes around detected players.
+- Minimized manual video analysis time by **85%** through model performance optimizations.
 
 ## 🎓 Education 📖
 **Bachelor of Information Technology**: February 2023 – Present  
