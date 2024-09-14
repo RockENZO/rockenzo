@@ -18,7 +18,7 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
 
 - **Databases**:  &nbsp;[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)  &nbsp;[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 
-- **Tools**:  &nbsp; [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)  &nbsp;[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/) &nbsp; [![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-306998?style=for-the-badge&logo=beautifulsoup&logoColor=white)](https://www.crummy.com/software/BeautifulSoup/) 
+- **Tools**: &nbsp; [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/) &nbsp; [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/) &nbsp; [![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-306998?style=for-the-badge&logo=python&logoColor=white)](https://www.crummy.com/software/BeautifulSoup/)
 
 
 ### 3. &nbsp;🧠 Machine Learning 🤖
