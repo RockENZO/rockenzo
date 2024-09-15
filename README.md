@@ -2,7 +2,10 @@
   <img src="B1T1.png" alt="Description" width="100%">
 </p>
 
-# 👋 Hello there, I'm Rock! 🙋
+
+<div align="center">
+  <h1 align = left >👋 Hello there, I'm Rock! 🙋 <img src="https://komarev.com/ghpvc/?username=rockenzo&label=Profile%20views&color=0e75b6&style=for-the-badge" alt="Profile views" align="right" /></h1>
+</div>
 
 Welcome to my profile! As an aspiring Software Engineer with a solid foundation in ___web development, software engineering, and machine learning___, I have a passion for solving complex problems and building scalable applications. Eager to collaborate with diverse teams, I aim to contribute to impactful projects and push the boundaries of tech.
 
@@ -127,6 +130,7 @@ Thanks for stopping by! Feel free to check out my repositories and get in touch 
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge"/>
   </a>
 </p>
+
 
 <p align="center">
   <img src="https://media.giphy.com/media/l0HUpt2s9Pclgt9Vm/giphy.gif" alt="Thanks for Stopping By" width="250" height="200">
