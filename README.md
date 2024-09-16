@@ -92,6 +92,19 @@ model precision.
 **97.5%** precision in generating real-time bounding boxes around detected players.
 - Minimized manual video analysis time by **85%** through model performance optimizations.
 
+<div align="center">
+  <a href="https://github.com/RockENZO/MyWeather">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=MyWeather&theme=cobalt" alt="MyWeather"/>
+  </a>
+</div>
+
+-	**Developed** a weather application using SwiftUI, providing real-time weather updates based on user location.
+- **Integrated** CoreLocation to fetch and manage user location data for accurate weather information.
+- **Implemented** a responsive UI with animated loading and launch screens to enhance user experience.
+- **Utilized** the OpenWeather API to fetch reliable and up-to-date weather data.
+- **Designed** custom views and extensions for streamlined UI components and improved code reusability.
+- **Conducted** thorough testing and debugging to ensure application stability and performance.
+
 ## 🎓 Education 📖
 **Bachelor of Information Technology**: February 2023 – Present  
 *University of Adelaide*  
