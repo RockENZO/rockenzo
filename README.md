@@ -2,7 +2,6 @@
   <img src="B1T1.png" alt="Description" width="100%">
 </p>
 
-
 <div align="center">
   <h1 align = left >👋 Hello there, I'm Rock! 🙋 <img src="https://komarev.com/ghpvc/?username=rockenzo&label=Profile%20views&color=0e75b6&style=for-the-badge" alt="Profile views" align="right" /></h1>
 </div>
