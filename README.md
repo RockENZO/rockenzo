@@ -147,3 +147,9 @@ Thanks for stopping by! Feel free to check out my repositories and get in touch 
 <p align="center">
   <img src="https://media.giphy.com/media/l0HUpt2s9Pclgt9Vm/giphy.gif" alt="Thanks for Stopping By" width="250" height="200">
 </p>
+
+<div align="center">
+  <a align = center href="https://spotify-github-profile.kittinanx.com/api/view?uid=31fxyxpn2nphks7upu5gtfwptfl4&redirect=true">
+    <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=31fxyxpn2nphks7upu5gtfwptfl4&cover_image=false&theme=default&show_offline=false&background_color=232323&interchange=false&bar_color=53b14f&bar_color_cover=true" alt="Spotify Profile">
+  </a>
+</div>
