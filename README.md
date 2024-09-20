@@ -14,15 +14,13 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
 - **Languages**:  &nbsp;[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) &nbsp; [![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](https://isocpp.org/)  &nbsp;[![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)](https://developer.apple.com/swift/)
 
 ### 2. &nbsp;🌐 Web Development 💻
-- **Frontend**:  &nbsp;[![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML) &nbsp; [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) &nbsp;[![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/)  &nbsp;[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)  &nbsp;[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)  &nbsp;[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) &nbsp;[![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)](https://greensock.com/gsap/)
+- **Frontend**:  &nbsp;[![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML) &nbsp; [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) &nbsp;[![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/)  &nbsp;[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)  &nbsp;[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)  &nbsp;[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) &nbsp;[![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)](https://greensock.com/gsap/) &nbsp;[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 - **Backend**:  &nbsp;[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)  &nbsp;[![Express.js](https://img.shields.io/badge/Express.js-787878?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/) &nbsp;[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
 
 - **Databases**:  &nbsp;[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)  &nbsp;[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 
 - **Tools**: &nbsp; [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/) &nbsp; [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/) &nbsp; [![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-306998?style=for-the-badge&logo=python&logoColor=white)](https://www.crummy.com/software/BeautifulSoup/)
-
-
 ### 3. &nbsp;🧠 Machine Learning 🤖
 - **Frameworks**:  &nbsp; [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)  &nbsp;[![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 
@@ -148,8 +146,8 @@ Thanks for stopping by! Feel free to check out my repositories and get in touch 
   <img src="https://media.giphy.com/media/l0HUpt2s9Pclgt9Vm/giphy.gif" alt="Thanks for Stopping By" width="250" height="200">
 </p>
 
-<div align="center">
-  <a align = center href="https://spotify-github-profile.kittinanx.com/api/view?uid=31fxyxpn2nphks7upu5gtfwptfl4&redirect=true">
-    <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=31fxyxpn2nphks7upu5gtfwptfl4&cover_image=false&theme=default&show_offline=false&background_color=232323&interchange=false&bar_color=53b14f&bar_color_cover=true" alt="Spotify Profile">
+<p align= "center">
+  <a align ="center" href="https://spotify-github-profile.kittinanx.com/api/view?uid=31fxyxpn2nphks7upu5gtfwptfl4&redirect=true">
+    <img align = "center"  src="https://spotify-github-profile.kittinanx.com/api/view?uid=31fxyxpn2nphks7upu5gtfwptfl4&cover_image=false&theme=default&show_offline=false&background_color=232323&interchange=false&bar_color=53b14f&bar_color_cover=true" alt="Spotify Profile">
   </a>
-</div>
+</p>
