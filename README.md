@@ -11,7 +11,10 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
 ## 🛠 Skills 👨‍💻
 
 ### 1. &nbsp;🔧 Software Development 📱
-- **Languages**:  &nbsp;[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) &nbsp; [![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](https://isocpp.org/)  &nbsp;[![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)](https://developer.apple.com/swift/)
+- **Languages**:  &nbsp;[![Python](https://img.shields.io/badge/Python-F7DF1E?style=for-the-badge&logo=python&logoColor=black)](https://www.python.org/)  &nbsp; [![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](https://isocpp.org/)  &nbsp;[![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)](https://developer.apple.com/swift/)
+- **Frameworks**:  &nbsp;[![SwiftUI](https://img.shields.io/badge/SwiftUI-001F3F?style=for-the-badge&logo=swift&logoColor=white)](https://developer.apple.com/xcode/swiftui/)
+
+
 
 ### 2. &nbsp;🌐 Web Development 💻
 - **Frontend**:  
