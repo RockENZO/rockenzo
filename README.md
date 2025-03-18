@@ -108,7 +108,7 @@ model precision.
 **Bachelor of Information Technology**: February 2023 – Present  
 *University of Adelaide*  
 - **Relevant coursework**:  
-  - Artificial Intelligence Techniques  
+  - Artificial Intelligence Technologies (_Distinction_)
   - Computer Systems  
   - Object-Oriented Programming  
   - Programming for IT Specialists (_Distinction_)  
