@@ -115,6 +115,10 @@ model precision.
   - Web & Database Computing (_Distinction_)  
   - Introduction to Applied Programming (_High Distinction_)  
   - Introduction to Computer Systems, Networks, and Security (_High Distinction_)
+  - Database and Ethical Data
+  - Secure Programming
+  - Using Machine Learning Tools
+  - Computer Vision
 
 ## 📜 Certification 🏆
 - **[HackerRank Software Engineer Certificate](https://www.hackerrank.com/certificates/iframe/1d18ed03135b)**  
