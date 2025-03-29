@@ -145,6 +145,10 @@ Thanks for stopping by! Feel free to check out my repositories and get in touch 
   <a href="https://github.com/rockenzo" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge"/>
   </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://linktr.ee/RockENZO" target="_blank">
+    <img src="https://img.shields.io/badge/Linktree-43E660?style=for-the-badge&logo=linktree&logoColor=white" alt="Linktree Badge"/>
+  </a>
 </p>
 
 
