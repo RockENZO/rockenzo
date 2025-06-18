@@ -26,7 +26,7 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
 ### 3. &nbsp;🧠 Machine Learning 🤖
 - **Frameworks**:  &nbsp; [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)  &nbsp;[![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 
-- **Experience**: Neural network training, optimization, predictive modeling.
+- **Experience**: Neural network training, optimization, predictive modeling, computer vision.
 
 ### 4. &nbsp;📊 Data Analysis 🧐
 - **Libraries**:  &nbsp;[![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/) &nbsp; [![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
