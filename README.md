@@ -105,6 +105,18 @@ model precision.
 - **Designed** custom views and extensions for streamlined UI components and improved code reusability.
 - **Conducted** thorough testing and debugging to ensure application stability and performance.
 
+<div align="center">
+  <a href="https://github.com/RockENZO/Road_Semantic_Segmentation_CV">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=Road_Semantic_Segmentation_CV&theme=cobalt" alt="Road_Semantic_Segmentation_CV"/>
+  </a>
+</div>
+
+- **Developed** a semantic segmentation pipeline for autonomous driving scenes using **PyTorch**.
+- **Implemented** custom data loaders, augmentation strategies, and advanced network architectures to boost segmentation accuracy.
+- **Conducted** ablation studies and tracked results with mIoU and FLOPs metrics for model efficiency.
+- **Documented** findings and methods in a comprehensive report, highlighting improvements over the baseline.
+
+
 ## 🎓 Education 📖
 **Bachelor of Information Technology**: February 2023 – Present  
 *University of Adelaide*  
