@@ -116,6 +116,18 @@ model precision.
 - **Conducted** ablation studies and tracked results with mIoU and FLOPs metrics for model efficiency.
 - **Documented** findings and methods in a comprehensive report, highlighting improvements over the baseline.
 
+<div align="center"> 
+  <a href="https://github.com/RockENZO/flappy_bird_dqn-main"> 
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=flappy_bird_dqn-main&theme=cobalt" alt="flappy_bird_dqn-main"/> 
+  </a> 
+</div>
+
+- **Engineered** a reinforcement learning agent using **Deep Q-Networks (DQN)** to autonomously play Flappy Bird, achieving high scores and advancing through increasing difficulty levels.
+- **Refined** the agent's state representation and reward function, leveraging game environment parameters (e.g., bird position, pipe gap, velocity) to optimize learning and decision-making.
+- **Implemented** experience replay and target network updates for stable and efficient training, following best practices from modern RL research.
+- **Utilized** PyTorch for neural network modeling and training, ensuring scalable and reproducible experiments.
+- **Validated** agent performance across multiple game levels, with automated evaluation and model checkpointing for robust benchmarking.
+
 
 ## 🎓 Education 📖
 **Bachelor of Information Technology**: February 2023 – Present  
