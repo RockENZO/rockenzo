@@ -52,10 +52,10 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
   </a>
 </div>
 
-- **Engineered** a web scraper leveraging **LLM** Ollama 3.1 for data parsing, extracting content from over **500** web pages on-premise with high precision.
-- **Developed** a user-friendly interface with **Streamlit**, allowing users to input URLs, start scraping, and parse data seamlessly.
-- **Employed BeautifulSoup, Selenium,** and **lxml** to manage various content sources, decreasing data extraction errors.
-- **Enhanced** and **tested** the application, reducing errors and bolstering overall reliability.
+- **Engineered** an advanced web scraper leveraging **LLM** Ollama gpt-oss:20b for intelligent data parsing, extracting and processing content from over **500** web pages on-premise with enhanced precision and performance.
+- **Developed** a responsive **Streamlit** interface with real-time progress tracking, sidebar configuration, and visual indicators for seamless user experience in URL input, scraping, and data parsing.
+- **Implemented** smart content cleaning and intelligent chunking algorithms using **BeautifulSoup** and **lxml**, significantly reducing data extraction errors and improving content processing efficiency.
+- **Architected** modular code structure with enhanced error handling, logging capabilities, export functionality, and configurable processing parameters for robust and reliable operation.
 
   
 <div align="center">
