@@ -57,6 +57,19 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
 - **Implemented** smart content cleaning and intelligent chunking algorithms using **BeautifulSoup** and **lxml**, significantly reducing data extraction errors and improving content processing efficiency.
 - **Architected** modular code structure with enhanced error handling, logging capabilities, export functionality, and configurable processing parameters for robust and reliable operation.
 
+<div align="center">
+  <a href="https://github.com/RockENZO/datapipeline-etl">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=datapipeline-etl&theme=cobalt" alt="datapipeline-etl"/>
+  </a>
+</div>
+
+- **Architected** and developed a comprehensive spatial data pipeline for an accessibility-focused mapping application serving Sydney, processing **76,000+** data points across **15+** datasets including building complexes, transportation networks, and accessibility infrastructure.
+- **Implemented** multi-service **Docker** architecture using Docker Compose to orchestrate **Elasticsearch**, **PostgreSQL** (GNAF), **Redis**, and **Flask** services, enabling scalable data processing and real-time spatial data visualization.
+- **Engineered** automated data indexing system with **Elasticsearch**, supporting both point and polygon geometries, with dynamic mapping configurations for heterogeneous spatial datasets (GeoJSON, EPSG4326 projections).
+- **Developed** real-time API integration pipeline using **APScheduler** for hourly pedestrian count data updates from ArcGIS REST services, implementing robust error handling and data transformation workflows.
+- **Built** Flask-based microservices architecture including GNAF address search API with **Celery/Redis** task queuing, Elasticsearch search API with geospatial filtering, and live bus tracking indexer for dynamic transportation data.
+- **Optimized** spatial query performance through bounding box filtering, bulk indexing strategies, and efficient Elasticsearch mappings, reducing query response times and enabling responsive interactive map interfaces.
+
   
 <div align="center">
   <a href="https://github.com/RockENZO/Feed-the-world-web-app">
