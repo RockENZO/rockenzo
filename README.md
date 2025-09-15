@@ -36,8 +36,9 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
 
 ### 5. &nbsp; 💬 LLM APIs and Model Localization 😶‍🌫️
 - **APIs**: &nbsp; [![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)  &nbsp; [![Hugging Face](https://img.shields.io/badge/Hugging_Face-FFAE00?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/) 
+- **Transformers**: &nbsp; [![BERT](https://img.shields.io/badge/BERT-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://huggingface.co/docs/transformers/model_doc/bert) &nbsp; [![DistilBERT](https://img.shields.io/badge/DistilBERT-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://huggingface.co/docs/transformers/model_doc/distilbert)
 - **Platforms**: &nbsp; [![Ollama](https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white)](https://ollama.com/)
-- **Experience**: Proficient in utilizing LLM APIs for integrating conversational AI into applications, and localizing models using platforms like Ollama for on-device or private cloud deployment.
+- **Experience**: Proficient in utilizing LLM APIs for integrating conversational AI into applications, fine-tuning transformer models (BERT/DistilBERT) for domain-specific tasks, and localizing models using platforms like Ollama for on-device or private cloud deployment.
 
 ### 6. &nbsp;📋 Project Management 🗂️
 - **Methodologies**: Agile, Scrum 
