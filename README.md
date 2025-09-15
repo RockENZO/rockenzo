@@ -70,6 +70,17 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
 - **Built** Flask-based microservices architecture including GNAF address search API with **Celery/Redis** task queuing, Elasticsearch search API with geospatial filtering, and live bus tracking indexer for dynamic transportation data.
 - **Optimized** spatial query performance through bounding box filtering, bulk indexing strategies, and efficient Elasticsearch mappings, reducing query response times and enabling responsive interactive map interfaces.
 
+<div align="center">
+  <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=NLP-Cyber-Harm-Detection&theme=cobalt" alt="NLP-Cyber-Harm-Detection"/>
+  </a>
+</div>
+
+- **Developed** an advanced multiclass fraud detection system using **BERT** and **DistilBERT** transformers, achieving **97%** accuracy in classifying 9 distinct fraud types including phishing, tech support scams, and job scams alongside legitimate messages.
+- **Engineered** comprehensive machine learning pipeline with traditional ML baselines (TF-IDF + Logistic Regression/SVM) and state-of-the-art transformer models, implementing **DistilBERT** for **60% faster training** while maintaining **97% of BERT's performance**.
+- **Optimized** for **Kaggle GPU training** with memory-efficient data loaders, batch processing, and automated model checkpointing, reducing training time and enabling scalable deployment for real-time fraud detection systems.
+- **Implemented** production-ready inference demos with interactive command-line and **Jupyter notebook** interfaces, featuring confidence scoring, batch prediction capabilities, and comprehensive evaluation metrics for cybersecurity applications.
+- **Architected** robust data preprocessing pipeline handling imbalanced multiclass datasets with **stratified sampling**, **label encoding**, and **cross-validation** strategies to ensure reliable model performance across all fraud categories.
   
 <div align="center">
   <a href="https://github.com/RockENZO/Feed-the-world-web-app">
