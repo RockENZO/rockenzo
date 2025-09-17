@@ -181,8 +181,13 @@ model precision.
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=rockenzo&rank_icon=github&theme=cobalt" />
 </p>
 
+
 <p align="center">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rockenzo&hide_progress=true&theme=cobalt&layout=compact" />
+</p>
+
+<p align="center">
+  <img alt="summary-card" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=rockenzo&theme=github_dark" style="width:100%"/>
 </p>
 
 ## 🔗 Connect with Me 🕸️
