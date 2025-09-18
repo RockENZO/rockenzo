@@ -78,10 +78,10 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
 </div>
 
 - **Developed** an advanced multiclass fraud detection system using **BERT** and **DistilBERT** transformers, achieving **97%** accuracy in classifying 9 distinct fraud types including phishing, tech support scams, and job scams alongside legitimate messages.
-- **Engineered** comprehensive machine learning pipeline with traditional ML baselines (TF-IDF + Logistic Regression/SVM) and state-of-the-art transformer models, implementing **DistilBERT** for **60% faster training** while maintaining **97% of BERT's performance**.
-- **Optimized** for **Kaggle GPU training** with memory-efficient data loaders, batch processing, and automated model checkpointing, reducing training time and enabling scalable deployment for real-time fraud detection systems.
-- **Implemented** production-ready inference demos with interactive command-line and **Jupyter notebook** interfaces, featuring confidence scoring, batch prediction capabilities, and comprehensive evaluation metrics for cybersecurity applications.
-- **Architected** robust data preprocessing pipeline handling imbalanced multiclass datasets with **stratified sampling**, **label encoding**, and **cross-validation** strategies to ensure reliable model performance across all fraud categories.
+- **Engineered** AI-powered reasoning pipeline using **Large Language Models** (GPT-2, local LLMs) for explainable fraud detection, providing detailed explanations of why content is classified as fraudulent with **zero API costs** through Kaggle GPU infrastructure.
+- **Optimized** **DistilBERT** implementation for **60% faster training** while maintaining **97% of BERT's performance**, with **40% smaller model size** and memory-efficient processing ideal for **real-time fraud detection** and resource-constrained deployments.
+- **Implemented** production-ready inference pipeline with **interactive Jupyter notebooks**, command-line demos, and **batch processing capabilities**, featuring confidence scoring, multiclass prediction, and comprehensive evaluation metrics for cybersecurity applications.
+- **Architected** transformer-based preprocessing pipeline with **stratified sampling**, **tokenization optimization**, and **GPU-accelerated training** on Kaggle, enabling scalable deployment and automated model checkpointing for enterprise fraud detection systems.
   
 <div align="center">
   <a href="https://github.com/RockENZO/Feed-the-world-web-app">
