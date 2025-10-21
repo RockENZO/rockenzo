@@ -77,12 +77,13 @@ Welcome to my profile! As an aspiring Software Engineer with a solid foundation 
   </a>
 </div>
 
-- **Developed** an advanced multiclass fraud detection system using **BERT**, **DistilBERT**, and **FLAN-T5** transformers, achieving **97%** accuracy in classifying 9 distinct fraud types including phishing, tech support scams, job scams, reward scams, and SSN scams alongside legitimate messages.
-- **Engineered** unified classification + reasoning pipeline using **fine-tuned FLAN-T5** models for explainable fraud detection, generating both predictions and detailed explanations in a single inference pass with **zero API costs** through Kaggle GPU infrastructure.
-- **Implemented** production-ready inference demos with **interactive Jupyter notebooks**, command-line utilities, and **batch processing capabilities**, featuring confidence scoring, multiclass prediction, and comprehensive evaluation metrics for cybersecurity applications.
-- **Optimized** **DistilBERT** implementation for **60% faster training** while maintaining **97% of BERT's performance**, with **40% smaller model size** and memory-efficient processing ideal for **real-time fraud detection** and resource-constrained deployments.
-- **Architected** transformer-based preprocessing pipeline with **stratified sampling**, **tokenization optimization**, and **GPU-accelerated training** on Kaggle, enabling scalable deployment with automated model checkpointing and early stopping for enterprise fraud detection systems.
-- **Built** comprehensive model comparison framework analyzing **multiple LLM architectures** (GPT-2, BERT variants, T5 models) with performance visualization, statistical analysis, and detailed reasoning quality assessments for cybersecurity research applications.
+
+- **Developed** transformer-based fraud detection system using **BERT** and **DistilBERT** for multiclass classification of 9 fraud types (phishing, tech support scams, job scams, reward scams, refund scams, popup scams, SSN scams, SMS spam) plus legitimate messages, establishing classification baseline with **90%+ accuracy**.
+- **Optimized** **DistilBERT** implementation achieving **60% faster training** with **40% reduced model size** while retaining **97% of BERT's performance**, enabling efficient deployment for real-time fraud detection in production environments with low-latency inference and resource-efficient processing.
+- **Analyzed** reasoning capabilities of multiple LLM architectures (**GPT-2**, **FLAN-T5** variants) for post-hoc fraud explanation generation, conducting comprehensive performance benchmarking with statistical analysis, quality assessment, and visualization of model size vs. reasoning quality trade-offs.
+- **Engineered** unified **FLAN-T5** text-to-text framework for simultaneous classification and compact reasoning generation in a single inference pass, transitioning from separate classification-then-explanation pipeline to integrated prediction with auto-synthesized rationales.
+- **Architected** state-of-the-art **BART joint model** (`BartForJointClassificationAndGeneration`) achieving **91%+ accuracy** with custom dual-head architecture, weighted multi-task loss optimization (CLS: 0.8, GEN: 1.2), and beam search decoding (num_beams=4) for rich contextual explanations (128 tokens) identifying specific fraud indicators.
+- **Implemented** production-ready inference pipeline with **interactive Jupyter notebooks**, **batch processing APIs**, and **comprehensive evaluation tools** featuring confidence scoring, confusion matrices, per-class metrics, and Kaggle-compatible deployment for scalable explainable AI cybersecurity applications.
   
 <div align="center">
   <a href="https://github.com/RockENZO/Feed-the-world-web-app">
