@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/RockENZO">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=A78BFA&center=true&vCenter=true&width=640&lines=Hi+there%2C+I'm+Rock+%F0%9F%91%8B;Software+Engineer+in+the+making;Full-stack+web+%C2%B7+ML+%C2%B7+LLM+tooling;Building+things+that+scale" alt="Typing intro" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=A78BFA&center=true&vCenter=true&width=640&lines=Hi+there%2C+I'm+Rock+%F0%9F%91%8B;Master+of+IT+student+in+Applied+AI;Full-stack+web+%C2%B7+ML+%C2%B7+LLM+tooling;Building+things+that+scale" alt="Typing intro" />
   </a>
 </p>
 
@@ -20,7 +20,8 @@
 
 ```ts
 const rock = {
-  studying:  "Bachelor of IT @ University of Adelaide",
+  studying:  "Master of IT (Applied AI) @ Adelaide University",
+  graduated: "Bachelor of IT @ University of Adelaide (2025)",
   focus:     ["Web Development", "Scalable Applications", "AI / ML"],
   building:  "data pipelines, explainable NLP and local-first AI tools",
   certified: "HackerRank Software Engineer (2024)",
@@ -108,7 +109,8 @@ const rock = {
 
 ### 🎓 Education &amp; certification
 
-- **Bachelor of Information Technology**, University of Adelaide (2023 to present). High Distinctions in Applied Programming and in Computer Systems, Networks &amp; Security; Distinctions in AI Technologies, Web &amp; Database Computing and Programming for IT Specialists.
+- **Master of Information Technology (Applied Artificial Intelligence)**, Adelaide University (2026 to present).
+- **Bachelor of Information Technology**, University of Adelaide (2023 to 2025). High Distinctions in Applied Programming and in Computer Systems, Networks &amp; Security; Distinctions in AI Technologies, Web &amp; Database Computing and Programming for IT Specialists.
 - **[HackerRank Software Engineer](https://www.hackerrank.com/certificates/iframe/1d18ed03135b)** (Sep 2024): problem solving, Python, SQL, REST APIs.
 
 ---
