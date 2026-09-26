@@ -61,31 +61,31 @@ const rock = {
 <table>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/datapipeline-etl"><img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=datapipeline-etl&bg_color=0D1B33&title_color=A78BFA&text_color=C9D1D9&icon_color=FF9F43&hide_border=true" alt="datapipeline-etl" /></a>
+      <a href="https://github.com/RockENZO/datapipeline-etl"><img src="https://opengraph.githubassets.com/1/RockENZO/datapipeline-etl" alt="datapipeline-etl" /></a>
       <br/><b>Knia Maps.</b> Geospatial ETL behind an accessibility map of Sydney: <b>76,000+</b> points from 15+ datasets on Elasticsearch, PostgreSQL, Redis and Flask.
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection"><img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=NLP-Cyber-Harm-Detection&bg_color=0D1B33&title_color=A78BFA&text_color=C9D1D9&icon_color=FF9F43&hide_border=true" alt="NLP Cyber Harm Detection" /></a>
+      <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection"><img src="https://opengraph.githubassets.com/1/RockENZO/NLP-Cyber-Harm-Detection" alt="NLP Cyber Harm Detection" /></a>
       <br/><b>CSIRO's Data61.</b> Explainable scam detection across 10 threat types, from BERT at <b>94%</b> to a BART model that explains its call.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/data"><img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=data&bg_color=0D1B33&title_color=A78BFA&text_color=C9D1D9&icon_color=FF9F43&hide_border=true" alt="Fraud dataset" /></a>
+      <a href="https://github.com/RockENZO/data"><img src="https://opengraph.githubassets.com/1/RockENZO/data" alt="Fraud dataset" /></a>
       <br/><b>CSIRO's Data61.</b> <b>194,914</b> scam and legitimate samples from 23 sources across email, SMS, popups and dialogue.
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing"><img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=Automatic-web-scraper-with-LLM-parsing&bg_color=0D1B33&title_color=A78BFA&text_color=C9D1D9&icon_color=FF9F43&hide_border=true" alt="LLM web scraper" /></a>
+      <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing"><img src="https://opengraph.githubassets.com/1/RockENZO/Automatic-web-scraper-with-LLM-parsing" alt="LLM web scraper" /></a>
       <br/>Messy web pages in, clean structured data out, via a local Ollama model. Tested on <b>500+</b> pages.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/MyWeather"><img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=MyWeather&bg_color=0D1B33&title_color=A78BFA&text_color=C9D1D9&icon_color=FF9F43&hide_border=true" alt="MyWeather" /></a>
+      <a href="https://github.com/RockENZO/MyWeather"><img src="https://opengraph.githubassets.com/1/RockENZO/MyWeather" alt="MyWeather" /></a>
       <br/>SwiftUI weather app with live location, smooth animations and OpenWeatherMap data.
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://github-readme-stats.vercel.app/api/pin/?username=RockENZO&repo=ML-object-detection-project&bg_color=0D1B33&title_color=A78BFA&text_color=C9D1D9&icon_color=FF9F43&hide_border=true" alt="Football player detection" /></a>
+      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://opengraph.githubassets.com/1/RockENZO/ML-object-detection-project" alt="Football player detection" /></a>
       <br/>YOLOv5/v8 finds players in match video at <b>97.5%</b> precision, cutting manual review by 85%.
     </td>
   </tr>
@@ -116,16 +116,16 @@ const rock = {
 ### 📊 GitHub activity
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=RockENZO&show_icons=true&rank_icon=github&include_all_commits=true&hide_border=true&bg_color=0D1B33&title_color=A78BFA&icon_color=FF9F43&text_color=C9D1D9&ring_color=A78BFA" alt="GitHub stats" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RockENZO&layout=compact&langs_count=8&hide_border=true&bg_color=0D1B33&title_color=A78BFA&text_color=C9D1D9" alt="Top languages" />
+  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=RockENZO&theme=tokyonight" alt="Profile summary" />
+</p>
+
+<p align="center">
+  <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=RockENZO&theme=tokyonight" alt="GitHub stats" />
+  <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=RockENZO&theme=tokyonight" alt="Most committed languages" />
 </p>
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=RockENZO&hide_border=true&background=0D1B33&ring=A78BFA&fire=FF9F43&currStreakNum=FFFFFF&sideNums=FFFFFF&currStreakLabel=A78BFA&sideLabels=A78BFA&dates=8B9BB4&stroke=1E2D4D" alt="GitHub streak" />
-</p>
-
-<p align="center">
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=RockENZO&custom_title=Contribution%20activity&hide_border=true&bg_color=0D1B33&color=C9D1D9&title_color=A78BFA&line=A78BFA&point=FF9F43&area=true&area_color=A78BFA&radius=8" alt="Contribution activity graph" />
 </p>
 
 <p align="center">
