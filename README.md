@@ -67,7 +67,7 @@ const rock = {
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection"><img src="https://opengraph.githubassets.com/1/RockENZO/NLP-Cyber-Harm-Detection" alt="NLP Cyber Harm Detection" /></a>
-      <br/><b>CSIRO's Data61.</b> Explainable scam detection across 10 threat types, from BERT at <b>94%</b> to a BART model that explains its call.
+      <br/><b>CSIRO's Data61.</b> Scam classification and explanation experiments across 10 categories; evaluation protocol and reproducible results are in progress.
     </td>
   </tr>
   <tr>
@@ -77,7 +77,7 @@ const rock = {
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing"><img src="https://opengraph.githubassets.com/1/RockENZO/Automatic-web-scraper-with-LLM-parsing" alt="LLM web scraper" /></a>
-      <br/>Messy web pages in, clean structured data out, via a local Ollama model. Tested on <b>500+</b> pages.
+      <br/>Messy web pages in, structured text out, via a local Ollama model.
     </td>
   </tr>
   <tr>
@@ -87,7 +87,7 @@ const rock = {
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://opengraph.githubassets.com/1/RockENZO/ML-object-detection-project" alt="Football player detection" /></a>
-      <br/>YOLOv5/v8 finds players in match video at <b>97.5%</b> precision, cutting manual review by 85%.
+      <br/>Football object detection with YOLO and a repeatable test-split evaluation command.
     </td>
   </tr>
 </table>
