@@ -86,8 +86,8 @@ const rock = {
       <br/>SwiftUI weather app with live location, smooth animations and OpenWeatherMap data.
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://opengraph.githubassets.com/1/RockENZO/ML-object-detection-project" alt="Football player detection" /></a>
-      <br/>Four-class YOLOv8s football detection with small-ball crop augmentation and validation-based resolution selection. On a <b>135-frame clip-prefix-grouped test (two groups)</b>: <b>mAP50 0.273 → 0.816</b> and <b>mAP50–95 0.118 → 0.581</b> versus a matched baseline. <a href="https://github.com/RockENZO/ML-object-detection-project/blob/3a3c0031ea37ed80a3ce9fe9da8a1f8eb9bb9462/reports/study_test_20260930.json">Evaluation report</a>.
+      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://opengraph.githubassets.com/1/RockENZO/ML-object-detection-project" alt="Football detection and broadcast analysis" /></a>
+      <br/><b>Football detection &amp; broadcast analysis.</b> Four-class YOLOv8s detection, shot-local BoT-SORT tracking, automatic pitch mapping, team-colour possession-change inference and synchronized Streamlit video/pitch replay. Detection-only results on a <b>135-frame clip-prefix-grouped test (two groups)</b>: <b>mAP50 0.273 → 0.816</b> and <b>mAP50–95 0.118 → 0.581</b> versus a matched baseline. <a href="https://github.com/RockENZO/ML-object-detection-project/blob/3a3c0031ea37ed80a3ce9fe9da8a1f8eb9bb9462/reports/study_test_20260930.json">Detection evaluation</a>.<br/><br/><b>Broadcast analysis remains experimental</b>, with tracking and possession-coverage limitations. <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/coaching_iteration_results.json">Broadcast evaluation</a> · <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/automatic_control_results.json">Automatic control evidence</a>.
     </td>
   </tr>
 </table>
