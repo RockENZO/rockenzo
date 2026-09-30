@@ -63,21 +63,21 @@ const rock = {
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/datapipeline-etl"><img src="https://opengraph.githubassets.com/1/RockENZO/datapipeline-etl" alt="datapipeline-etl" /></a>
-      <br/><b>Knia Maps.</b> Geospatial ETL behind an accessibility map of Sydney: <b>76,000+</b> points from 15+ datasets on Elasticsearch, PostgreSQL, Redis and Flask.
+      <br/><b>Knia Maps.</b> Geospatial ETL for a Sydney accessibility map using Elasticsearch, PostgreSQL, Redis, Celery and Flask, with reproducible service integration tests.
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection"><img src="https://opengraph.githubassets.com/1/RockENZO/NLP-Cyber-Harm-Detection" alt="NLP Cyber Harm Detection" /></a>
-      <br/><b>CSIRO's Data61.</b> Scam classification and explanation experiments across 10 categories; evaluation protocol and reproducible results are in progress.
+      <br/><b>CSIRO's Data61.</b> Nine-class scam text classification using word/character features and validation-based decision selection. On an <b>18,261-record template-grouped internal test</b>: <b>macro F1 0.948</b>, with legitimate-message false positives reduced from <b>3.37% to 1.75%</b> versus a matched baseline. <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection/blob/397e103aa0be418320d4e9ae7b2d824da0227625/evaluation/reports/nine_class_test_20260930.json">Evaluation report</a>.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/data"><img src="https://opengraph.githubassets.com/1/RockENZO/data" alt="Fraud dataset" /></a>
-      <br/><b>CSIRO's Data61.</b> <b>194,914</b> scam and legitimate samples from 23 sources across email, SMS, popups and dialogue.
+      <br/><b>CSIRO's Data61.</b> <b>194,913</b> scam and legitimate samples from 19 retained source datasets across email, SMS, popups and dialogue, with verified hashes and reproducible provenance-preserving builds.
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing"><img src="https://opengraph.githubassets.com/1/RockENZO/Automatic-web-scraper-with-LLM-parsing" alt="LLM web scraper" /></a>
-      <br/>Messy web pages in, structured text out, via a local Ollama model.
+      <br/>Local Ollama extraction from web pages, with request-time model fallback, partial-result reporting and offline failure tests.
     </td>
   </tr>
   <tr>
@@ -87,7 +87,7 @@ const rock = {
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://opengraph.githubassets.com/1/RockENZO/ML-object-detection-project" alt="Football player detection" /></a>
-      <br/>Football object detection with YOLO and a repeatable test-split evaluation command.
+      <br/>Four-class YOLOv8s football detection with small-ball crop augmentation and validation-based resolution selection. On a <b>135-frame clip-prefix-grouped test (two groups)</b>: <b>mAP50 0.273 → 0.816</b> and <b>mAP50–95 0.118 → 0.581</b> versus a matched baseline. <a href="https://github.com/RockENZO/ML-object-detection-project/blob/3a3c0031ea37ed80a3ce9fe9da8a1f8eb9bb9462/reports/study_test_20260930.json">Evaluation report</a>.
     </td>
   </tr>
 </table>
