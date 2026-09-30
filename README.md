@@ -67,7 +67,7 @@ const rock = {
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection"><img src="https://opengraph.githubassets.com/1/RockENZO/NLP-Cyber-Harm-Detection" alt="NLP Cyber Harm Detection" /></a>
-      <br/><b>CSIRO's Data61.</b> Scam classification experiments across nine categories, with an auditable source-held-out binary baseline and per-source evaluation reports.
+      <br/><b>CSIRO's Data61.</b> Nine-class scam text classification using word/character features and validation-based decision selection. On an <b>18,261-record template-grouped internal test</b>: <b>macro F1 0.948</b>, with legitimate-message false positives reduced from <b>3.37% to 1.75%</b> versus a matched baseline. <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection/blob/397e103aa0be418320d4e9ae7b2d824da0227625/evaluation/reports/nine_class_test_20260930.json">Evaluation report</a>.
     </td>
   </tr>
   <tr>
@@ -87,7 +87,7 @@ const rock = {
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://opengraph.githubassets.com/1/RockENZO/ML-object-detection-project" alt="Football player detection" /></a>
-      <br/>Four-class football object detection with YOLO, video-prefix grouped splits and a reproducible training/evaluation pipeline.
+      <br/>Four-class YOLOv8s football detection with small-ball crop augmentation and validation-based resolution selection. On a <b>135-frame clip-prefix-grouped test (two groups)</b>: <b>mAP50 0.273 → 0.816</b> and <b>mAP50–95 0.118 → 0.581</b> versus a matched baseline. <a href="https://github.com/RockENZO/ML-object-detection-project/blob/3a3c0031ea37ed80a3ce9fe9da8a1f8eb9bb9462/reports/study_test_20260930.json">Evaluation report</a>.
     </td>
   </tr>
 </table>
