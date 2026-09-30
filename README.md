@@ -77,7 +77,7 @@ const rock = {
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing"><img src="https://opengraph.githubassets.com/1/RockENZO/Automatic-web-scraper-with-LLM-parsing" alt="LLM web scraper" /></a>
-      <br/>Local Ollama extraction from web pages, with request-time model fallback, partial-result reporting and offline failure tests.
+      <br/>Source-verifiable local LLM extraction with semantic HTML blocks, structured JSON and duplicate merging. On <b>16 fixed synthetic regression fixtures</b> using Qwen: field exact-match F1 improved from <b>0.778 to 0.938</b>, with published evidence and latency tradeoffs. <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing/blob/a979dff2076a3637ef4003a7742cbe28666b8f3c/evaluation/reports/structured_benchmark_20260930.json">Evaluation report</a>.
     </td>
   </tr>
   <tr>
