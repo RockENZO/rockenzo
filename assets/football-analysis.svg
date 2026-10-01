@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+<title id="title">Football Match Analysis</title>
+<desc id="desc">RockENZO football analysis project: YOLOv8s detection, BoT-SORT tracking and automatic pitch reconstruction. Pitch diagram is illustrative; broadcast analysis is experimental.</desc>
+<rect width="1200" height="600" fill="#ffffff"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="80" y="83" font-size="28" fill="#59636f">RockENZO / ML-object-detection-project</text>
+<text x="80" y="160" font-size="58" font-weight="700" fill="#24292f">Football Match Analysis</text>
+<text x="80" y="218" font-size="30" fill="#59636f">Detection · Tracking · Pitch reconstruction</text>
+<rect x="80" y="270" width="620" height="225" rx="18" fill="#173e2b"/>
+<g fill="none" stroke="#adcbb6" stroke-width="2.5">
+<rect x="102" y="288" width="576" height="189" rx="1"/>
+<path d="M390 288V477"/>
+<circle cx="390" cy="382.5" r="39"/>
+<path d="M102 331H173V434H102M678 331H607V434H678"/>
+<path d="M102 359H130V406H102M678 359H650V406H678"/>
+</g>
+<g fill="#56b5ff">
+<circle cx="209" cy="321" r="8"/><circle cx="287" cy="365" r="8"/><circle cx="245" cy="441" r="8"/><circle cx="358" cy="412" r="8"/>
+</g>
+<g fill="#ffb660">
+<circle cx="503" cy="317" r="8"/><circle cx="464" cy="374" r="8"/><circle cx="555" cy="433" r="8"/><circle cx="420" cy="346" r="8"/>
+</g>
+<circle cx="367" cy="398" r="5" fill="#ffffff"/>
+<text x="752" y="310" font-size="30" font-weight="700" fill="#24292f">YOLOv8s</text>
+<text x="752" y="358" font-size="26" fill="#59636f">BoT-SORT · PnLCalib</text>
+<text x="752" y="405" font-size="26" fill="#59636f">Streamlit replay dashboard</text>
+<rect x="752" y="443" width="186" height="43" rx="21" fill="#fff3cc"/>
+<text x="777" y="472" font-size="23" font-weight="700" fill="#735c0f">Experimental</text>
+<text x="80" y="543" font-size="21" fill="#59636f">Illustrative pitch · automatic offline analysis</text>
+</g>
+<rect y="580" width="1200" height="20" fill="#3774a4"/>
+</svg>

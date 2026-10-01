@@ -67,7 +67,7 @@ const rock = {
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection"><img src="https://opengraph.githubassets.com/1/RockENZO/NLP-Cyber-Harm-Detection" alt="NLP Cyber Harm Detection" /></a>
-      <br/><b>CSIRO's Data61.</b> Nine-class scam text classification using word/character features and validation-based decision selection. On an <b>18,261-record template-grouped internal test</b>: <b>macro F1 0.948</b>, with legitimate-message false positives reduced from <b>3.37% to 1.75%</b> versus a matched baseline. <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection/blob/397e103aa0be418320d4e9ae7b2d824da0227625/evaluation/reports/nine_class_test_20260930.json">Evaluation report</a>.
+      <br/><b>CSIRO's Data61.</b> Nine-class scam detection with word and character features. <b>Macro F1 0.948</b> on an <b>18,261-record internal test grouped by template</b>. <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection/blob/397e103aa0be418320d4e9ae7b2d824da0227625/evaluation/reports/nine_class_test_20260930.json">Evaluation</a>.
     </td>
   </tr>
   <tr>
@@ -77,7 +77,7 @@ const rock = {
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing"><img src="https://opengraph.githubassets.com/1/RockENZO/Automatic-web-scraper-with-LLM-parsing" alt="LLM web scraper" /></a>
-      <br/>Source-verifiable local LLM extraction with semantic HTML blocks, structured JSON and duplicate merging. On <b>16 fixed synthetic regression fixtures</b> using Qwen: field exact-match F1 improved from <b>0.778 to 0.938</b>, with published evidence and latency tradeoffs. <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing/blob/a979dff2076a3637ef4003a7742cbe28666b8f3c/evaluation/reports/structured_benchmark_20260930.json">Evaluation report</a>.
+      <br/>Extract structured JSON from webpages with local LLMs, traceable source fields and duplicate merging. <b>Field exact-match F1 0.938</b> with Qwen on <b>16 synthetic regression fixtures</b>. <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing/blob/a979dff2076a3637ef4003a7742cbe28666b8f3c/evaluation/reports/structured_benchmark_20260930.json">Evaluation</a>.
     </td>
   </tr>
   <tr>
@@ -86,8 +86,8 @@ const rock = {
       <br/>SwiftUI weather app with live location, smooth animations and OpenWeatherMap data.
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://opengraph.githubassets.com/1/RockENZO/ML-object-detection-project" alt="Football detection and broadcast analysis" /></a>
-      <br/><b>Football detection &amp; broadcast analysis.</b> Four-class YOLOv8s detection, shot-local BoT-SORT tracking, automatic pitch mapping, team-colour possession-change inference and synchronized Streamlit video/pitch replay. Detection-only results on a <b>135-frame clip-prefix-grouped test (two groups)</b>: <b>mAP50 0.273 → 0.816</b> and <b>mAP50–95 0.118 → 0.581</b> versus a matched baseline. <a href="https://github.com/RockENZO/ML-object-detection-project/blob/3a3c0031ea37ed80a3ce9fe9da8a1f8eb9bb9462/reports/study_test_20260930.json">Detection evaluation</a>.<br/><br/><b>Broadcast analysis remains experimental</b>, with tracking and possession-coverage limitations. <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/coaching_iteration_results.json">Broadcast evaluation</a> · <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/automatic_control_results.json">Automatic control evidence</a>.
+      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="assets/football-analysis.svg" alt="Football detection and broadcast analysis" /></a>
+      <br/>YOLOv8s football detection, player tracking and automatic pitch mapping with synchronized video/pitch replay. <b>Experimental</b> possession-change estimates; tracking and coverage remain limited. <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/MATCH_ANALYSIS.md">Results &amp; limitations</a>.
     </td>
   </tr>
 </table>
