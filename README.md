@@ -96,7 +96,7 @@ const rock = {
 <summary><b>More projects</b></summary>
 <br/>
 
-- [Odyssey](https://github.com/RockENZO/odyssey): a local-first coding agent for your terminal, 17 tools on Ollama with no cloud
+- [Odyssey](https://github.com/RockENZO/odyssey): a terminal coding agent with 17 tools, local Ollama inference and optional external web research
 - [MagicTrick](https://github.com/RockENZO/MagicTrick): an iOS card trick with no buttons, only rotate, shake and a secret tap
 - [ControllerMouse](https://github.com/RockENZO/ControllerMouse): drive your Mac's cursor with a game controller from the menu bar
 - [Road semantic segmentation](https://github.com/RockENZO/Road_Semantic_Segmentation_CV): PyTorch segmentation for driving scenes, with mIoU and FLOPs ablations
@@ -158,3 +158,4 @@ const rock = {
 </p>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1B33,50:3b2f7a,100:FF9F43&height=110&section=footer" />
+
