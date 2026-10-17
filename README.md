@@ -107,6 +107,39 @@ const rock = {
 
 ---
 
+### 🎮 Live playground
+
+<p align="center"><i>Two browser experiments built with three.js. Click a recording to play it live.</i></p>
+
+<table>
+  <tr>
+    <td width="50%" valign="top" align="center">
+      <a href="https://rockenzo.github.io/Roadster-and-Beyond/"><img src="assets/roadster-and-beyond.gif" alt="Roadster and Beyond: event mode stunts" width="100%" /></a>
+      <br/><b>Roadster and Beyond</b>
+      <br/>A fan-made recreation of the Tesla Roadster launch night, with rigid-body physics, a broadcast-style HUD and the four highlight stunts. Keyboard and gamepad.
+      <br/><br/>
+      <a href="https://rockenzo.github.io/Roadster-and-Beyond/"><img src="https://img.shields.io/badge/%E2%96%B6%20Play%20live-FF9F43?style=flat-square&logoColor=0D1B33" alt="Play live" /></a>
+      <a href="https://github.com/RockENZO/Roadster-and-Beyond"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
+      <br/>
+      <img src="https://img.shields.io/badge/three.js-A78BFA?style=flat-square&logo=threedotjs&logoColor=0D1B33" alt="three.js" />
+      <img src="https://img.shields.io/badge/Vite-A78BFA?style=flat-square&logo=vite&logoColor=0D1B33" alt="Vite" />
+    </td>
+    <td width="50%" valign="top" align="center">
+      <a href="https://rockenzo.github.io/touch-grass/"><img src="assets/touch-grass.gif" alt="Touch Grass: moving a hand through the meadow" width="340" /></a>
+      <br/><b>Touch Grass</b>
+      <br/>An interactive 3D meadow: run your hand through 260k instanced blades of grass, then switch between Morning, Golden hour and Night.
+      <br/><br/>
+      <a href="https://rockenzo.github.io/touch-grass/"><img src="https://img.shields.io/badge/%E2%96%B6%20Play%20live-FF9F43?style=flat-square&logoColor=0D1B33" alt="Play live" /></a>
+      <a href="https://github.com/RockENZO/touch-grass"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
+      <br/>
+      <img src="https://img.shields.io/badge/three.js-A78BFA?style=flat-square&logo=threedotjs&logoColor=0D1B33" alt="three.js" />
+      <img src="https://img.shields.io/badge/GLSL-A78BFA?style=flat-square&logo=opengl&logoColor=0D1B33" alt="GLSL" />
+    </td>
+  </tr>
+</table>
+
+---
+
 ### 🎓 Education &amp; certification
 
 - **Master of Information Technology (Applied Artificial Intelligence)**, Adelaide University (2026 to present).
