@@ -137,7 +137,7 @@ const rock = {
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top" align="center" colspan="2">
+    <td valign="top" align="center" colspan="2">
       <a href="https://rockenzo.github.io/ML-object-detection-project/"><img src="assets/football-analysis.gif" alt="Football match momentum viewer: video with detections, calibrated pitch, momentum timeline, critical moments, tactic notes and a players table" width="340" /></a>
       <br/><b>Football Match Viewer</b>
       <br/>A static viewer for one broadcast clip: video with detections, a calibrated top-down pitch, momentum timeline, critical moments, tactic notes, per-player distance and speed, and space control. Python does the detection and tracking offline. <b>Experimental</b> estimates from one 30 s clip.
