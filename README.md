@@ -86,7 +86,7 @@ const rock = {
       <br/>SwiftUI weather app with live location, smooth animations and OpenWeatherMap data.
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="assets/football-analysis.gif" alt="Football match momentum viewer: video with detections, calibrated pitch, momentum timeline, critical moments, tactic notes and a players table" width="100%" /></a>
+      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://opengraph.githubassets.com/1/RockENZO/ML-object-detection-project" alt="Football match analysis" /></a>
       <br/>YOLOv8s football detection, player tracking and automatic pitch mapping, with a static match viewer: momentum timeline, critical moments, tactic notes, per-player distance and speed, and space control replayed over the video and a calibrated pitch. Detector fine-tuned to 0.895 mAP50 (ball recall 0.61) on a small validation set. <b>Experimental</b> estimates from one 30 s clip, not industrial-grade; the ball is still missed about four times in ten. <a href="https://rockenzo.github.io/ML-object-detection-project/">Live demo</a> · <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/MATCH_ANALYSIS.md">Results &amp; limitations</a>.
     </td>
   </tr>
@@ -109,7 +109,7 @@ const rock = {
 
 ### 🎮 Live playground
 
-<p align="center"><i>Two browser experiments built with three.js. Click a recording to play it live.</i></p>
+<p align="center"><i>Browser demos you can open live. Click a recording to play it.</i></p>
 
 <table>
   <tr>
@@ -134,6 +134,19 @@ const rock = {
       <br/>
       <img src="https://img.shields.io/badge/three.js-A78BFA?style=flat-square&logo=threedotjs&logoColor=0D1B33" alt="three.js" />
       <img src="https://img.shields.io/badge/GLSL-A78BFA?style=flat-square&logo=opengl&logoColor=0D1B33" alt="GLSL" />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" align="center">
+      <a href="https://rockenzo.github.io/ML-object-detection-project/"><img src="assets/football-analysis.gif" alt="Football match viewer: video with detections, calibrated pitch, space control, momentum timeline and a players table" width="560" /></a>
+      <br/><b>Football match analysis</b>
+      <br/>YOLOv8s detection and tracking with automatic pitch mapping, replayed as a static viewer: momentum timeline, critical moments, tactic notes, per-player speed and space control. Experimental, from one 30 s clip.
+      <br/><br/>
+      <a href="https://rockenzo.github.io/ML-object-detection-project/"><img src="https://img.shields.io/badge/%E2%96%B6%20Open%20live-FF9F43?style=flat-square&logoColor=0D1B33" alt="Open live" /></a>
+      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
+      <br/>
+      <img src="https://img.shields.io/badge/YOLOv8-A78BFA?style=flat-square&logoColor=0D1B33" alt="YOLOv8" />
+      <img src="https://img.shields.io/badge/PyTorch-A78BFA?style=flat-square&logo=pytorch&logoColor=0D1B33" alt="PyTorch" />
     </td>
   </tr>
 </table>
