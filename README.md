@@ -86,8 +86,8 @@ const rock = {
       <br/>SwiftUI weather app with live location, smooth animations and OpenWeatherMap data.
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="assets/football-analysis.gif" alt="Football match momentum viewer: video with detections, calibrated pitch, momentum timeline, critical moments and tactic notes" width="100%" /></a>
-      <br/>YOLOv8s football detection, player tracking and automatic pitch mapping, now with a static match viewer: momentum timeline, critical moments and tactic notes replayed over the video and a calibrated pitch. <b>Experimental</b> estimates from one 30 s clip; ball coverage remains limited. <a href="https://rockenzo.github.io/ML-object-detection-project/">Live demo</a> · <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/MATCH_ANALYSIS.md">Results &amp; limitations</a>.
+      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="assets/football-analysis.gif" alt="Football match momentum viewer: video with detections, calibrated pitch, momentum timeline, critical moments, tactic notes and a players table" width="100%" /></a>
+      <br/>YOLOv8s football detection, player tracking and automatic pitch mapping, with a static match viewer: momentum timeline, critical moments, tactic notes, per-player distance and speed, and space control replayed over the video and a calibrated pitch. Detector fine-tuned to 0.895 mAP50 (ball recall 0.61) on a small validation set. <b>Experimental</b> estimates from one 30 s clip, not industrial-grade; the ball is still missed about four times in ten. <a href="https://rockenzo.github.io/ML-object-detection-project/">Live demo</a> · <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/MATCH_ANALYSIS.md">Results &amp; limitations</a>.
     </td>
   </tr>
 </table>
