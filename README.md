@@ -114,9 +114,9 @@ const rock = {
 <table>
   <tr>
     <td width="50%" valign="top" align="center">
-      <a href="https://rockenzo.github.io/Roadster-and-Beyond/"><img src="assets/roadster-and-beyond.gif" alt="Roadster and Beyond: event mode stunts" width="100%" /></a>
+      <a href="https://rockenzo.github.io/Roadster-and-Beyond/"><img src="assets/roadster-and-beyond.gif" alt="Roadster and Beyond: event mode stunts and laps of Spa" width="100%" /></a>
       <br/><b>Roadster and Beyond</b>
-      <br/>A fan-made recreation of the Tesla Roadster launch night, with rigid-body physics, a broadcast-style HUD and the four highlight stunts. Keyboard and gamepad.
+      <br/>A fan-made recreation of the Tesla Roadster launch night, with rigid-body physics, a broadcast-style HUD, the four highlight stunts and a day or night track day at Spa-Francorchamps. Keyboard and gamepad.
       <br/><br/>
       <a href="https://rockenzo.github.io/Roadster-and-Beyond/"><img src="https://img.shields.io/badge/%E2%96%B6%20Play%20live-FF9F43?style=flat-square&logoColor=0D1B33" alt="Play live" /></a>
       <a href="https://github.com/RockENZO/Roadster-and-Beyond"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
