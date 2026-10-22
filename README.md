@@ -153,7 +153,7 @@ const rock = {
     <td colspan="2" valign="top" align="center">
       <a href="https://rockenzo.github.io/datapipeline-etl/"><img src="assets/datapipeline-etl.gif" alt="Sydney spatial ETL: the pipeline runs in the browser, then searches open data and follows a live bus on the map" width="560" /></a>
       <br/><b>Sydney spatial ETL</b>
-      <br/>A geospatial data pipeline replayed in the browser on real open Sydney data: extract, transform, load and query steps, searchable map layers, and a live NSW bus layer that keeps a selected bus open as it refreshes. The full system runs on Docker with Elasticsearch.
+      <br/>Explore Sydney’s address data and live NSW bus locations on an interactive map.
       <br/><br/>
       <a href="https://rockenzo.github.io/datapipeline-etl/"><img src="https://img.shields.io/badge/%E2%96%B6%20Open%20live-FF9F43?style=flat-square&logoColor=0D1B33" alt="Open live" /></a>
       <a href="https://github.com/RockENZO/datapipeline-etl"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
