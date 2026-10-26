@@ -166,6 +166,32 @@ const rock = {
 
 ---
 
+### 🧰 Toolshed Collection
+
+<p align="center">
+  <b>Small tools. Inspectable evidence.</b><br/>
+  My personal collection of focused developer tools.
+</p>
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/RockENZO/readme-reality">Readme Reality</a></b>
+      <br/>Offline checks for README links, package scripts and Python paths.
+      <br/><br/>
+      <a href="https://rockenzo.github.io/readme-reality/">Try examples</a> · <a href="https://github.com/RockENZO/readme-reality">Source</a>
+    </td>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/RockENZO/demo-proof">DemoProof</a></b>
+      <br/>An experimental tool for turning approved demo snapshots into replay-verified videos, GIFs and evidence reports.
+      <br/><br/>
+      <a href="https://rockenzo.github.io/demo-proof/">View recording</a> · <a href="https://github.com/RockENZO/demo-proof">Source</a>
+    </td>
+  </tr>
+</table>
+
+---
+
 ### 🎓 Education &amp; certification
 
 - **Master of Information Technology (Applied Artificial Intelligence)**, Adelaide University (2026 to present).
