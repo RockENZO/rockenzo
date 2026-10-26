@@ -175,14 +175,16 @@ const rock = {
 
 <table>
   <tr>
-    <td width="50%" valign="top">
-      <b><a href="https://github.com/RockENZO/readme-reality">Readme Reality</a></b>
+    <td width="50%" valign="top" align="center">
+      <a href="https://rockenzo.github.io/readme-reality/"><img src="assets/readme-reality.gif" alt="Readme Reality: real browser walkthrough of example README findings, repository evidence and corrected snapshots" width="100%" /></a>
+      <br/><b><a href="https://github.com/RockENZO/readme-reality">Readme Reality</a></b>
       <br/>Offline checks for README links, package scripts and Python paths.
       <br/><br/>
       <a href="https://rockenzo.github.io/readme-reality/">Try examples</a> · <a href="https://github.com/RockENZO/readme-reality">Source</a>
     </td>
-    <td width="50%" valign="top">
-      <b><a href="https://github.com/RockENZO/demo-proof">DemoProof</a></b>
+    <td width="50%" valign="top" align="center">
+      <a href="https://rockenzo.github.io/demo-proof/"><img src="assets/demo-proof.gif" alt="DemoProof: recorded replay of a fictional weather snapshot with temperature toggle and refresh" width="100%" /></a>
+      <br/><b><a href="https://github.com/RockENZO/demo-proof">DemoProof</a></b>
       <br/>An experimental tool for turning approved demo snapshots into replay-verified videos, GIFs and evidence reports.
       <br/><br/>
       <a href="https://rockenzo.github.io/demo-proof/">View recording</a> · <a href="https://github.com/RockENZO/demo-proof">Source</a>
