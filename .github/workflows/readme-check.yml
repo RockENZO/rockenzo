@@ -1,0 +1,21 @@
+name: README references
+
+# A local preview can disappear without a README edit.
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check local profile images and links
+        uses: RockENZO/readme-reality@9298574e5bc5e042ab9955b2be50081c646cf51d # v0.2.0
+        with:
+          root: .
+          readme: README.md
