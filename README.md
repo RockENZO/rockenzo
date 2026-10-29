@@ -63,31 +63,31 @@ const rock = {
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/datapipeline-etl"><img src="https://opengraph.githubassets.com/1/RockENZO/datapipeline-etl" alt="datapipeline-etl" /></a>
-      <br/><b>Knia Maps.</b> Geospatial ETL for a Sydney accessibility map using Elasticsearch, PostgreSQL, Redis, Celery and Flask, with reproducible service integration tests.
+      <br/><b>Knia Maps.</b> Geospatial ETL for Sydney accessibility mapping, combining Elasticsearch search, PostgreSQL storage and Docker services with reproducible integration tests.
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection"><img src="https://opengraph.githubassets.com/1/RockENZO/NLP-Cyber-Harm-Detection" alt="NLP Cyber Harm Detection" /></a>
-      <br/><b>CSIRO's Data61.</b> Nine-class scam detection with word and character features. <b>Macro F1 0.948</b> on an <b>18,261-record internal test grouped by template</b>. <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection/blob/397e103aa0be418320d4e9ae7b2d824da0227625/evaluation/reports/nine_class_test_20260930.json">Evaluation</a>.
+      <br/><b>CSIRO's Data61.</b> Nine-class scam detection using word and character features, with <b>macro F1 0.948</b> on an <b>18,261-record, template-grouped internal test</b>. <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection/blob/397e103aa0be418320d4e9ae7b2d824da0227625/evaluation/reports/nine_class_test_20260930.json">Evaluation</a>.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/data"><img src="https://opengraph.githubassets.com/1/RockENZO/data" alt="Fraud dataset" /></a>
-      <br/><b>CSIRO's Data61.</b> <b>194,913</b> scam and legitimate samples from 19 retained source datasets across email, SMS, popups and dialogue, with verified hashes and reproducible provenance-preserving builds.
+      <br/><b>CSIRO's Data61.</b> A reproducible corpus of <b>194,913</b> scam and legitimate samples from 19 retained source datasets, with verified hashes and traceable provenance.
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing"><img src="https://opengraph.githubassets.com/1/RockENZO/Automatic-web-scraper-with-LLM-parsing" alt="LLM web scraper" /></a>
-      <br/>Extract structured JSON from webpages with local LLMs, traceable source fields and duplicate merging. <b>Field exact-match F1 0.938</b> with Qwen on <b>16 synthetic regression fixtures</b>. <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing/blob/a979dff2076a3637ef4003a7742cbe28666b8f3c/evaluation/reports/structured_benchmark_20260930.json">Evaluation</a>.
+      <br/>Structured webpage extraction with local LLMs and traceable source evidence. <b>Field exact-match F1 0.938</b> with Qwen on <b>16 synthetic regression fixtures</b>. <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing/blob/a979dff2076a3637ef4003a7742cbe28666b8f3c/evaluation/reports/structured_benchmark_20260930.json">Evaluation</a>.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/MyWeather"><img src="https://opengraph.githubassets.com/1/RockENZO/MyWeather" alt="MyWeather" /></a>
-      <br/>SwiftUI weather app with live location, smooth animations and OpenWeatherMap data.
+      <br/>SwiftUI weather app with location-based OpenWeatherMap forecasts, animated transitions and Liquid Glass cards, bringing current conditions and forecast trends into one interface.
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://opengraph.githubassets.com/1/RockENZO/ML-object-detection-project" alt="Football match analysis" /></a>
-      <br/>YOLOv8s football detection, player tracking and automatic pitch mapping, with a static match viewer: momentum timeline, critical moments, tactic notes, per-player distance and speed, and space control replayed over the video and a calibrated pitch. Detector fine-tuned to 0.895 mAP50 (ball recall 0.61) on a small validation set. <b>Experimental</b> estimates from one 30 s clip, not industrial-grade; the ball is still missed about four times in ten. <a href="https://rockenzo.github.io/ML-object-detection-project/">Live demo</a> · <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/MATCH_ANALYSIS.md">Results &amp; limitations</a>.
+      <br/><b>Experimental</b> YOLOv8s football detection, player tracking and pitch mapping, with a match viewer for one 30-second clip. <a href="https://rockenzo.github.io/ML-object-detection-project/">Live demo</a> · <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/MATCH_ANALYSIS.md">Results &amp; limitations</a>.
     </td>
   </tr>
 </table>
