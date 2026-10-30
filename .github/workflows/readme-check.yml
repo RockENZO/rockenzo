@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Check local profile images and links
-        uses: RockENZO/readme-reality@9298574e5bc5e042ab9955b2be50081c646cf51d # v0.2.0
+        uses: RockENZO/readme-reality@d8f1d521c1f13c9916ae455222271e1b701b6f71 # v0.3.0
         with:
           root: .
           readme: README.md
