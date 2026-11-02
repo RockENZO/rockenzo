@@ -235,7 +235,7 @@ const rock = {
 
 <p align="center">
   <a href="https://github.com/RockENZO"><img src="https://img.shields.io/badge/GitHub-0D1B33?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <!-- Add more once confirmed, e.g. LinkedIn / email / portfolio -->
+  <a href="https://www.linkedin.com/in/gewanga1880714/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
 </p>
 
 <p align="center">
