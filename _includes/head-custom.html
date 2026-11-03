@@ -1,0 +1,43 @@
+<!-- Dark theme for the GitHub Pages copy of the profile README, using the same navy/lavender/gold palette. -->
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0D1B33">
+<style>
+  :root { color-scheme: dark; }
+  html, body { background: #0D1B33; color: #E8EDF8; }
+  .markdown-body { color: #E8EDF8; }
+  .markdown-body img { background-color: transparent; }
+  .markdown-body a { color: #A78BFA; }
+  .markdown-body a:hover { color: #FF9F43; }
+  .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4,
+  .markdown-body h5, .markdown-body h6, .markdown-body strong, .markdown-body b { color: #F4F6FC; }
+  .markdown-body h1, .markdown-body h2 { border-bottom-color: #1E2D4D; }
+  .markdown-body hr { background-color: #1E2D4D; border-color: #1E2D4D; }
+  .markdown-body table th, .markdown-body table td { border-color: #1E2D4D; }
+  .markdown-body table tr { background-color: transparent; border-top-color: #1E2D4D; }
+  .markdown-body table tr:nth-child(2n) { background-color: rgba(30, 45, 77, .35); }
+  .markdown-body blockquote { color: #8B9BB4; border-left-color: #1E2D4D; }
+  .markdown-body code, .markdown-body tt { background-color: rgba(167, 139, 250, .14); color: #E8EDF8; }
+  .markdown-body pre { background-color: #101F3C; }
+  .markdown-body pre code { background-color: transparent; }
+  .markdown-body kbd { background-color: #101F3C; color: #E8EDF8; border-color: #1E2D4D; box-shadow: inset 0 -1px 0 #1E2D4D; }
+  .markdown-body .footer { color: #8B9BB4; border-color: #1E2D4D !important; }
+  ::selection { background: rgba(167, 139, 250, .4); }
+</style>
+<script>
+  // The page is always dark, so always show the dark terminal card. The README itself keeps
+  // light/dark <picture> sources for github.com, which follows the viewer's theme.
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('picture').forEach(function (picture) {
+      var fallback = picture.querySelector('img');
+      picture.querySelectorAll('source').forEach(function (source) {
+        var media = source.getAttribute('media') || '';
+        if (media.indexOf('prefers-color-scheme: light') !== -1) { source.remove(); return; }
+        media = media.replace(' and (prefers-color-scheme: dark)', '').replace('(prefers-color-scheme: dark) and ', '');
+        source.setAttribute('media', media === '(prefers-color-scheme: dark)' ? 'all' : media);
+      });
+      if (fallback && /profile-terminal-light\.svg$/.test(fallback.getAttribute('src') || '')) {
+        fallback.setAttribute('src', fallback.getAttribute('src').replace('profile-terminal-light', 'profile-terminal-dark'));
+      }
+    });
+  });
+</script>

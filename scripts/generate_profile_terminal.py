@@ -172,8 +172,13 @@ a += ['<defs>'+glyph_paths()+'<g id="rock-glyphs">'+''.join(f'<use href="#glyph-
 a+=['<path d="M41 407h267" stroke="#303943"/>',typing_caption(),'</g><path d="M348 76V480" stroke="#303943"/>']
 
 art=''.join(a)
-D={'bg':'#10151b','line':'#303943','fg':'#e5e9e6','muted':'#9ba7ad','accent':'#e5b879','active':'#1c2b2b'}
-L={'bg':'#f8f7f2','line':'#c9cfc9','fg':'#24312e','muted':'#586b64','accent':'#885b25','active':'#e5e9dc'}
+# Palette shared with the README: navy (0D1B33), gold (FF9F43), lavender (A78BFA), plus a teal water field.
+D={'bg':'#0D1B33','line':'#1E2D4D','fg':'#E8EDF8','muted':'#8B9BB4','accent':'#FF9F43','active':'#16284B','label':'#A78BFA'}
+L={'bg':'#F7F6FC','line':'#D9D5EC','fg':'#1B2340','muted':'#59627F','accent':'#B45F06','active':'#ECE8FB','label':'#6B4FD3'}
+MARK_COLORS={
+ 'dark':{'#54766d':'#2FA79B','#354c49':'#1F6F6A','#e1eae2':'#D9CCFF','#e5b879':D['accent'],'#9ba7ad':D['muted'],'#303943':D['line']},
+ 'light':{'#54766d':'#2A8F86','#354c49':'#8CBDB7','#e1eae2':'#2A2060','#e5b879':L['accent'],'#9ba7ad':L['muted'],'#303943':L['line']},
+}
 def tx(x,y,v,size=11,c='fg',extra=''):
  return f'<text x="{x}" y="{y}" font-size="{size}" fill="{{{c}}}" {extra}>{html.escape(v)}</text>'
 def anim(attr,values,times,dur,extra=''):
@@ -205,10 +210,9 @@ def command_area(x, y, cs, os):
 for theme,pal in [('dark',D),('light',L)]:
  for mobile in [False,True]:
   W,H=(360,1010) if mobile else (900,602)
-  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII-filled geometric ROCK lettering over animated ASCII waves. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker, Streamlit. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama. Asynchronously suspended geometric letters with an ASCII-text fill sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',15,'muted'),tx(W-130,29,'PROFILE 01',14,'muted')]
+  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII-filled geometric ROCK lettering over animated ASCII waves. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker, Streamlit. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama. Asynchronously suspended geometric letters with an ASCII-text fill sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',15,'muted'),tx(W-130,29,'PROFILE 01',14,'label')]
   mark=art
-  if theme=='light':
-   for old,new in {'#54766d':'#678575','#354c49':'#9daa9f','#728e8a':'#496e5e','#e1eae2':'#102b21','#e5b879':L['accent'],'#9ba7ad':L['muted'],'#303943':L['line']}.items():mark=mark.replace(old,new)
+  for old,new in MARK_COLORS[theme].items():mark=mark.replace(old,new)
   if mobile:
    mark=mark[:mark.index('<path d="M41 407')]+ '</g>'
    out+=['<g transform="translate(28,-28) scale(.85)">'+mark+'</g>'];x,y=23,350
@@ -224,13 +228,13 @@ for theme,pal in [('dark',D),('light',L)]:
   out += ['<g class="motion" opacity=".8"><rect x="'+str(x-8)+'" y="'+str(ys[0]-hy)+'" width="'+str(332 if mobile else 497)+'" height="'+str(43 if mobile else 27)+'" rx="3" fill="{active}">'+anim('y',[v-hy for v in ys]+[ys[0]-hy],[i/len(ys) for i in range(len(ys)+1)],len(ys)*2,'begin="5s" repeatCount="indefinite" calcMode="discrete"')+'</rect></g>']
   for i,((label,value),yy) in enumerate(zip(fields,ys)):
    vy=yy+20 if mobile else yy
-   if label:out.append(tx(x,yy,label,11.5 if mobile else 12,'muted'))
+   if label:out.append(tx(x,yy,label,11.5 if mobile else 12,'label'))
    width=len(value)*cw+2;start=.25+i*(.32 if mobile else .5);duration=start+.65
    times=[0,start/duration]+[(start+.65*j/len(value))/duration for j in range(1,len(value)+1)]
    vals=[0,0]+[width*j/len(value) for j in range(1,len(value)+1)]
    out += [f'<defs><clipPath id="about-{i}"><rect x="{value_x}" y="{vy-hy}" width="{width}" height="{hy+6}">'+anim('width',vals,times,duration,'fill="freeze" calcMode="discrete"')+'</rect></clipPath></defs>',tx(value_x,vy,value,size,extra=f'class="motion" clip-path="url(#about-{i})"'),tx(value_x,vy,value,size,extra='class="still"')]
   # A quiet line pointer cycles after the one-time boot; factual values stay fully readable.
-  out += ['<g class="motion"><rect x="'+str(8 if mobile else 365)+'" y="'+str(ys[0]-8)+'" width="3" height="9" fill="{accent}" opacity="0">'+anim('opacity',[0,0,1],[0,.999,1],5,'fill="freeze"')+anim('y',[v-8 for v in ys]+[ys[0]-8],[i/len(ys) for i in range(len(ys)+1)],len(ys)*2,'begin="5s" repeatCount="indefinite" calcMode="discrete"')+'</rect></g>']
+  out += ['<g class="motion"><rect x="'+str(8 if mobile else 365)+'" y="'+str(ys[0]-8)+'" width="3" height="9" fill="{label}" opacity="0">'+anim('opacity',[0,0,1],[0,.999,1],5,'fill="freeze"')+anim('y',[v-8 for v in ys]+[ys[0]-8],[i/len(ys) for i in range(len(ys)+1)],len(ys)*2,'begin="5s" repeatCount="indefinite" calcMode="discrete"')+'</rect></g>']
   fy=952 if mobile else 528
   out += [f'<path d="M{x} {fy-24}H{344 if mobile else 870}" stroke="{{line}}"/>', command_area(x,fy,14 if mobile else 15,13 if mobile else 15), '</g></svg>']
   s=''.join(out)
