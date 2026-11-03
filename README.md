@@ -5,7 +5,6 @@
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=rockenzo&label=Profile%20views&color=7c6cf0&style=flat-square" alt="Profile views" />
   <img src="https://img.shields.io/badge/Based%20in-Adelaide%2C%20AU-0D1B33?style=flat-square" alt="Based in Adelaide" />
-  <img src="https://img.shields.io/badge/Open%20to-collaborate-a78bfa?style=flat-square" alt="Open to collaborate" />
 </p>
 
 ---
