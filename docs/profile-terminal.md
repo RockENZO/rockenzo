@@ -51,3 +51,11 @@ Reduced motion hides all suspended foreground/mask instances and selects the ori
 The README's picture sources explicitly select the four `-static.svg` files when the parent page matches `prefers-reduced-motion: reduce`, before the animated theme/mobile sources. This avoids relying on reduced-motion propagation into an SVG img document, which did not respond reliably to browser emulation during the embedding checks. Static files omit motion groups and all animation elements, and retain the complete text and unfiltered field. The standalone animated SVG's CSS fallback remains available too.
 
 The desktop art caption cycles through meaningful project-focus phrases using typing, pause and deletion; the compact mobile card omits this caption. Static variants retain the first phrase. The tool labels use Codex, Claude Code and DeepSeek Harness; Hugging Face and Ollama remain, while Streamlit is listed under Core. README alt text and SVG descriptions carry the same tool names.
+
+## Colour palette
+
+The card uses the same palette as the rest of the README: navy `#0D1B33` background (dark card), lavender `#A78BFA` for labels and the row marker, gold `#FF9F43` for the handle, prompt, caption and cursor, and a teal ASCII water field (`#2FA79B` moving frames, `#1F6F6A` static field) with lavender-tinted ROCK letters (`#D9CCFF`). The light card keeps the same hues with darker values for contrast (`MARK_COLORS` and the `D` / `L` palettes in the generator). Change colours there and regenerate; the water veil and letter clearance use the palette background (`{bg}`), so keep it a flat colour.
+
+## GitHub Pages dark theme
+
+`_includes/head-custom.html` is the Jekyll Primer theme's head hook for the published page (https://rockenzo.github.io/rockenzo/), which renders `README.md`. It sets a navy page background and palette-matched links, tables and code, and a small script rewrites the README's light/dark `<picture>` sources so the always-dark page always shows the dark card. github.com is unaffected: it ignores this file and keeps following the viewer's colour scheme.
