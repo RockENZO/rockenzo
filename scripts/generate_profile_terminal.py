@@ -204,7 +204,7 @@ def command_area(x, y, cs, os):
 
 for theme,pal in [('dark',D),('light',L)]:
  for mobile in [False,True]:
-  W,H=(360,1002) if mobile else (900,596)
+  W,H=(360,1010) if mobile else (900,602)
   out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII-filled geometric ROCK lettering over animated ASCII waves. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker, Streamlit. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama. Asynchronously suspended geometric letters with an ASCII-text fill sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',15,'muted'),tx(W-130,29,'PROFILE 01',14,'muted')]
   mark=art
   if theme=='light':
@@ -232,7 +232,7 @@ for theme,pal in [('dark',D),('light',L)]:
   # A quiet line pointer cycles after the one-time boot; factual values stay fully readable.
   out += ['<g class="motion"><rect x="'+str(8 if mobile else 365)+'" y="'+str(ys[0]-8)+'" width="3" height="9" fill="{accent}" opacity="0">'+anim('opacity',[0,0,1],[0,.999,1],5,'fill="freeze"')+anim('y',[v-8 for v in ys]+[ys[0]-8],[i/len(ys) for i in range(len(ys)+1)],len(ys)*2,'begin="5s" repeatCount="indefinite" calcMode="discrete"')+'</rect></g>']
   fy=952 if mobile else 528
-  out += [f'<path d="M{x} {fy-24}H{344 if mobile else 870}" stroke="{{line}}"/>', command_area(x,fy,14 if mobile else 15,12 if mobile else 13), '</g></svg>']
+  out += [f'<path d="M{x} {fy-24}H{344 if mobile else 870}" stroke="{{line}}"/>', command_area(x,fy,14 if mobile else 15,13 if mobile else 15), '</g></svg>']
   s=''.join(out)
   for k,v in pal.items():s=s.replace('{'+k+'}',v)
   root=ET.fromstring(s)
