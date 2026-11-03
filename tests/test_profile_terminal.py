@@ -47,6 +47,20 @@ class ProfileTerminalTests(unittest.TestCase):
                     visible = sum(values[bisect.bisect_right(times,t)-1] == "visible" for times,values in schedules)
                     self.assertEqual(visible, 1, (asset.name,phase))
 
+    def test_open_plane_sampling_and_shared_letter_geometry(self):
+        sample = self.model["field_character"]
+        for x, y in [(-10,27),(90,-10),(41,70)]:
+            values = {sample(x,y,i/8) for i in range(8)}
+            self.assertGreater(len(values), 1, (x,y))
+            self.assertEqual(sample(x,y,0), sample(x,y,1))
+        for asset in self.assets:
+            root = ET.parse(asset)
+            letters = root.find('.//s:g[@id="fixed-rock-letters"]/s:use', NS)
+            clearance = root.find('.//s:mask[@id="fixed-letter-clearance"]/s:use', NS)
+            self.assertEqual(letters.get("href"), "#rock-glyphs")
+            self.assertEqual(clearance.get("href"), letters.get("href"))
+            self.assertIsNotNone(root.find('.//s:radialGradient[@id="wave-feather"]', NS))
+
     def test_image_size_and_stationary_letter_contract(self):
         self.assertEqual(len(self.assets), 4)
         for asset in self.assets:

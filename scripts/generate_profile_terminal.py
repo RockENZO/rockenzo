@@ -23,20 +23,32 @@ def emit(path, content):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(content)
 
-G={
-'R':['1111110','1100011','1100011','1100011','1111110','1101100','1100110','1100011','1100011'],
-'O':['0111110','1100011','1100011','1100011','1100011','1100011','1100011','1100011','0111110'],
-'C':['0111111','1100000','1100000','1100000','1100000','1100000','1100000','1100000','0111111'],
-'K':['1100011','1100110','1101100','1111000','1110000','1111000','1101100','1100110','1100011']}
+# Original geometric glyph outlines. Flat fills, chamfered corners and an
+# approximately 12-unit stem weight; no font files, extrusion or shadow layers.
+GLYPHS = {
+ 'R': [[(0,0),(43,0),(57,14),(57,36),(44,49),(35,49),(59,78),(43,78),(20,49),(12,49),(12,78),(0,78)], [(12,12),(38,12),(45,19),(45,31),(38,38),(12,38)]],
+ 'O': [[(14,0),(44,0),(58,14),(58,64),(44,78),(14,78),(0,64),(0,14)], [(18,12),(40,12),(46,18),(46,60),(40,66),(18,66),(12,60),(12,18)]],
+ 'C': [[(14,0),(58,0),(58,12),(18,12),(12,18),(12,60),(18,66),(58,66),(58,78),(14,78),(0,64),(0,14)]],
+ 'K': [[(0,0),(12,0),(12,31),(42,0),(58,0),(23,39),(60,78),(43,78),(12,47),(12,78),(0,78)]]
+}
+PLACEMENTS = [('R',74,145),('O',195,145),('C',74,266),('K',195,266)]
+def inside_polygon(x,y,polygon):
+ inside=False
+ for (ax,ay),(bx,by) in zip(polygon,polygon[1:]+polygon[:1]):
+  if (ay>y)!=(by>y) and x<(bx-ax)*(y-ay)/(by-ay)+ax:inside=not inside
+ return inside
+
 def mask(x,y):
- # 2 x 2 custom glyph layout, scaled into a field; RO / CK.
- xx=x-8;yy=y-6
- if xx<0 or yy<0:return False
- col=xx//31;row=yy//23
- if col>1 or row>1:return False
- gx=(xx%31)//3;gy=(yy%23)//2
- if gx>6 or gy>8:return False
- return G['ROCK'[row*2+col]][gy][gx]=='1'
+ # Background text is sampled in SVG coordinates; vector counters stay open.
+ px,py=43+x*ASCII_ADVANCE,115+y*4.7-2.5
+ return any(sum(inside_polygon(px-ox,py-oy,poly) for poly in GLYPHS[letter])%2 for letter,ox,oy in PLACEMENTS)
+
+def glyph_paths():
+ paths=[]
+ for letter,x,y in PLACEMENTS:
+  d=' '.join('M'+' L'.join(f'{px},{py}' for px,py in polygon)+' Z' for polygon in GLYPHS[letter])
+  paths.append(f'<path d="{d}" transform="translate({x} {y})" fill-rule="evenodd"/>')
+ return ''.join(paths)
 ASCII_ADVANCE = 3.4371
 
 def txt(x,y,s,size,col):
@@ -44,62 +56,38 @@ def txt(x,y,s,size,col):
  grid = f' textLength="{len(s)*ASCII_ADVANCE:.4f}" lengthAdjust="spacingAndGlyphs"' if size == 5.7 else ''
  return f'<text x="{x}" y="{y}" font-size="{size}" fill="{col}" xml:space="preserve"{grid}>{html.escape(s)}</text>'
 
+# Static ASCII fallback and the animated field share the same aperture. Only
+# the display is cropped: the radial-wave expression below has no edge walls.
 field_rows=[]
-fixed_rows=[]
-cutout_runs=[]
-a=['<g font-family="Menlo,Consolas,monospace" aria-label="ASCII ROCK: extruded lettering carved into a signal field">']
+a=['<g font-family="Menlo,Consolas,monospace" aria-label="Flat geometric ROCK over an open ASCII wave field">']
 for y in range(58):
- layers={k:'' for k in ['field','side','face','rim']}
+ row=''
  for x in range(77):
-  face=mask(x,y);side=not face and any(mask(x-d,y+d//2) for d in range(1,10));edge=face and not all(mask(x+dx,y+dy) for dx,dy in [(1,0),(-1,0),(0,1),(0,-1)])
-  near=not face and not side and any(mask(x+dx,y+dy) for dx,dy in [(1,0),(-1,0),(0,1),(0,-1)])
   wave=math.sin(x*.17+y*.12)+math.cos(y*.34-x*.07)
-  # Leave front faces and their side volumes out of the background texture.
-  field=(' /:-=+'[max(0,min(5,int((wave+2)*1.3)))]) if not face and not side else ' '
-  if (x<4 or x>73 or y<3 or y>54) and (x+y)%3!=0:field=' '
-  layers['field']+=field
-  layers['side']+=('\\' if (x+y)%3==0 else '.') if side else ' '
-  # White ridges retain the first study's sculptural face; darker interiors read as a cutout.
-  layers['face']+=('+' if (x+y)%3==0 else '=') if edge else (('/' if (x-y)%5==0 else '.') if face and (x+y)%2==0 else ' ')
-  layers['rim']+=(':' if (x+y)%2==0 else '.') if near else ' '
- field_rows.append(txt(43,115+y*4.7,layers['field'],5.7,'#354c49'))
- for k,col in [('side','#728e8a'),('face','#e1eae2'),('rim','#e5b879')]:
-  fixed_rows.append(txt(43,115+y*4.7,layers[k],5.7,col))
- # Pixel-run cutouts keep animated ASCII texture out of stationary letter volumes.
- occupied=[mask(x,y) or any(mask(x-d,y+d//2) for d in range(1,10)) for x in range(77)]
- start=None
- for x in range(78):
-  hit=x<77 and occupied[x]
-  if hit and start is None:start=x
-  if not hit and start is not None:
-   cutout_runs.append(f'<rect x="{43+start*ASCII_ADVANCE-.7:.3f}" y="{115+y*4.7-5.3:.3f}" width="{(x-start)*ASCII_ADVANCE+1.4:.3f}" height="6.2" fill="black"/>')
-   start=None
+  row+=' ' if mask(x,y) else ' /:-=+'[max(0,min(5,int((wave+2)*1.3)))]
+ field_rows.append(txt(43,115+y*4.7,row,5.7,'#354c49'))
 background=''.join(field_rows)
 # A closed periodic visual model: staggered breathing holes and the summed
 # amplitudes of several outward-travelling radial waves. No runtime simulation.
 WAVE_FRAMES = 72
 WAVE_SECONDS = 8
 WAVE_SOURCES = [(19, 12, 0.0), (49, 15, .29), (21, 39, .53), (62, 41, .76), (37, 29, .12)]
-occupied = [[mask(x,y) or any(mask(x-d,y+d//2) for d in range(1,10)) for x in range(77)] for y in range(58)]
-distances = [[[(math.hypot((x-sx)*.8,y-sy), offset) for sx,sy,offset in WAVE_SOURCES] for x in range(77)] for y in range(58)]
-def wave_rows(phase):
- rows=[]
+def field_character(x,y,phase):
+ # Analytic open-plane sampling works equally inside and outside the visible
+ # aperture. The viewport never clamps, reflects or wraps a travelling wave.
  angle=(phase % 1)*math.tau
- for y in range(58):
-  row=''
-  for x in range(77):
-   if occupied[y][x]:row+=' ';continue
-   samples=distances[y][x]
-   holes=[(distance,4+2.8*math.sin(angle+offset*math.tau)) for distance,offset in samples]
-   if any(distance<radius for distance,radius in holes):row+=' ';continue
-   wave=sum(math.cos(.72*distance-2*angle+offset*math.tau)*math.exp(-distance/26) for distance,offset in samples)
-   wave+=.3*math.sin(.15*x+.11*y-angle)
-   # A narrow moving contour makes the expanding hole boundaries legible.
-   near=any(0<=distance-radius<.9 for distance,radius in holes)
-   level=max(0,min(7,int((wave+1.25)*2.5)))
-   row+= ':' if near else ' .:-=+*#'[level]
-  rows.append(row)
- return rows
+ if mask(x,y):return ' '
+ samples=[(math.hypot((x-sx)*.8,y-sy),offset) for sx,sy,offset in WAVE_SOURCES]
+ holes=[(distance,4+2.8*math.sin(angle+offset*math.tau)) for distance,offset in samples]
+ if any(distance<radius for distance,radius in holes):return ' '
+ wave=sum(math.cos(.72*distance-2*angle+offset*math.tau)*math.exp(-distance/26) for distance,offset in samples)
+ wave+=.3*math.sin(.15*x+.11*y-angle)
+ near=any(0<=distance-radius<.9 for distance,radius in holes)
+ level=max(0,min(7,int((wave+1.25)*2.5)))
+ return ':' if near else ' .:-=+*#'[level]
+
+def wave_rows(phase):
+ return [''.join(field_character(x,y,phase) for x in range(77)) for y in range(58)]
 frames=[]
 for frame in range(WAVE_FRAMES):
  start,end=frame/WAVE_FRAMES,(frame+1)/WAVE_FRAMES
@@ -109,11 +97,11 @@ for frame in range(WAVE_FRAMES):
  switch='<animate attributeName="visibility" values="'+';'.join(values)+'" keyTimes="'+';'.join(f'{t:.9f}' for t in times)+f'" dur="{WAVE_SECONDS}s" repeatCount="indefinite" calcMode="discrete"/>'
  frame_rows='<text font-size="5.7" fill="#54766d" xml:space="preserve">'+''.join(f'<tspan x="43" y="{115+y*4.7}" textLength="{len(row)*ASCII_ADVANCE:.4f}" lengthAdjust="spacingAndGlyphs">{html.escape(row)}</tspan>' for y,row in enumerate(wave_rows(start)) if row.strip())+'</text>'
  frames.append(f'<g class="wave-frame" data-frame="{frame}" visibility="'+('visible' if frame==0 else 'hidden')+'">'+switch+frame_rows+'</g>')
-a += ['<defs><mask id="fixed-letter-clearance" maskUnits="userSpaceOnUse" x="35" y="105" width="284" height="290"><rect x="35" y="105" width="284" height="290" fill="white"/>'+''.join(cutout_runs)+'</mask></defs>',
-      '<g class="motion water-background" mask="url(#fixed-letter-clearance)">'+''.join(frames)+'</g>',
-      '<g class="still water-static">'+background+'</g>',
-      '<g id="fixed-rock-letters">'+''.join(fixed_rows)+'</g>']
-a+=['<path d="M41 407h267" stroke="#303943"/>',txt(43,430,'ROCK / SIGNAL SCULPTURE',10,'#e5b879'),txt(43,450,'ASCII FORM + NEGATIVE SPACE',9,'#9ba7ad'),'</g><path d="M348 76V520" stroke="#303943"/>']
+a += ['<defs><g id="rock-glyphs">'+glyph_paths()+'</g><radialGradient id="wave-feather" gradientUnits="userSpaceOnUse" cx="175" cy="249" r="128" gradientTransform="translate(0 -7.47) scale(1 1.03)"><stop offset="0" stop-color="white"/><stop offset=".7" stop-color="white"/><stop offset="1" stop-color="black"/></radialGradient><mask id="open-field-window" maskUnits="userSpaceOnUse" x="35" y="105" width="284" height="290"><rect x="35" y="105" width="284" height="290" fill="url(#wave-feather)"/></mask><mask id="fixed-letter-clearance" maskUnits="userSpaceOnUse" x="35" y="105" width="284" height="290"><rect x="35" y="105" width="284" height="290" fill="white"/><use href="#rock-glyphs" fill="black" stroke="black" stroke-width="1.8" stroke-linejoin="round"/></mask></defs>',
+      '<g mask="url(#open-field-window)"><g class="motion water-background" mask="url(#fixed-letter-clearance)">'+''.join(frames)+'</g>',
+      '<g class="still water-static">'+background+'</g></g>',
+      '<g id="fixed-rock-letters" fill="#e1eae2"><use href="#rock-glyphs"/></g>']
+a+=['<path d="M41 407h267" stroke="#303943"/>',txt(43,430,'ROCK / WAVE STUDY',10,'#e5b879'),txt(43,450,'GEOMETRIC TYPE / ASCII FIELD',9,'#9ba7ad'),'</g><path d="M348 76V520" stroke="#303943"/>']
 
 art=''.join(a)
 D={'bg':'#10151b','line':'#303943','fg':'#e5e9e6','muted':'#9ba7ad','accent':'#e5b879','active':'#1c2b2b'}
@@ -147,7 +135,7 @@ def command_area(x, y):
 for theme,pal in [('dark',D),('light',L)]:
  for mobile in [False,True]:
   W,H=(360,1070) if mobile else (900,560)
-  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII ROCK lettering. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Hugging Face, Ollama, OpenAI, Streamlit. Born 2004-04-21. Stationary ASCII letters sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',12,'muted'),tx(W-112,29,'PROFILE 01',11,'muted')]
+  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original flat geometric ROCK lettering over animated ASCII waves. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Hugging Face, Ollama, OpenAI, Streamlit. Born 2004-04-21. Stationary vector letters sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',12,'muted'),tx(W-112,29,'PROFILE 01',11,'muted')]
   mark=art
   if theme=='light':
    for old,new in {'#54766d':'#678575','#354c49':'#9daa9f','#728e8a':'#496e5e','#e1eae2':'#102b21','#e5b879':L['accent'],'#9ba7ad':L['muted'],'#303943':L['line']}.items():mark=mark.replace(old,new)
