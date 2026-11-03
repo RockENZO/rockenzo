@@ -14,7 +14,7 @@
   <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/profile-terminal-dark-mobile.svg" />
   <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/profile-terminal-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile-terminal-dark.svg" />
-  <img src="assets/profile-terminal-light.svg" width="100%" alt="About RockENZO: Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide (2025). Building data pipelines, explainable NLP and local-first AI tools. Stack: React, Vue, PyTorch, Elasticsearch and Docker. HackerRank Software Engineer (2024). Born 2004-04-21." />
+  <img src="assets/profile-terminal-light.svg" width="100%" alt="About RockENZO: Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide (2025). Core: Python, React, Vue, Elasticsearch and Docker. AI/ML: PyTorch, TensorFlow, scikit-learn, Pandas and NumPy. LLM tools: Hugging Face, Ollama, OpenAI and Streamlit. Born 2004-04-21." />
 </picture>
 
 ---
