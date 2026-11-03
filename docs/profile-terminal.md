@@ -24,6 +24,14 @@ Reduced-motion users see the original unfiltered static ASCII field. Check that 
 
 The ASCII rows use explicit `textLength` and `lengthAdjust="spacingAndGlyphs"` to pin the character advance across Menlo, Consolas and monospace font fallbacks; the letter-clearance mask now uses the exact vector glyphs rather than font-dependent pixel runs. Check per-character positions when changing the grid metrics.
 
+## Mask-free water layer (performance)
+
+An SVG shown through `<img>` is repainted as a whole whenever anything inside it changes, so the slowest layer sets the effective frame rate of everything else, including the suspended letters. The water layer used to sit under two live masks (the feathered aperture and a letter-clearance mask driven by the moving glyph tracks), which sent the whole water layer through an offscreen pass on every frame.
+
+The animated water now has no mask. The card background is a flat colour, so background-coloured paint over the water gives the same pixels: `#wave-aperture-veil` is a radial gradient (`#wave-veil`, same centre, radius and stops as `#wave-feather`) fading from transparent to the background colour, and `#letter-clearance` holds the moving clearance shapes (`mask-R`, `mask-O`, ...), which reuse the letter geometry and tracks exactly. Order matters: water, veil, clearance, letters. If the card background ever stops being a flat colour, this approach no longer matches the old masks. The static fallback still uses the `open-field-window` mask, which does not animate. Rendered frames were compared with the previous masked version at several times: the largest per-pixel difference was 2/255.
+
+Measured in headless Chromium with the CPU throttled to simulate slower devices, the desktop card delivered noticeably more visual frames per second (roughly 30 to 36-42 at 6x throttle, 36 to 50 at 4x). The mobile card was unchanged. Safari and Firefox were not measured.
+
 ## Open-plane wave sampling
 
 `field_character(x, y, phase)` evaluates the radial-wave expression for arbitrary coordinates, including positions beyond the visible region. There is no edge reflection, wrapping or viewport clamping in the field model. The SVG aperture is only an observation window: a soft elliptical feather hides the rendered grid boundaries without changing the travelling waves. Off-window waves continue mathematically; invisible pixels are not needlessly rendered.
@@ -36,7 +44,7 @@ The modern glyph outlines are unchanged. Their fill is a repeating pair of liter
 
 Four glyphs use separate periodic tracks (R 7.4 s, O 5.8 s, C 8.6 s, K 6.6 s), independent of the eight-second water loop. The generator samples the periodic steady-state response of a common mass/spring/damper equation under a multi-harmonic drive. Mass, stiffness, damping and phase differ per letter; each axis is normalized to a small visual displacement/tilt budget. These are visual design units, not measured material properties. Each 73-point track closes exactly and SVG interpolates continuously between the samples.
 
-The foreground and its clearance-mask instances share the same geometry and identical translation/rotation tracks. This is geometric occlusion only: water never drives the letters and the letters do not alter the wave propagation model. Previously baked-in letter holes are removed from the moving water frames so vacated positions do not leave ghost silhouettes. The wave sources, equations, timing, frame rate and feathered observation aperture stay unchanged.
+The foreground and its clearance-mask instances share the same geometry and identical translation/rotation tracks. This is geometric occlusion only: water never drives the letters and the letters do not alter the wave propagation model. Previously baked-in letter holes are removed from the moving water frames so vacated positions do not leave ghost silhouettes; the moving clearance shapes cover the water behind each letter. The wave sources, equations, timing, frame rate and feathered observation aperture stay unchanged.
 
 Reduced motion hides all suspended foreground/mask instances and selects the original static glyphs and static field. Inspect both normal and reduced-motion variants when updating the trajectories.
 

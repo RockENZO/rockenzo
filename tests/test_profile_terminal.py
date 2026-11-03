@@ -56,10 +56,27 @@ class ProfileTerminalTests(unittest.TestCase):
         for asset in self.assets:
             root = ET.parse(asset)
             letters = root.find('.//s:g[@id="fixed-rock-letters"]/s:use', NS)
-            clearance = root.find('.//s:mask[@id="fixed-letter-clearance"]/s:g[@class="still"]/s:use', NS)
             self.assertEqual(letters.get("href"), "#rock-glyphs")
-            self.assertEqual(clearance.get("href"), letters.get("href"))
             self.assertIsNotNone(root.find('.//s:radialGradient[@id="wave-feather"]', NS))
+
+    def test_animated_water_uses_no_live_masks(self):
+        for asset in self.assets:
+            with self.subTest(asset=asset.name):
+                root = ET.parse(asset)
+                water = root.find('.//s:g[@class="motion water-background"]', NS)
+                self.assertIsNotNone(water)
+                self.assertNotIn("mask", water.attrib)
+                self.assertIsNone(root.find('.//s:mask[@id="fixed-letter-clearance"]', NS))
+                # No ancestor of the animated water may be masked either.
+                parents = {child: parent for parent in root.iter() for child in parent}
+                node = water
+                while node in parents:
+                    node = parents[node]
+                    self.assertNotIn("mask", node.attrib)
+                self.assertIsNotNone(root.find('.//s:rect[@id="wave-aperture-veil"]', NS))
+                self.assertIsNotNone(root.find('.//s:radialGradient[@id="wave-veil"]', NS))
+                clearance = root.find('.//s:g[@id="letter-clearance"]', NS)
+                self.assertEqual(clearance.get("fill"), clearance.get("stroke"))
 
     def test_letter_fill_is_stationary_ascii_text(self):
         for asset in self.assets:
