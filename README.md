@@ -30,30 +30,46 @@
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/datapipeline-etl"><img src="https://opengraph.githubassets.com/1/RockENZO/datapipeline-etl" alt="datapipeline-etl" /></a>
       <br/><b>Knia Maps.</b> Geospatial ETL for Sydney accessibility mapping, combining Elasticsearch search, PostgreSQL storage and Docker services with reproducible integration tests.
+      <br/><br/>
+      <a href="https://github.com/RockENZO/datapipeline-etl"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection"><img src="https://opengraph.githubassets.com/1/RockENZO/NLP-Cyber-Harm-Detection" alt="NLP Cyber Harm Detection" /></a>
-      <br/><b>CSIRO's Data61.</b> Nine-class scam detection using word and character features, with <b>macro F1 0.948</b> on an <b>18,261-record, template-grouped internal test</b>. <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection/blob/397e103aa0be418320d4e9ae7b2d824da0227625/evaluation/reports/nine_class_test_20260930.json">Evaluation</a>.
+      <br/><b>CSIRO's Data61.</b> Nine-class scam detection using word and character features, with <b>macro F1 0.948</b> on an <b>18,261-record, template-grouped internal test</b>.
+      <br/><br/>
+      <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection/blob/397e103aa0be418320d4e9ae7b2d824da0227625/evaluation/reports/nine_class_test_20260930.json"><img src="https://img.shields.io/badge/Evaluation-FF9F43?style=flat-square&logoColor=0D1B33" alt="Evaluation report" /></a>
+      <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/data"><img src="https://opengraph.githubassets.com/1/RockENZO/data" alt="Fraud dataset" /></a>
       <br/><b>CSIRO's Data61.</b> A reproducible corpus of <b>194,913</b> scam and legitimate samples from 19 retained source datasets, with verified hashes and traceable provenance.
+      <br/><br/>
+      <a href="https://github.com/RockENZO/data"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing"><img src="https://opengraph.githubassets.com/1/RockENZO/Automatic-web-scraper-with-LLM-parsing" alt="LLM web scraper" /></a>
-      <br/>Structured webpage extraction with local LLMs and traceable source evidence. <b>Field exact-match F1 0.938</b> with Qwen on <b>16 synthetic regression fixtures</b>. <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing/blob/a979dff2076a3637ef4003a7742cbe28666b8f3c/evaluation/reports/structured_benchmark_20260930.json">Evaluation</a>.
+      <br/>Structured webpage extraction with local LLMs and traceable source evidence. <b>Field exact-match F1 0.938</b> with Qwen on <b>16 synthetic regression fixtures</b>.
+      <br/><br/>
+      <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing/blob/a979dff2076a3637ef4003a7742cbe28666b8f3c/evaluation/reports/structured_benchmark_20260930.json"><img src="https://img.shields.io/badge/Evaluation-FF9F43?style=flat-square&logoColor=0D1B33" alt="Evaluation report" /></a>
+      <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/MyWeather"><img src="https://opengraph.githubassets.com/1/RockENZO/MyWeather" alt="MyWeather" /></a>
       <br/>SwiftUI weather app with location-based OpenWeatherMap forecasts, animated transitions and Liquid Glass cards, bringing current conditions and forecast trends into one interface.
+      <br/><br/>
+      <a href="https://github.com/RockENZO/MyWeather"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
     <td width="50%" valign="top">
       <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://opengraph.githubassets.com/1/RockENZO/ML-object-detection-project" alt="Football match analysis" /></a>
-      <br/><b>Experimental</b> YOLOv8s football detection, player tracking and pitch mapping, with a match viewer for one 30-second clip. <a href="https://rockenzo.github.io/ML-object-detection-project/">Live demo</a> · <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/MATCH_ANALYSIS.md">Results &amp; limitations</a>.
+      <br/><b>Experimental</b> YOLOv8s football detection, player tracking and pitch mapping, with a match viewer for one 30-second clip.
+      <br/><br/>
+      <a href="https://rockenzo.github.io/ML-object-detection-project/"><img src="https://img.shields.io/badge/%E2%96%B6%20Open%20live-FF9F43?style=flat-square&logoColor=0D1B33" alt="Open live" /></a>
+      <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/MATCH_ANALYSIS.md"><img src="https://img.shields.io/badge/Results%20%26%20limitations-FF9F43?style=flat-square&logoColor=0D1B33" alt="Results and limitations" /></a>
+      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
   </tr>
 </table>
@@ -204,7 +220,7 @@
 
 - **Master of Information Technology (Applied Artificial Intelligence)**, Adelaide University (2026 to present).
 - **Bachelor of Information Technology**, University of Adelaide (2023 to 2025). High Distinctions in Applied Programming and in Computer Systems, Networks &amp; Security; Distinctions in AI Technologies, Web &amp; Database Computing and Programming for IT Specialists.
-- **[HackerRank Software Engineer](https://www.hackerrank.com/certificates/iframe/1d18ed03135b)** (Sep 2024): problem solving, Python, SQL, REST APIs.
+- **HackerRank Software Engineer** (Sep 2024): problem solving, Python, SQL, REST APIs. <a href="https://www.hackerrank.com/certificates/iframe/1d18ed03135b"><img src="https://img.shields.io/badge/Verify%20certificate-FF9F43?style=flat-square&logoColor=0D1B33" alt="Verify certificate" /></a>
 
 ---
 
@@ -240,7 +256,7 @@
 ### 🤝 Let's connect
 
 <p align="center">
-  <a href="https://github.com/RockENZO"><img src="https://img.shields.io/badge/GitHub-0D1B33?style=for-the-badge&logo=github&logoColor=white" /></a>
+  <a href="https://github.com/RockENZO"><img src="https://img.shields.io/badge/GitHub-0D1B33?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
 </p>
 
 <p align="center">
