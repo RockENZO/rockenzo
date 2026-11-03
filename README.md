@@ -3,12 +3,6 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/RockENZO">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=A78BFA&center=true&vCenter=true&width=640&lines=Hi+there%2C+I'm+Rock+%F0%9F%91%8B;Master+of+IT+student+in+Applied+AI;Full-stack+web+%C2%B7+ML+%C2%B7+LLM+tooling;Building+things+that+scale" alt="Typing intro" />
-  </a>
-</p>
-
-<p align="center">
   <img src="https://komarev.com/ghpvc/?username=rockenzo&label=Profile%20views&color=7c6cf0&style=flat-square" alt="Profile views" />
   <img src="https://img.shields.io/badge/Based%20in-Adelaide%2C%20AU-0D1B33?style=flat-square" alt="Based in Adelaide" />
   <img src="https://img.shields.io/badge/Open%20to-collaborate-a78bfa?style=flat-square" alt="Open to collaborate" />
@@ -16,44 +10,12 @@
 
 ---
 
-### 🧭 About me
-
-```ts
-const rock = {
-  studying:  "Master of IT (Applied AI) @ Adelaide University",
-  graduated: "Bachelor of IT @ University of Adelaide (2025)",
-  focus:     ["Web Development", "Scalable Applications", "AI / ML"],
-  building:  "data pipelines, explainable NLP and local-first AI tools",
-  certified: "HackerRank Software Engineer (2024)",
-  askMeAbout: ["React & Vue", "PyTorch", "Elasticsearch", "Docker"],
-};
-```
-
-### ⚡ Tech stack
-
-<p align="center">
-  <b>Languages</b><br/><br/>
-  <img src="https://skillicons.dev/icons?i=py,cpp,swift,ts,js,html&theme=dark" />
-</p>
-<p align="center">
-  <b>Frontend &amp; backend</b><br/><br/>
-  <img src="https://skillicons.dev/icons?i=react,vue,threejs,tailwind,nodejs,express,flask&theme=dark" />
-</p>
-<p align="center">
-  <b>Data &amp; infrastructure</b><br/><br/>
-  <img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,elasticsearch,redis,docker,git&theme=dark" />
-</p>
-<p align="center">
-  <b>Machine learning &amp; LLMs</b><br/><br/>
-  <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,sklearn&theme=dark" />
-  <br/>
-  <img src="https://img.shields.io/badge/Hugging_Face-FFAE00?style=for-the-badge&logo=huggingface&logoColor=black" />
-  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" />
-  <img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white" />
-  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
-  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
-  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" />
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/profile-terminal-dark-mobile.svg" />
+  <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/profile-terminal-light-mobile.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/profile-terminal-dark.svg" />
+  <img src="assets/profile-terminal-light.svg" width="100%" alt="About RockENZO: Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide (2025). Building data pipelines, explainable NLP and local-first AI tools. Stack: React, Vue, PyTorch, Elasticsearch and Docker. HackerRank Software Engineer (2024). Born 2004-04-21." />
+</picture>
 
 ---
 
