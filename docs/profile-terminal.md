@@ -18,7 +18,7 @@ Before publishing, inspect desktop/mobile and dark/light variants embedded throu
 
 ## ASCII water background
 
-The ASCII field is a separate background layer. The generator precomputes 72 ASCII frames (nine frames per second) for an eight-second loop. Five holes expand and contract at staggered phases, and outward-travelling radial wave amplitudes are summed before character quantization. Native SVG visibility animation selects one frame at a time. The flat, filled geometric glyphs have chamfered corners and approximately uniform 12-unit stems; they use original SVG paths, with no external font, shadow, extrusion or rim layer. The paths live outside the animated frame group. A fixed clearance mask references the exact same paths, so the background cannot drift into the letters due to font fallback. This is a periodic visual interference model, not a physical fluid solver or an optical diffraction benchmark.
+The ASCII field is a separate background layer. The generator precomputes 72 ASCII frames (nine frames per second) for an eight-second loop. Five holes expand and contract at staggered phases, and outward-travelling radial wave amplitudes are summed before character quantization. Native SVG visibility animation selects one frame at a time. The flat geometric glyphs have chamfered corners and approximately uniform 12-unit stems; their original SVG paths are filled with stationary, literal ASCII text from a small repeating SVG pattern. An unobtrusive subpixel contour keeps the shape readable at small sizes; there is no offset shadow or extrusion. No external font is loaded. The paths live outside the animated frame group. A fixed clearance mask references the exact same paths, so the background cannot drift into the letters due to font fallback. This is a periodic visual interference model, not a physical fluid solver or an optical diffraction benchmark.
 
 Reduced-motion users see the original unfiltered static ASCII field. Check that exactly one background frame is visible at each sample, that the loop closes, and that source radii peak at different times. Inspect the art region independently of the About highlight and command cursor when testing temporal changes, and verify that the stationary letter geometry stays unchanged.
 
@@ -27,3 +27,7 @@ The ASCII rows use explicit `textLength` and `lengthAdjust="spacingAndGlyphs"` t
 ## Open-plane wave sampling
 
 `field_character(x, y, phase)` evaluates the radial-wave expression for arbitrary coordinates, including positions beyond the visible region. There is no edge reflection, wrapping or viewport clamping in the field model. The SVG aperture is only an observation window: a soft elliptical feather hides the rendered grid boundaries without changing the travelling waves. Off-window waves continue mathematically; invisible pixels are not needlessly rendered.
+
+## Terminal character fill
+
+The modern glyph outlines are unchanged. Their fill is a repeating pair of literal ASCII text rows (`#+=/#+` and `=/#+=/`), not a raster texture or external font. Explicit textLength/spacingAndGlyphs keeps the tile width stable across fallback fonts. The fill has no animation; only the existing water background, About reveal and command line move.
