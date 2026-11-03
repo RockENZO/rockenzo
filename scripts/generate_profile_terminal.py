@@ -37,7 +37,16 @@ def mask(x,y):
  gx=(xx%31)//3;gy=(yy%23)//2
  if gx>6 or gy>8:return False
  return G['ROCK'[row*2+col]][gy][gx]=='1'
-def txt(x,y,s,size,col):return f'<text x="{x}" y="{y}" font-size="{size}" fill="{col}" xml:space="preserve">{html.escape(s)}</text>'
+ASCII_ADVANCE = 3.4371
+
+def txt(x,y,s,size,col):
+ # Pin the ASCII grid advance across Menlo, Consolas and monospace fallbacks.
+ grid = f' textLength="{len(s)*ASCII_ADVANCE:.4f}" lengthAdjust="spacingAndGlyphs"' if size == 5.7 else ''
+ return f'<text x="{x}" y="{y}" font-size="{size}" fill="{col}" xml:space="preserve"{grid}>{html.escape(s)}</text>'
+
+field_rows=[]
+fixed_rows=[]
+cutout_runs=[]
 a=['<g font-family="Menlo,Consolas,monospace" aria-label="ASCII ROCK: extruded lettering carved into a signal field">']
 for y in range(58):
  layers={k:'' for k in ['field','side','face','rim']}
@@ -53,8 +62,23 @@ for y in range(58):
   # White ridges retain the first study's sculptural face; darker interiors read as a cutout.
   layers['face']+=('+' if (x+y)%3==0 else '=') if edge else (('/' if (x-y)%5==0 else '.') if face and (x+y)%2==0 else ' ')
   layers['rim']+=(':' if (x+y)%2==0 else '.') if near else ' '
- for k,col in [('field','#354c49'),('side','#728e8a'),('face','#e1eae2'),('rim','#e5b879')]:
-  a.append(txt(43,115+y*4.7,layers[k],5.7,col))
+ field_rows.append(txt(43,115+y*4.7,layers['field'],5.7,'#354c49'))
+ for k,col in [('side','#728e8a'),('face','#e1eae2'),('rim','#e5b879')]:
+  fixed_rows.append(txt(43,115+y*4.7,layers[k],5.7,col))
+ # Pixel-run cutouts keep refracted ASCII texture out of stationary letter volumes.
+ occupied=[mask(x,y) or any(mask(x-d,y+d//2) for d in range(1,10)) for x in range(77)]
+ start=None
+ for x in range(78):
+  hit=x<77 and occupied[x]
+  if hit and start is None:start=x
+  if not hit and start is not None:
+   cutout_runs.append(f'<rect x="{43+start*ASCII_ADVANCE-.7:.3f}" y="{115+y*4.7-5.3:.3f}" width="{(x-start)*ASCII_ADVANCE+1.4:.3f}" height="6.2" fill="black"/>')
+   start=None
+background=''.join(field_rows)
+a += ['<defs><filter id="ascii-water" filterUnits="userSpaceOnUse" x="35" y="105" width="284" height="290" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".015 .03" numOctaves="1" seed="7" result="ripples"><animate attributeName="baseFrequency" values=".015 .03;.021 .022;.015 .03" dur="14s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="ripples" scale="7" xChannelSelector="R" yChannelSelector="G"/></filter><mask id="fixed-letter-clearance" maskUnits="userSpaceOnUse" x="35" y="105" width="284" height="290"><rect x="35" y="105" width="284" height="290" fill="white"/>'+''.join(cutout_runs)+'</mask></defs>',
+      '<g class="motion water-background" mask="url(#fixed-letter-clearance)"><g filter="url(#ascii-water)">'+background+'</g></g>',
+      '<g class="still water-static">'+background+'</g>',
+      '<g id="fixed-rock-letters">'+''.join(fixed_rows)+'</g>']
 a+=['<path d="M41 407h267" stroke="#303943"/>',txt(43,430,'ROCK / SIGNAL SCULPTURE',10,'#e5b879'),txt(43,450,'ASCII FORM + NEGATIVE SPACE',9,'#9ba7ad'),'</g><path d="M348 76V520" stroke="#303943"/>']
 
 art=''.join(a)
@@ -89,7 +113,7 @@ def command_area(x, y):
 for theme,pal in [('dark',D),('light',L)]:
  for mobile in [False,True]:
   W,H=(360,1070) if mobile else (900,560)
-  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII ROCK lettering. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Hugging Face, Ollama, OpenAI, Streamlit. Born 2004-04-21. Decorative reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',12,'muted'),tx(W-112,29,'PROFILE 01',11,'muted')]
+  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII ROCK lettering. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Hugging Face, Ollama, OpenAI, Streamlit. Born 2004-04-21. Stationary ASCII letters sit over a decorative, rippling ASCII background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',12,'muted'),tx(W-112,29,'PROFILE 01',11,'muted')]
   mark=art
   if theme=='light':
    for old,new in {'#354c49':'#9daa9f','#728e8a':'#496e5e','#e1eae2':'#102b21','#e5b879':L['accent'],'#9ba7ad':L['muted'],'#303943':L['line']}.items():mark=mark.replace(old,new)
