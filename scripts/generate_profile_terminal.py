@@ -50,6 +50,58 @@ def glyph_paths():
   paths.append(f'<g id="glyph-{letter}"><path d="{d}" transform="translate({x} {y})" fill-rule="evenodd"/></g>')
  return ''.join(paths)
 
+# Separate glyph-local tiles prevent RO and CK from sharing a timeline.
+# Each tier has seven staggered bands, with a non-overlapping handoff.
+FLAP_SECONDS = 10
+FLAP_GROUP_ROWS = 7
+FLAP_ROWS = 2 * FLAP_GROUP_ROWS
+FLAP_SWEEP_SECONDS = (FLAP_GROUP_ROWS - 1) * .18 + 6 * .12 + .105
+FLAP_STATES = [('#+=/#+', '=/#+=/'), ('R0CK42', '7A9C2F'),
+               ('H4X019', 'AB7306'), ('01:/+=', '9K2R4C'),
+               ('[0][1]', '#+=/#+'), ('7F3A09', 'C2E841'),
+               ('=/#+=/', '42R0CK')]
+
+def flap_schedule(row):
+ tier, band = divmod(row, FLAP_GROUP_ROWS)
+ start = .8 + band * .18 + tier * (FLAP_SWEEP_SECONDS + .03)
+ times, scales = [0.], [1.]
+ changes, states = [0.], [0]
+ for flip in range(7):
+  moment = start + flip * .12
+  times += [moment, moment + .05, moment + .105]
+  scales += [1., .08, 1.]
+  changes.append(moment + .05)
+  states.append(0 if flip == 6 else 1 + (flip + row) % 6)
+ times.append(FLAP_SECONDS); scales.append(1.)
+ changes.append(FLAP_SECONDS); states.append(0)
+ return times, scales, changes, states
+
+def flap_band_y(row):
+ tier, band = divmod(row, FLAP_GROUP_ROWS)
+ return band * 12
+
+def ascii_fill():
+ def pair(rows, shifted=False):
+  return '<g font-family="Menlo,Consolas,monospace" font-size="6.8" font-weight="700" fill="#e1eae2" xml:space="preserve">' + ''.join(
+   f'<text x="0" y="{y}" textLength="22.8" lengthAdjust="spacingAndGlyphs">{html.escape(text)}</text>'
+   for y,text in zip((-.8,5.2) if shifted else (5.2,11.2), rows)) + '</g>'
+ out = ['<pattern id="rock-ascii-fill-static" patternUnits="userSpaceOnUse" width="22.8" height="12">'+pair(FLAP_STATES[0])+'</pattern>']
+ out += [f'<g id="flap-state-{i}">'+pair(rows,True)+'</g>' for i,rows in enumerate(FLAP_STATES)]
+ for row in range(FLAP_ROWS):
+  out.append(f'<clipPath id="flap-clip-{row}"><rect x="0" y="{flap_band_y(row)}" width="22.8" height="12"/></clipPath>')
+ for row in range(FLAP_ROWS):
+  if row % FLAP_GROUP_ROWS == 0:
+   suffix = "-lower" if row else ""
+   out.append(f'<pattern id="rock-ascii-fill{suffix}" patternUnits="userSpaceOnUse" width="22.8" height="84">')
+  times,scales,changes,states = flap_schedule(row)
+  keys = ';'.join(f'{t/FLAP_SECONDS:.6f}' for t in times)
+  values = ';'.join(f'1 {v}' for v in scales)
+  change_keys = ';'.join(f'{t/FLAP_SECONDS:.6f}' for t in changes)
+  refs = ';'.join(f'#flap-state-{state}' for state in states)
+  out.append(f'<g data-flap-row="{row}" clip-path="url(#flap-clip-{row})"><g transform="translate(0 {flap_band_y(row)+6})"><g><animateTransform attributeName="transform" type="scale" values="{values}" keyTimes="{keys}" dur="{FLAP_SECONDS}s" repeatCount="indefinite" calcMode="linear"/><use href="#flap-state-0"><animate attributeName="href" values="{refs}" keyTimes="{change_keys}" dur="{FLAP_SECONDS}s" repeatCount="indefinite" calcMode="discrete"/></use></g></g></g>')
+  if row % FLAP_GROUP_ROWS == FLAP_GROUP_ROWS - 1: out.append('</pattern>')
+ return ''.join(out)
+
 # Periodic steady-state responses to a multi-harmonic drive of the same
 # mass/spring/damper equation. Units are visual design units, not material data.
 SUSPENSION = {
@@ -89,9 +141,10 @@ def suspended_glyphs(instance):
  times=';'.join(f'{i/72:.9f}' for i in range(73))
  for letter,x,y in PLACEMENTS:
   t=TRACKS[letter];cx,cy=x+29,y+39
+  fill = ' fill="url(#rock-ascii-fill-lower)"' if instance == 'fore' and letter in 'CK' else ''
   shift=';'.join(f'{dx} {dy}' for dx,dy in zip(t['x'],t['y']))
   turn=';'.join(f'{angle} {cx} {cy}' for angle in t['tilt'])
-  groups.append(f'<g id="{instance}-{letter}" data-letter="{letter}" transform="translate({t["x"][0]} {t["y"][0]})"><animateTransform attributeName="transform" type="translate" values="{shift}" keyTimes="{times}" dur="{t["period"]}s" repeatCount="indefinite" calcMode="linear"/><g transform="rotate({t["tilt"][0]} {cx} {cy})"><animateTransform attributeName="transform" type="rotate" values="{turn}" keyTimes="{times}" dur="{t["period"]}s" repeatCount="indefinite" calcMode="linear"/><use href="#glyph-{letter}"/></g></g>')
+  groups.append(f'<g id="{instance}-{letter}" data-letter="{letter}" transform="translate({t["x"][0]} {t["y"][0]})"><animateTransform attributeName="transform" type="translate" values="{shift}" keyTimes="{times}" dur="{t["period"]}s" repeatCount="indefinite" calcMode="linear"/><g transform="rotate({t["tilt"][0]} {cx} {cy})"><animateTransform attributeName="transform" type="rotate" values="{turn}" keyTimes="{times}" dur="{t["period"]}s" repeatCount="indefinite" calcMode="linear"/><use href="#glyph-{letter}"{fill}/></g></g>')
  return ''.join(groups)
 
 ASCII_ADVANCE = 3.4371
@@ -158,7 +211,7 @@ for frame in range(WAVE_FRAMES):
  switch='<animate attributeName="visibility" values="'+';'.join(values)+'" keyTimes="'+';'.join(f'{t:.9f}' for t in times)+f'" dur="{WAVE_SECONDS}s" repeatCount="indefinite" calcMode="discrete"/>'
  frame_rows='<text font-size="5.7" fill="#54766d" xml:space="preserve">'+''.join(f'<tspan x="43" y="{115+y*4.7}" textLength="{len(row)*ASCII_ADVANCE:.4f}" lengthAdjust="spacingAndGlyphs">{html.escape(row)}</tspan>' for y,row in enumerate(wave_rows(start)) if row.strip())+'</text>'
  frames.append(f'<g class="wave-frame" data-frame="{frame}" visibility="'+('visible' if frame==0 else 'hidden')+'">'+switch+frame_rows+'</g>')
-a += ['<defs>'+glyph_paths()+'<g id="rock-glyphs">'+''.join(f'<use href="#glyph-{letter}"/>' for letter,_,_ in PLACEMENTS)+'</g><pattern id="rock-ascii-fill" patternUnits="userSpaceOnUse" width="22.8" height="12"><g font-family="Menlo,Consolas,monospace" font-size="6.8" font-weight="700" fill="#e1eae2" xml:space="preserve"><text x="0" y="5.2" textLength="22.8" lengthAdjust="spacingAndGlyphs">#+=/#+</text><text x="0" y="11.2" textLength="22.8" lengthAdjust="spacingAndGlyphs">=/#+=/</text></g></pattern><radialGradient id="wave-feather" gradientUnits="userSpaceOnUse" cx="175" cy="249" r="128" gradientTransform="translate(0 -7.47) scale(1 1.03)"><stop offset="0" stop-color="white"/><stop offset=".7" stop-color="white"/><stop offset="1" stop-color="black"/></radialGradient><mask id="open-field-window" maskUnits="userSpaceOnUse" x="35" y="105" width="284" height="290"><rect x="35" y="105" width="284" height="290" fill="url(#wave-feather)"/></mask><radialGradient id="wave-veil" gradientUnits="userSpaceOnUse" cx="175" cy="249" r="128" gradientTransform="translate(0 -7.47) scale(1 1.03)"><stop offset="0" stop-color="{bg}" stop-opacity="0"/><stop offset=".7" stop-color="{bg}" stop-opacity="0"/><stop offset="1" stop-color="{bg}"/></radialGradient></defs>',
+a += ['<defs>'+glyph_paths()+'<g id="rock-glyphs">'+''.join(f'<use href="#glyph-{letter}"/>' for letter,_,_ in PLACEMENTS)+'</g>'+ascii_fill()+'<radialGradient id="wave-feather" gradientUnits="userSpaceOnUse" cx="175" cy="249" r="128" gradientTransform="translate(0 -7.47) scale(1 1.03)"><stop offset="0" stop-color="white"/><stop offset=".7" stop-color="white"/><stop offset="1" stop-color="black"/></radialGradient><mask id="open-field-window" maskUnits="userSpaceOnUse" x="35" y="105" width="284" height="290"><rect x="35" y="105" width="284" height="290" fill="url(#wave-feather)"/></mask><radialGradient id="wave-veil" gradientUnits="userSpaceOnUse" cx="175" cy="249" r="128" gradientTransform="translate(0 -7.47) scale(1 1.03)"><stop offset="0" stop-color="{bg}" stop-opacity="0"/><stop offset=".7" stop-color="{bg}" stop-opacity="0"/><stop offset="1" stop-color="{bg}"/></radialGradient></defs>',
       # Animated water is painted without masks: SVG images repaint as a whole, and a live mask forces the
       # large water layer through an offscreen pass on every frame. The card background is flat, so painting
       # background-coloured shapes over the water gives the same pixels as the former masks: a radial veil
@@ -168,7 +221,7 @@ a += ['<defs>'+glyph_paths()+'<g id="rock-glyphs">'+''.join(f'<use href="#glyph-
       '<rect class="motion" id="wave-aperture-veil" x="35" y="105" width="284" height="290" fill="url(#wave-veil)"/>',
       '<g class="motion" id="letter-clearance" fill="{bg}" stroke="{bg}" stroke-width="1.8" stroke-linejoin="round">'+suspended_glyphs('mask')+'</g>',
       '<g mask="url(#open-field-window)"><g class="still water-static">'+background+'</g></g>',
-      '<g class="motion" id="rock-animated-letters" fill="url(#rock-ascii-fill)" stroke="#e1eae2" stroke-opacity=".3" stroke-width=".4">'+suspended_glyphs('fore')+'</g><g class="still" id="fixed-rock-letters"><use href="#rock-glyphs" fill="url(#rock-ascii-fill)" stroke="#e1eae2" stroke-opacity=".3" stroke-width=".4"/></g>']
+      '<g class="motion" id="rock-animated-letters" fill="url(#rock-ascii-fill)" stroke="#e1eae2" stroke-opacity=".3" stroke-width=".4">'+suspended_glyphs('fore')+'</g><g class="still" id="fixed-rock-letters"><use href="#rock-glyphs" fill="url(#rock-ascii-fill-static)" stroke="#e1eae2" stroke-opacity=".3" stroke-width=".4"/></g>']
 a+=['<path d="M41 407h267" stroke="#303943"/>',typing_caption(),'</g><path d="M348 76V480" stroke="#303943"/>']
 
 art=''.join(a)
