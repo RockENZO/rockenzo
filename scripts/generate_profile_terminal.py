@@ -65,7 +65,7 @@ for y in range(58):
  field_rows.append(txt(43,115+y*4.7,layers['field'],5.7,'#354c49'))
  for k,col in [('side','#728e8a'),('face','#e1eae2'),('rim','#e5b879')]:
   fixed_rows.append(txt(43,115+y*4.7,layers[k],5.7,col))
- # Pixel-run cutouts keep refracted ASCII texture out of stationary letter volumes.
+ # Pixel-run cutouts keep animated ASCII texture out of stationary letter volumes.
  occupied=[mask(x,y) or any(mask(x-d,y+d//2) for d in range(1,10)) for x in range(77)]
  start=None
  for x in range(78):
@@ -75,8 +75,42 @@ for y in range(58):
    cutout_runs.append(f'<rect x="{43+start*ASCII_ADVANCE-.7:.3f}" y="{115+y*4.7-5.3:.3f}" width="{(x-start)*ASCII_ADVANCE+1.4:.3f}" height="6.2" fill="black"/>')
    start=None
 background=''.join(field_rows)
-a += ['<defs><filter id="ascii-water" filterUnits="userSpaceOnUse" x="35" y="105" width="284" height="290" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".015 .03" numOctaves="1" seed="7" result="ripples"><animate attributeName="baseFrequency" values=".015 .03;.021 .022;.015 .03" dur="14s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="ripples" scale="7" xChannelSelector="R" yChannelSelector="G"/></filter><mask id="fixed-letter-clearance" maskUnits="userSpaceOnUse" x="35" y="105" width="284" height="290"><rect x="35" y="105" width="284" height="290" fill="white"/>'+''.join(cutout_runs)+'</mask></defs>',
-      '<g class="motion water-background" mask="url(#fixed-letter-clearance)"><g filter="url(#ascii-water)">'+background+'</g></g>',
+# A closed periodic visual model: staggered breathing holes and the summed
+# amplitudes of several outward-travelling radial waves. No runtime simulation.
+WAVE_FRAMES = 72
+WAVE_SECONDS = 8
+WAVE_SOURCES = [(19, 12, 0.0), (49, 15, .29), (21, 39, .53), (62, 41, .76), (37, 29, .12)]
+occupied = [[mask(x,y) or any(mask(x-d,y+d//2) for d in range(1,10)) for x in range(77)] for y in range(58)]
+distances = [[[(math.hypot((x-sx)*.8,y-sy), offset) for sx,sy,offset in WAVE_SOURCES] for x in range(77)] for y in range(58)]
+def wave_rows(phase):
+ rows=[]
+ angle=(phase % 1)*math.tau
+ for y in range(58):
+  row=''
+  for x in range(77):
+   if occupied[y][x]:row+=' ';continue
+   samples=distances[y][x]
+   holes=[(distance,4+2.8*math.sin(angle+offset*math.tau)) for distance,offset in samples]
+   if any(distance<radius for distance,radius in holes):row+=' ';continue
+   wave=sum(math.cos(.72*distance-2*angle+offset*math.tau)*math.exp(-distance/26) for distance,offset in samples)
+   wave+=.3*math.sin(.15*x+.11*y-angle)
+   # A narrow moving contour makes the expanding hole boundaries legible.
+   near=any(0<=distance-radius<.9 for distance,radius in holes)
+   level=max(0,min(7,int((wave+1.25)*2.5)))
+   row+= ':' if near else ' .:-=+*#'[level]
+  rows.append(row)
+ return rows
+frames=[]
+for frame in range(WAVE_FRAMES):
+ start,end=frame/WAVE_FRAMES,(frame+1)/WAVE_FRAMES
+ if frame==0:times=[0,end,1];values=['visible','hidden','hidden']
+ elif frame==WAVE_FRAMES-1:times=[0,start,1];values=['hidden','visible','hidden']
+ else:times=[0,start,end,1];values=['hidden','visible','hidden','hidden']
+ switch='<animate attributeName="visibility" values="'+';'.join(values)+'" keyTimes="'+';'.join(f'{t:.9f}' for t in times)+f'" dur="{WAVE_SECONDS}s" repeatCount="indefinite" calcMode="discrete"/>'
+ frame_rows='<text font-size="5.7" fill="#54766d" xml:space="preserve">'+''.join(f'<tspan x="43" y="{115+y*4.7}" textLength="{len(row)*ASCII_ADVANCE:.4f}" lengthAdjust="spacingAndGlyphs">{html.escape(row)}</tspan>' for y,row in enumerate(wave_rows(start)) if row.strip())+'</text>'
+ frames.append(f'<g class="wave-frame" data-frame="{frame}" visibility="'+('visible' if frame==0 else 'hidden')+'">'+switch+frame_rows+'</g>')
+a += ['<defs><mask id="fixed-letter-clearance" maskUnits="userSpaceOnUse" x="35" y="105" width="284" height="290"><rect x="35" y="105" width="284" height="290" fill="white"/>'+''.join(cutout_runs)+'</mask></defs>',
+      '<g class="motion water-background" mask="url(#fixed-letter-clearance)">'+''.join(frames)+'</g>',
       '<g class="still water-static">'+background+'</g>',
       '<g id="fixed-rock-letters">'+''.join(fixed_rows)+'</g>']
 a+=['<path d="M41 407h267" stroke="#303943"/>',txt(43,430,'ROCK / SIGNAL SCULPTURE',10,'#e5b879'),txt(43,450,'ASCII FORM + NEGATIVE SPACE',9,'#9ba7ad'),'</g><path d="M348 76V520" stroke="#303943"/>']
@@ -113,10 +147,10 @@ def command_area(x, y):
 for theme,pal in [('dark',D),('light',L)]:
  for mobile in [False,True]:
   W,H=(360,1070) if mobile else (900,560)
-  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII ROCK lettering. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Hugging Face, Ollama, OpenAI, Streamlit. Born 2004-04-21. Stationary ASCII letters sit over a decorative, rippling ASCII background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',12,'muted'),tx(W-112,29,'PROFILE 01',11,'muted')]
+  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII ROCK lettering. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Hugging Face, Ollama, OpenAI, Streamlit. Born 2004-04-21. Stationary ASCII letters sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',12,'muted'),tx(W-112,29,'PROFILE 01',11,'muted')]
   mark=art
   if theme=='light':
-   for old,new in {'#354c49':'#9daa9f','#728e8a':'#496e5e','#e1eae2':'#102b21','#e5b879':L['accent'],'#9ba7ad':L['muted'],'#303943':L['line']}.items():mark=mark.replace(old,new)
+   for old,new in {'#54766d':'#678575','#354c49':'#9daa9f','#728e8a':'#496e5e','#e1eae2':'#102b21','#e5b879':L['accent'],'#9ba7ad':L['muted'],'#303943':L['line']}.items():mark=mark.replace(old,new)
   if mobile:
    mark=mark[:mark.index('<path d="M41 407')]+ '</g>'
    out+=['<g transform="translate(28,-28) scale(.85)">'+mark+'</g>'];x,y=23,350

@@ -1,0 +1,27 @@
+name: Profile SVG assets
+
+on:
+  push:
+    paths:
+      - 'assets/profile-terminal-*.svg'
+      - 'scripts/generate_profile_terminal.py'
+      - 'tests/test_profile_terminal.py'
+      - '.github/workflows/profile-assets.yml'
+  pull_request:
+    paths:
+      - 'assets/profile-terminal-*.svg'
+      - 'scripts/generate_profile_terminal.py'
+      - 'tests/test_profile_terminal.py'
+      - '.github/workflows/profile-assets.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  generated-assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify generated assets and animation contracts
+        run: python3 -m unittest discover -s tests
