@@ -169,7 +169,7 @@ a += ['<defs>'+glyph_paths()+'<g id="rock-glyphs">'+''.join(f'<use href="#glyph-
       '<g class="motion" id="letter-clearance" fill="{bg}" stroke="{bg}" stroke-width="1.8" stroke-linejoin="round">'+suspended_glyphs('mask')+'</g>',
       '<g mask="url(#open-field-window)"><g class="still water-static">'+background+'</g></g>',
       '<g class="motion" id="rock-animated-letters" fill="url(#rock-ascii-fill)" stroke="#e1eae2" stroke-opacity=".3" stroke-width=".4">'+suspended_glyphs('fore')+'</g><g class="still" id="fixed-rock-letters"><use href="#rock-glyphs" fill="url(#rock-ascii-fill)" stroke="#e1eae2" stroke-opacity=".3" stroke-width=".4"/></g>']
-a+=['<path d="M41 407h267" stroke="#303943"/>',typing_caption(),'</g><path d="M348 76V520" stroke="#303943"/>']
+a+=['<path d="M41 407h267" stroke="#303943"/>',typing_caption(),'</g><path d="M348 76V480" stroke="#303943"/>']
 
 art=''.join(a)
 D={'bg':'#10151b','line':'#303943','fg':'#e5e9e6','muted':'#9ba7ad','accent':'#e5b879','active':'#1c2b2b'}
@@ -202,7 +202,7 @@ def command_area(x, y):
 
 for theme,pal in [('dark',D),('light',L)]:
  for mobile in [False,True]:
-  W,H=(360,1070) if mobile else (900,580)
+  W,H=(360,1002) if mobile else (900,540)
   out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII-filled geometric ROCK lettering over animated ASCII waves. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker, Streamlit. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama. Asynchronously suspended geometric letters with an ASCII-text fill sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',12,'muted'),tx(W-112,29,'PROFILE 01',11,'muted')]
   mark=art
   if theme=='light':
@@ -210,7 +210,7 @@ for theme,pal in [('dark',D),('light',L)]:
   if mobile:
    mark=mark[:mark.index('<path d="M41 407')]+ '</g>'
    out+=['<g transform="translate(28,-28) scale(.85)">'+mark+'</g>'];x,y=23,350
-  else:out +=[mark,'<path d="M348 76V520" stroke="{line}"/>'];x,y=382,94
+  else:out +=[mark,'<path d="M348 76V480" stroke="{line}"/>'];x,y=382,94
   out += [tx(x,y,'rockenzo@github',14,'accent'),tx(x,y+49,'Build. Verify.',28 if mobile else 34),tx(x,y+88,'Make it tangible.',25 if mobile else 29)]
   fields=[('STUDY','Master of IT (Applied AI) @ Adelaide University'),('GRADUATED','Bachelor of IT @ University of Adelaide (2025)'),('FOCUS','Web development / scalable apps / AI & ML'),('CORE','Python / React / Vue / Elasticsearch / Docker / Streamlit'),('AI / ML','PyTorch / TensorFlow / scikit-learn / Pandas / NumPy'),('LLM TOOLS','Codex / Claude Code / DeepSeek Harness'),('','Hugging Face / Ollama')]
   if mobile:
@@ -227,7 +227,7 @@ for theme,pal in [('dark',D),('light',L)]:
    out += [f'<defs><clipPath id="about-{i}"><rect x="{value_x}" y="{vy-14}" width="{width}" height="19">'+anim('width',vals,times,duration,'fill="freeze" calcMode="discrete"')+'</rect></clipPath></defs>',tx(value_x,vy,value,size,extra=f'class="motion" clip-path="url(#about-{i})"'),tx(value_x,vy,value,size,extra='class="still"')]
   # A quiet line pointer cycles after the one-time boot; factual values stay fully readable.
   out += ['<g class="motion"><rect x="'+str(8 if mobile else 365)+'" y="'+str(ys[0]-8)+'" width="3" height="9" fill="{accent}" opacity="0">'+anim('opacity',[0,0,1],[0,.999,1],5,'fill="freeze"')+anim('y',[v-8 for v in ys]+[ys[0]-8],[i/len(ys) for i in range(len(ys)+1)],len(ys)*2,'begin="5s" repeatCount="indefinite" calcMode="discrete"')+'</rect></g>']
-  fy=1020 if mobile else 515
+  fy=952 if mobile else 479
   out += [f'<path d="M{x} {fy-24}H{337 if mobile else 865}" stroke="{{line}}"/>', command_area(x,fy), '</g></svg>']
   s=''.join(out)
   for k,v in pal.items():s=s.replace('{'+k+'}',v)
