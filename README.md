@@ -143,17 +143,19 @@
   <tr>
     <td width="50%" valign="top" align="center">
       <a href="https://rockenzo.github.io/readme-reality/"><img src="assets/readme-reality.gif" alt="Readme Reality: real browser walkthrough of example README findings, repository evidence and corrected snapshots" width="100%" /></a>
-      <br/><b><a href="https://github.com/RockENZO/readme-reality">Readme Reality</a></b>
+      <br/><b>Readme Reality</b>
       <br/>Offline checks for README links, package scripts and Python paths.
       <br/><br/>
-      <a href="https://rockenzo.github.io/readme-reality/">Try examples</a> · <a href="https://github.com/RockENZO/readme-reality">Source</a>
+      <a href="https://rockenzo.github.io/readme-reality/"><img src="https://img.shields.io/badge/%E2%96%B6%20Try%20examples-FF9F43?style=flat-square&logoColor=0D1B33" alt="Try examples" /></a>
+      <a href="https://github.com/RockENZO/readme-reality"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
     <td width="50%" valign="top" align="center">
       <a href="https://rockenzo.github.io/demo-proof/"><img src="assets/demo-proof.gif" alt="DemoProof: recorded replay of a fictional weather snapshot with temperature toggle and refresh" width="100%" /></a>
-      <br/><b><a href="https://github.com/RockENZO/demo-proof">DemoProof</a></b>
+      <br/><b>DemoProof</b>
       <br/>An experimental tool for turning approved demo snapshots into replay-verified videos, GIFs and evidence reports.
       <br/><br/>
-      <a href="https://rockenzo.github.io/demo-proof/">View recording</a> · <a href="https://github.com/RockENZO/demo-proof">Source</a>
+      <a href="https://rockenzo.github.io/demo-proof/"><img src="https://img.shields.io/badge/%E2%96%B6%20View%20recording-FF9F43?style=flat-square&logoColor=0D1B33" alt="View recording" /></a>
+      <a href="https://github.com/RockENZO/demo-proof"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
   </tr>
 </table>
@@ -176,16 +178,22 @@
   </tr>
   <tr>
     <td width="33%" valign="top" align="center">
-      <b><a href="https://github.com/RockENZO/odyssey">Odyssey</a></b>
+      <b>Odyssey</b>
       <br/>Terminal coding agent. LangGraph engine with SQLite checkpoints, approvals and a completion gate. First real run: qwen3.8:27b-mlx passed 10 of 10 tasks of a frozen suite, a pipeline check rather than a capability claim.
+      <br/><br/>
+      <a href="https://github.com/RockENZO/odyssey"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
     <td width="33%" valign="top" align="center">
-      <b><a href="https://github.com/RockENZO/transactional-agent-ledger">Transactional agent ledger</a></b>
+      <b>Transactional agent ledger</b>
       <br/>SQLite ledger of claims. A step only counts once a verifier, such as the project's test command, accepts it.
+      <br/><br/>
+      <a href="https://github.com/RockENZO/transactional-agent-ledger"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
     <td width="33%" valign="top" align="center">
-      <b><a href="https://github.com/RockENZO/trajectory-replay">Trajectory replay</a></b>
+      <b>Trajectory replay</b>
       <br/>Record a run's tool calls as a cassette, replay it without a model and score trajectories.
+      <br/><br/>
+      <a href="https://github.com/RockENZO/trajectory-replay"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
   </tr>
 </table>
