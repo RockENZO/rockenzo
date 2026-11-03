@@ -20,3 +20,5 @@ Before publishing, inspect desktop/mobile and dark/light variants embedded throu
 The ASCII field is a separate background layer. A native SVG turbulence/displacement filter gently refracts that layer on a 14-second loop. The letter faces, amber edges and side volumes are outside the filter and contain no animations. A fixed mask keeps the refracted background out of those letter volumes. This is decorative ASCII image motion, not a fluid simulation or live data.
 
 Reduced-motion users see the original unfiltered static ASCII field. Inspect the art region independently of the About highlight and command cursor when testing temporal changes, and verify that the stationary letter geometry stays unchanged.
+
+The ASCII rows use explicit `textLength` and `lengthAdjust="spacingAndGlyphs"` to pin the character advance to the same grid as the clearance mask across Menlo, Consolas and monospace font fallbacks. Check per-character positions when changing the grid metrics.

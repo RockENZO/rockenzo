@@ -37,7 +37,13 @@ def mask(x,y):
  gx=(xx%31)//3;gy=(yy%23)//2
  if gx>6 or gy>8:return False
  return G['ROCK'[row*2+col]][gy][gx]=='1'
-def txt(x,y,s,size,col):return f'<text x="{x}" y="{y}" font-size="{size}" fill="{col}" xml:space="preserve">{html.escape(s)}</text>'
+ASCII_ADVANCE = 3.4371
+
+def txt(x,y,s,size,col):
+ # Pin the ASCII grid advance across Menlo, Consolas and monospace fallbacks.
+ grid = f' textLength="{len(s)*ASCII_ADVANCE:.4f}" lengthAdjust="spacingAndGlyphs"' if size == 5.7 else ''
+ return f'<text x="{x}" y="{y}" font-size="{size}" fill="{col}" xml:space="preserve"{grid}>{html.escape(s)}</text>'
+
 field_rows=[]
 fixed_rows=[]
 cutout_runs=[]
@@ -66,7 +72,7 @@ for y in range(58):
   hit=x<77 and occupied[x]
   if hit and start is None:start=x
   if not hit and start is not None:
-   cutout_runs.append(f'<rect x="{43+start*3.4371-.7:.3f}" y="{115+y*4.7-5.3:.3f}" width="{(x-start)*3.4371+1.4:.3f}" height="6.2" fill="black"/>')
+   cutout_runs.append(f'<rect x="{43+start*ASCII_ADVANCE-.7:.3f}" y="{115+y*4.7-5.3:.3f}" width="{(x-start)*ASCII_ADVANCE+1.4:.3f}" height="6.2" fill="black"/>')
    start=None
 background=''.join(field_rows)
 a += ['<defs><filter id="ascii-water" filterUnits="userSpaceOnUse" x="35" y="105" width="284" height="290" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".015 .03" numOctaves="1" seed="7" result="ripples"><animate attributeName="baseFrequency" values=".015 .03;.021 .022;.015 .03" dur="14s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="ripples" scale="7" xChannelSelector="R" yChannelSelector="G"/></filter><mask id="fixed-letter-clearance" maskUnits="userSpaceOnUse" x="35" y="105" width="284" height="290"><rect x="35" y="105" width="284" height="290" fill="white"/>'+''.join(cutout_runs)+'</mask></defs>',
