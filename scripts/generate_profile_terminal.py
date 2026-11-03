@@ -88,7 +88,7 @@ def suspended_glyphs(instance):
  groups=[]
  times=';'.join(f'{i/72:.9f}' for i in range(73))
  for letter,x,y in PLACEMENTS:
-  t=TRACKS[letter];cx,cy=x+29,y+39
+  t=TRACKS[letter];cx,cy=x+32,y+39
   shift=';'.join(f'{dx} {dy}' for dx,dy in zip(t['x'],t['y']))
   turn=';'.join(f'{angle} {cx} {cy}' for angle in t['tilt'])
   groups.append(f'<g id="{instance}-{letter}" data-letter="{letter}" transform="translate({t["x"][0]} {t["y"][0]})"><animateTransform attributeName="transform" type="translate" values="{shift}" keyTimes="{times}" dur="{t["period"]}s" repeatCount="indefinite" calcMode="linear"/><g transform="rotate({t["tilt"][0]} {cx} {cy})"><animateTransform attributeName="transform" type="rotate" values="{turn}" keyTimes="{times}" dur="{t["period"]}s" repeatCount="indefinite" calcMode="linear"/><use href="#glyph-{letter}"/></g></g>')
@@ -111,11 +111,11 @@ def typing_caption():
   for i in range(151):
    t=(i/10)%15;active=int(t//5);phase=t%5
    count=min(len(phrase),max(0,int((phase-.15)/.07))) if phase<4 else max(0,len(phrase)-int((phase-4)/.02))
-   widths.append(round(count*6.633,4) if active==j else 0)
+   widths.append(round(count*7.236,4) if active==j else 0)
    visible.append('1' if active==j else '0')
   values=';'.join(map(str,widths));positions=';'.join(str(43+w) for w in widths)
-  parts.append(f'<g opacity="{visible[0]}"><animate attributeName="opacity" values="{";".join(visible)}" keyTimes="{times}" dur="15s" repeatCount="indefinite" calcMode="discrete"/><defs><clipPath id="caption-{j}"><rect x="43" y="424" width="0" height="19"><animate attributeName="width" values="{values}" keyTimes="{times}" dur="15s" repeatCount="indefinite" calcMode="discrete"/></rect></clipPath></defs><text x="43" y="438" font-size="11" fill="#e5b879" clip-path="url(#caption-{j})">{html.escape(phrase)}</text><rect x="43" y="427" width="5" height="13" fill="#e5b879"><animate attributeName="x" values="{positions}" keyTimes="{times}" dur="15s" repeatCount="indefinite" calcMode="discrete"/><animate attributeName="opacity" values="1;0;1" keyTimes="0;.5;1" dur="1.2s" repeatCount="indefinite" calcMode="discrete"/></rect></g>')
- parts += ['</g><g class="still">', txt(43,438,CAPTION_PHRASES[0],11,'#e5b879'), '</g>']
+  parts.append(f'<g opacity="{visible[0]}"><animate attributeName="opacity" values="{";".join(visible)}" keyTimes="{times}" dur="15s" repeatCount="indefinite" calcMode="discrete"/><defs><clipPath id="caption-{j}"><rect x="43" y="424" width="0" height="19"><animate attributeName="width" values="{values}" keyTimes="{times}" dur="15s" repeatCount="indefinite" calcMode="discrete"/></rect></clipPath></defs><text x="43" y="438" font-size="12" fill="#e5b879" clip-path="url(#caption-{j})">{html.escape(phrase)}</text><rect x="43" y="426" width="6" height="14" fill="#e5b879"><animate attributeName="x" values="{positions}" keyTimes="{times}" dur="15s" repeatCount="indefinite" calcMode="discrete"/><animate attributeName="opacity" values="1;0;1" keyTimes="0;.5;1" dur="1.2s" repeatCount="indefinite" calcMode="discrete"/></rect></g>')
+ parts += ['</g><g class="still">', txt(43,438,CAPTION_PHRASES[0],12,'#e5b879'), '</g>']
  return ''.join(parts)
 
 # Static ASCII fallback and the animated field share the same aperture. Only
@@ -189,21 +189,21 @@ def command_area(x, y):
             t = (i / 10) % 12
             active, phase = int(t // 4), t % 4
             count = min(len(command), max(0, int((phase - .2) / .075))) if phase < 3.2 else max(0, len(command) - int((phase - 3.2) / .045))
-            widths.append(count * 7.23 if active == j else 0)
+            widths.append(count * 7.839 if active == j else 0)
             visible.append(1 if active == j else 0)
             output_visible.append(1 if active == j and 1.5 < phase < 3.2 else 0)
         parts += [f'<g opacity="{visible[0]}">' + anim('opacity', visible, times, 12, 'repeatCount="indefinite" calcMode="discrete"'),
-                  f'<defs><clipPath id="command-{j}"><rect x="{x+29}" y="{y-14}" width="0" height="20">' + anim('width', widths, times, 12, 'repeatCount="indefinite" calcMode="discrete"') + '</rect></clipPath></defs>',
-                  tx(x, y, '~ $', 12, 'accent'), tx(x+29, y, command, 12, 'accent', f'clip-path="url(#command-{j})"'),
-                  f'<rect x="{x+29}" y="{y-11}" width="6" height="14" fill="{{accent}}">' + anim('x', [x+29+w for w in widths], times, 12, 'repeatCount="indefinite" calcMode="discrete"') + anim('opacity', [1,0,1], [0,.5,1], 1.2, 'repeatCount="indefinite" calcMode="discrete"') + '</rect>',
-                  '<g opacity="0">' + anim('opacity', output_visible, times, 12, 'repeatCount="indefinite" calcMode="discrete"') + tx(x, y+24, result, 10, 'muted') + '</g></g>']
-    parts += ['</g>', '<g class="still">', tx(x,y,'~ $ cat about.txt',12,'accent'), tx(x,y+24,results[0],10,'muted'), '</g>']
+                  f'<defs><clipPath id="command-{j}"><rect x="{x+32}" y="{y-14}" width="0" height="20">' + anim('width', widths, times, 12, 'repeatCount="indefinite" calcMode="discrete"') + '</rect></clipPath></defs>',
+                  tx(x, y, '~ $', 13, 'accent'), tx(x+32, y, command, 13, 'accent', f'clip-path="url(#command-{j})"'),
+                  f'<rect x="{x+32}" y="{y-12}" width="7" height="15" fill="{{accent}}">' + anim('x', [x+32+w for w in widths], times, 12, 'repeatCount="indefinite" calcMode="discrete"') + anim('opacity', [1,0,1], [0,.5,1], 1.2, 'repeatCount="indefinite" calcMode="discrete"') + '</rect>',
+                  '<g opacity="0">' + anim('opacity', output_visible, times, 12, 'repeatCount="indefinite" calcMode="discrete"') + tx(x, y+26, result, 11, 'muted') + '</g></g>']
+    parts += ['</g>', '<g class="still">', tx(x,y,'~ $ cat about.txt',13,'accent'), tx(x,y+26,results[0],11,'muted'), '</g>']
     return ''.join(parts)
 
 for theme,pal in [('dark',D),('light',L)]:
  for mobile in [False,True]:
   W,H=(360,1002) if mobile else (900,540)
-  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII-filled geometric ROCK lettering over animated ASCII waves. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker, Streamlit. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama. Asynchronously suspended geometric letters with an ASCII-text fill sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',12,'muted'),tx(W-112,29,'PROFILE 01',11,'muted')]
+  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII-filled geometric ROCK lettering over animated ASCII waves. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker, Streamlit. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama. Asynchronously suspended geometric letters with an ASCII-text fill sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',14,'muted'),tx(W-124,29,'PROFILE 01',13,'muted')]
   mark=art
   if theme=='light':
    for old,new in {'#54766d':'#678575','#354c49':'#9daa9f','#728e8a':'#496e5e','#e1eae2':'#102b21','#e5b879':L['accent'],'#9ba7ad':L['muted'],'#303943':L['line']}.items():mark=mark.replace(old,new)
@@ -211,24 +211,24 @@ for theme,pal in [('dark',D),('light',L)]:
    mark=mark[:mark.index('<path d="M41 407')]+ '</g>'
    out+=['<g transform="translate(28,-28) scale(.85)">'+mark+'</g>'];x,y=23,350
   else:out +=[mark,'<path d="M348 76V480" stroke="{line}"/>'];x,y=382,94
-  out += [tx(x,y,'rockenzo@github',14,'accent'),tx(x,y+49,'Build. Verify.',28 if mobile else 34),tx(x,y+88,'Make it tangible.',25 if mobile else 29)]
+  out += [tx(x,y,'rockenzo@github',16,'accent'),tx(x,y+49,'Build. Verify.',28 if mobile else 34),tx(x,y+88,'Make it tangible.',25 if mobile else 29)]
   fields=[('STUDY','Master of IT (Applied AI) @ Adelaide University'),('GRADUATED','Bachelor of IT @ University of Adelaide (2025)'),('FOCUS','Web development / scalable apps / AI & ML'),('CORE','Python / React / Vue / Elasticsearch / Docker / Streamlit'),('AI / ML','PyTorch / TensorFlow / scikit-learn / Pandas / NumPy'),('LLM TOOLS','Codex / Claude Code / DeepSeek Harness'),('','Hugging Face / Ollama')]
   if mobile:
    fields=[('STUDY','Master of IT (Applied AI)'),('','@ Adelaide University'),('GRADUATED','Bachelor of IT (2025)'),('','@ University of Adelaide'),('FOCUS','Web development / scalable apps / AI & ML'),('CORE','Python / React / Vue'),('','Elasticsearch / Docker / Streamlit'),('AI / ML','PyTorch / TensorFlow / scikit-learn'),('','Pandas / NumPy'),('LLM TOOLS','Codex / Claude Code'),('','DeepSeek Harness / Hugging Face / Ollama')]
   ys=[500,524,572,596,644,704,728,776,800,848,872] if mobile else [224,259,294,329,364,399,419]
-  value_x=23 if mobile else 469;size=12 if mobile else 11;cw=size*.603
-  out += ['<g class="motion" opacity=".8"><rect x="'+str(x-8)+'" y="'+str(ys[0]-14)+'" width="'+str(326 if mobile else 490)+'" height="'+str(43 if mobile else 27)+'" rx="3" fill="{active}">'+anim('y',[v-14 for v in ys]+[ys[0]-14],[i/len(ys) for i in range(len(ys)+1)],len(ys)*2,'begin="5s" repeatCount="indefinite" calcMode="discrete"')+'</rect></g>']
+  value_x=23 if mobile else 455;size=12.5 if mobile else 12;cw=size*.603
+  out += ['<g class="motion" opacity=".8"><rect x="'+str(x-8)+'" y="'+str(ys[0]-14)+'" width="'+str(326 if mobile else 497)+'" height="'+str(43 if mobile else 27)+'" rx="3" fill="{active}">'+anim('y',[v-14 for v in ys]+[ys[0]-14],[i/len(ys) for i in range(len(ys)+1)],len(ys)*2,'begin="5s" repeatCount="indefinite" calcMode="discrete"')+'</rect></g>']
   for i,((label,value),yy) in enumerate(zip(fields,ys)):
    vy=yy+20 if mobile else yy
-   if label:out.append(tx(x,yy,label,10,'muted'))
+   if label:out.append(tx(x,yy,label,11,'muted'))
    width=len(value)*cw+2;start=.25+i*(.32 if mobile else .5);duration=start+.65
    times=[0,start/duration]+[(start+.65*j/len(value))/duration for j in range(1,len(value)+1)]
    vals=[0,0]+[width*j/len(value) for j in range(1,len(value)+1)]
-   out += [f'<defs><clipPath id="about-{i}"><rect x="{value_x}" y="{vy-14}" width="{width}" height="19">'+anim('width',vals,times,duration,'fill="freeze" calcMode="discrete"')+'</rect></clipPath></defs>',tx(value_x,vy,value,size,extra=f'class="motion" clip-path="url(#about-{i})"'),tx(value_x,vy,value,size,extra='class="still"')]
+   out += [f'<defs><clipPath id="about-{i}"><rect x="{value_x}" y="{vy-14}" width="{width}" height="20">'+anim('width',vals,times,duration,'fill="freeze" calcMode="discrete"')+'</rect></clipPath></defs>',tx(value_x,vy,value,size,extra=f'class="motion" clip-path="url(#about-{i})"'),tx(value_x,vy,value,size,extra='class="still"')]
   # A quiet line pointer cycles after the one-time boot; factual values stay fully readable.
   out += ['<g class="motion"><rect x="'+str(8 if mobile else 365)+'" y="'+str(ys[0]-8)+'" width="3" height="9" fill="{accent}" opacity="0">'+anim('opacity',[0,0,1],[0,.999,1],5,'fill="freeze"')+anim('y',[v-8 for v in ys]+[ys[0]-8],[i/len(ys) for i in range(len(ys)+1)],len(ys)*2,'begin="5s" repeatCount="indefinite" calcMode="discrete"')+'</rect></g>']
   fy=952 if mobile else 479
-  out += [f'<path d="M{x} {fy-24}H{337 if mobile else 865}" stroke="{{line}}"/>', command_area(x,fy), '</g></svg>']
+  out += [f'<path d="M{x} {fy-24}H{337 if mobile else 870}" stroke="{{line}}"/>', command_area(x,fy), '</g></svg>']
   s=''.join(out)
   for k,v in pal.items():s=s.replace('{'+k+'}',v)
   root=ET.fromstring(s)
