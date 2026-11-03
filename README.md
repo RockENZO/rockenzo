@@ -96,7 +96,7 @@ const rock = {
 <summary><b>More projects</b></summary>
 <br/>
 
-- [Odyssey](https://github.com/RockENZO/odyssey): a terminal coding agent with 17 tools, local Ollama inference and optional external web research
+- [Odyssey](https://github.com/RockENZO/odyssey): a terminal coding agent with 17 tools and local Ollama inference, with a resumable LangGraph engine (see Agent engineering below)
 - [MagicTrick](https://github.com/RockENZO/MagicTrick): an iOS card trick with no buttons, only rotate, shake and a secret tap
 - [ControllerMouse](https://github.com/RockENZO/ControllerMouse): drive your Mac's cursor with a game controller from the menu bar
 - [Road semantic segmentation](https://github.com/RockENZO/Road_Semantic_Segmentation_CV): PyTorch segmentation for driving scenes, with mIoU and FLOPs ablations
@@ -188,6 +188,38 @@ const rock = {
       <br/>An experimental tool for turning approved demo snapshots into replay-verified videos, GIFs and evidence reports.
       <br/><br/>
       <a href="https://rockenzo.github.io/demo-proof/">View recording</a> · <a href="https://github.com/RockENZO/demo-proof">Source</a>
+    </td>
+  </tr>
+</table>
+
+---
+
+### 🤖 Agent engineering
+
+<p align="center">
+  <b>Resumable, verified, measurable.</b><br/>
+  A local coding agent and two small libraries, kept as three independent repos.
+</p>
+
+<table>
+  <tr>
+    <td colspan="3" valign="top" align="center">
+      <a href="https://github.com/RockENZO/odyssey"><img src="assets/agent-crash-resume.gif" alt="A process is killed with kill -9 mid-turn; a new process resumes from the SQLite checkpoint and the ledger gate accepts the fix" width="560" /></a>
+      <br/><sub>Kill the process mid-turn, resume from the checkpoint, accept only after the tests pass. The model in this recording is a scripted stand-in.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top" align="center">
+      <b><a href="https://github.com/RockENZO/odyssey">Odyssey</a></b>
+      <br/>Terminal coding agent. LangGraph engine with SQLite checkpoints, approvals and a completion gate. First real run: qwen3.8:27b-mlx passed 10 of 10 tasks of a frozen suite, a pipeline check rather than a capability claim.
+    </td>
+    <td width="33%" valign="top" align="center">
+      <b><a href="https://github.com/RockENZO/transactional-agent-ledger">Transactional agent ledger</a></b>
+      <br/>SQLite ledger of claims. A step only counts once a verifier, such as the project's test command, accepts it.
+    </td>
+    <td width="33%" valign="top" align="center">
+      <b><a href="https://github.com/RockENZO/trajectory-replay">Trajectory replay</a></b>
+      <br/>Record a run's tool calls as a cassette, replay it without a model and score trajectories.
     </td>
   </tr>
 </table>
