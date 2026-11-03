@@ -18,7 +18,7 @@
   <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/profile-terminal-dark-mobile.svg" />
   <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/profile-terminal-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile-terminal-dark.svg" />
-  <img src="assets/profile-terminal-light.svg" width="100%" alt="About RockENZO: Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide (2025). Core: Python, React, Vue, Elasticsearch, Docker and Streamlit. AI/ML: PyTorch, TensorFlow, scikit-learn, Pandas and NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama. Born 2004-04-21." />
+  <img src="assets/profile-terminal-light.svg" width="100%" alt="About RockENZO: Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide (2025). Core: Python, React, Vue, Elasticsearch, Docker and Streamlit. AI/ML: PyTorch, TensorFlow, scikit-learn, Pandas and NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama." />
 </picture>
 
 ---
