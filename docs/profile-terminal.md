@@ -7,6 +7,7 @@ Regenerate with Python 3.10+ (standard library only):
 ```sh
 python3 scripts/generate_profile_terminal.py
 python3 scripts/generate_profile_terminal.py --check
+python3 -m unittest discover -s tests
 ```
 
 Edit the field data, glyph masks or colors in the generator, then regenerate all four variants. Preserve the original `B1T1.png` header and the README's theme/mobile picture sources.
@@ -17,8 +18,8 @@ Before publishing, inspect desktop/mobile and dark/light variants embedded throu
 
 ## ASCII water background
 
-The ASCII field is a separate background layer. A native SVG turbulence/displacement filter gently refracts that layer on a 14-second loop. The letter faces, amber edges and side volumes are outside the filter and contain no animations. A fixed mask keeps the refracted background out of those letter volumes. This is decorative ASCII image motion, not a fluid simulation or live data.
+The ASCII field is a separate background layer. The generator precomputes 72 ASCII frames (nine frames per second) for an eight-second loop. Five holes expand and contract at staggered phases, and outward-travelling radial wave amplitudes are summed before character quantization. Native SVG visibility animation selects one frame at a time. The letter faces, amber edges and side volumes are outside the animated frame group and contain no animations. A fixed mask keeps the animated background out of those letter volumes. This is a periodic visual interference model, not a physical fluid solver or an optical diffraction benchmark.
 
-Reduced-motion users see the original unfiltered static ASCII field. Inspect the art region independently of the About highlight and command cursor when testing temporal changes, and verify that the stationary letter geometry stays unchanged.
+Reduced-motion users see the original unfiltered static ASCII field. Check that exactly one background frame is visible at each sample, that the loop closes, and that source radii peak at different times. Inspect the art region independently of the About highlight and command cursor when testing temporal changes, and verify that the stationary letter geometry stays unchanged.
 
 The ASCII rows use explicit `textLength` and `lengthAdjust="spacingAndGlyphs"` to pin the character advance to the same grid as the clearance mask across Menlo, Consolas and monospace font fallbacks. Check per-character positions when changing the grid metrics.
