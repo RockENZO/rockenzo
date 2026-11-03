@@ -18,7 +18,7 @@ class ProfileTerminalTests(unittest.TestCase):
         source = ROOT / "scripts/generate_profile_terminal.py"
         with patch.object(sys, "argv", [str(source), "--check"]), contextlib.redirect_stdout(io.StringIO()):
             cls.model = runpy.run_path(str(source))
-        cls.assets = list((ROOT / "assets").glob("profile-terminal-*.svg"))
+        cls.assets = [p for p in (ROOT / "assets").glob("profile-terminal-*.svg") if "-static" not in p.stem]
 
     def test_wave_loop_closes_and_changes(self):
         rows = self.model["wave_rows"]
@@ -56,7 +56,7 @@ class ProfileTerminalTests(unittest.TestCase):
         for asset in self.assets:
             root = ET.parse(asset)
             letters = root.find('.//s:g[@id="fixed-rock-letters"]/s:use', NS)
-            clearance = root.find('.//s:mask[@id="fixed-letter-clearance"]/s:use', NS)
+            clearance = root.find('.//s:mask[@id="fixed-letter-clearance"]/s:g[@class="still"]/s:use', NS)
             self.assertEqual(letters.get("href"), "#rock-glyphs")
             self.assertEqual(clearance.get("href"), letters.get("href"))
             self.assertIsNotNone(root.find('.//s:radialGradient[@id="wave-feather"]', NS))
@@ -73,6 +73,58 @@ class ProfileTerminalTests(unittest.TestCase):
             self.assertFalse(fill.findall('.//s:animate', NS))
             letters = root.find('.//s:g[@id="fixed-rock-letters"]/s:use', NS)
             self.assertEqual(letters.get("fill"), "url(#rock-ascii-fill)")
+
+    def test_suspension_is_bounded_closed_and_independent(self):
+        tracks = self.model["TRACKS"]
+        configs = self.model["SUSPENSION"]
+        self.assertEqual(len({track["period"] for track in tracks.values()}), 4)
+        for letter, track in tracks.items():
+            self.assertNotEqual(track["period"], self.model["WAVE_SECONDS"])
+            for axis, limit in [("x",configs[letter]["x"]),("y",configs[letter]["y"]),("tilt",configs[letter]["tilt"])]:
+                self.assertEqual(track[axis][0], track[axis][-1])
+                self.assertGreater(max(track[axis])-min(track[axis]), .1)
+                self.assertLessEqual(max(map(abs,track[axis])), limit+.00001)
+        for asset in self.assets:
+            root = ET.parse(asset)
+            for letter in tracks:
+                fore = root.find(f'.//s:g[@id="fore-{letter}"]', NS)
+                mask = root.find(f'.//s:g[@id="mask-{letter}"]', NS)
+                self.assertIsNotNone(fore)
+                self.assertIsNotNone(mask)
+                for front, clearance in zip(fore.findall('.//s:animateTransform',NS), mask.findall('.//s:animateTransform',NS)):
+                    self.assertEqual(front.attrib, clearance.attrib)
+                    self.assertNotIn("begin", front.attrib)
+                self.assertEqual(len(fore.findall('.//s:animateTransform', NS)),2)
+                self.assertEqual(fore.find('.//s:use',NS).get("href"), f"#glyph-{letter}")
+                self.assertEqual(mask.find('.//s:use',NS).get("href"), f"#glyph-{letter}")
+
+    def test_explicit_static_picture_fallback(self):
+        assets = list((ROOT / "assets").glob("profile-terminal-*-static.svg"))
+        self.assertEqual(len(assets),4)
+        readme = (ROOT / "README.md").read_text()
+        self.assertEqual(readme.count("prefers-reduced-motion: reduce"),4)
+        for asset in assets:
+            self.assertIn("assets/"+asset.name,readme)
+            root=ET.parse(asset)
+            self.assertFalse(root.findall('.//s:animate',NS))
+            self.assertFalse(root.findall('.//s:animateTransform',NS))
+            self.assertFalse(root.findall('.//s:g[@class="wave-frame"]',NS))
+            self.assertIsNotNone(root.find('.//s:g[@id="fixed-rock-letters"]',NS))
+            self.assertLess(asset.stat().st_size,50_000)
+
+    def test_requested_profile_copy(self):
+        self.assertEqual(len(self.model["CAPTION_PHRASES"]),3)
+        for asset in self.assets + list((ROOT/"assets").glob("profile-terminal-*-static.svg")):
+            text=asset.read_text()
+            for tool in ["Codex","Claude Code","DeepSeek Harness"]:
+                self.assertIn(tool,text)
+            self.assertNotIn("OpenAI",text)
+            self.assertNotIn("ROCK / WAVE STUDY",text)
+            self.assertNotIn("GEOMETRIC TYPE / ASCII FIELD",text)
+            if "mobile" not in asset.name:
+                self.assertIn(self.model["CAPTION_PHRASES"][0],text)
+        readme=(ROOT/"README.md").read_text()
+        self.assertIn("Codex, Claude Code, DeepSeek Harness",readme)
 
     def test_image_size_and_stationary_letter_contract(self):
         self.assertEqual(len(self.assets), 4)
