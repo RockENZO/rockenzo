@@ -78,18 +78,48 @@ class ProfileTerminalTests(unittest.TestCase):
                 clearance = root.find('.//s:g[@id="letter-clearance"]', NS)
                 self.assertEqual(clearance.get("fill"), clearance.get("stroke"))
 
-    def test_letter_fill_is_stationary_ascii_text(self):
+    def test_split_flap_rows_and_static_fill(self):
+        for pair in self.model['FLAP_STATES']:
+            self.assertTrue(all(text.isascii() and len(text) == 6 for text in pair))
+        starts = []
+        for row in range(self.model['FLAP_ROWS']):
+            times, scales, changes, states = self.model['flap_schedule'](row)
+            self.assertEqual(times, sorted(set(times)))
+            self.assertEqual(changes, sorted(set(changes)))
+            self.assertEqual((scales[0], scales[-1]), (1., 1.))
+            self.assertEqual((states[0], states[-1]), (0, 0))
+            self.assertEqual(len(times), len(scales))
+            self.assertEqual(len(changes), len(states))
+            self.assertTrue(all(.08 <= value <= 1 for value in scales))
+            self.assertTrue(all(0 <= value < len(self.model['FLAP_STATES']) for value in states))
+            self.assertLess(times[-2], 5)
+            starts.append(times[1])
+        self.assertEqual(len(set(starts)), self.model['FLAP_ROWS'])
+        upper_end = self.model['flap_schedule'](self.model['FLAP_GROUP_ROWS'] - 1)[0][-2]
+        lower_start = self.model['flap_schedule'](self.model['FLAP_GROUP_ROWS'])[0][1]
+        self.assertGreater(lower_start, upper_end)
+        self.assertLess(lower_start - upper_end, .05)
+        self.assertEqual([self.model['flap_band_y'](row) for row in range(14)],
+                         [0,12,24,36,48,60,72]*2)
         for asset in self.assets:
             root = ET.parse(asset)
             fill = root.find('.//s:pattern[@id="rock-ascii-fill"]', NS)
-            self.assertIsNotNone(fill)
-            rows = fill.findall('.//s:text', NS)
-            self.assertEqual(len(rows), 2)
-            self.assertTrue(all(row.text and row.text.isascii() for row in rows))
-            self.assertTrue(all(row.get("lengthAdjust") == "spacingAndGlyphs" for row in rows))
-            self.assertFalse(fill.findall('.//s:animate', NS))
+            self.assertEqual(fill.get('height'), '84')
+            lower = root.find('.//s:pattern[@id="rock-ascii-fill-lower"]', NS)
+            self.assertEqual(lower.get('height'), '84')
+            for letter in 'ROCK':
+                use = root.find(f'.//s:g[@id="fore-{letter}"]//s:use', NS)
+                if letter in 'CK':
+                    self.assertEqual(use.get('fill'), 'url(#rock-ascii-fill-lower)')
+                else:
+                    self.assertIsNone(use.get('fill'))
+            self.assertEqual(len(fill.findall('./s:g', NS)) + len(lower.findall('./s:g', NS)), self.model['FLAP_ROWS'])
+            self.assertEqual(len(fill.findall('.//s:animate', NS)) + len(lower.findall('.//s:animate', NS)), self.model['FLAP_ROWS'])
+            self.assertEqual(len(fill.findall('.//s:animateTransform', NS)) + len(lower.findall('.//s:animateTransform', NS)), self.model['FLAP_ROWS'])
+            still = root.find('.//s:pattern[@id="rock-ascii-fill-static"]', NS)
+            self.assertEqual([text.text for text in still.findall('.//s:text', NS)], list(self.model['FLAP_STATES'][0]))
             letters = root.find('.//s:g[@id="fixed-rock-letters"]/s:use', NS)
-            self.assertEqual(letters.get("fill"), "url(#rock-ascii-fill)")
+            self.assertEqual(letters.get('fill'), 'url(#rock-ascii-fill-static)')
 
     def test_suspension_is_bounded_closed_and_independent(self):
         tracks = self.model["TRACKS"]
