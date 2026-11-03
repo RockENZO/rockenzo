@@ -61,6 +61,19 @@ class ProfileTerminalTests(unittest.TestCase):
             self.assertEqual(clearance.get("href"), letters.get("href"))
             self.assertIsNotNone(root.find('.//s:radialGradient[@id="wave-feather"]', NS))
 
+    def test_letter_fill_is_stationary_ascii_text(self):
+        for asset in self.assets:
+            root = ET.parse(asset)
+            fill = root.find('.//s:pattern[@id="rock-ascii-fill"]', NS)
+            self.assertIsNotNone(fill)
+            rows = fill.findall('.//s:text', NS)
+            self.assertEqual(len(rows), 2)
+            self.assertTrue(all(row.text and row.text.isascii() for row in rows))
+            self.assertTrue(all(row.get("lengthAdjust") == "spacingAndGlyphs" for row in rows))
+            self.assertFalse(fill.findall('.//s:animate', NS))
+            letters = root.find('.//s:g[@id="fixed-rock-letters"]/s:use', NS)
+            self.assertEqual(letters.get("fill"), "url(#rock-ascii-fill)")
+
     def test_image_size_and_stationary_letter_contract(self):
         self.assertEqual(len(self.assets), 4)
         for asset in self.assets:
