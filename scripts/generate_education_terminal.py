@@ -47,6 +47,25 @@ ENTRIES = [
      ['problem solving · Python · SQL · REST APIs'], None),
 ]
 
+R = 14
+
+def window_shape(w, h, top=True, bottom=True):
+    """Closed outline of a window section; rounded only where it is an outer edge."""
+    x0, y0, x1, y1 = .5, .5, w - .5, h - .5
+    d = [f'M{x0} {y0 + R if top else y0}']
+    d.append(f'A{R} {R} 0 0 1 {x0 + R} {y0} H{x1 - R} A{R} {R} 0 0 1 {x1} {y0 + R}' if top else f'H{x1}')
+    d.append(f'V{y1 - R} A{R} {R} 0 0 1 {x1 - R} {y1} H{x0 + R} A{R} {R} 0 0 1 {x0} {y1 - R}' if bottom else f'V{y1} H{x0}')
+    return ' '.join(d) + ' Z'
+
+def window_border(w, h, top=True, bottom=True):
+    """Outline stroke that leaves seams between stacked images open."""
+    x0, y0, x1, y1 = .5, .5, w - .5, h - .5
+    if top and bottom:
+        return window_shape(w, h)
+    if top:
+        return f'M{x0} {y1 + .5} V{y0 + R} A{R} {R} 0 0 1 {x0 + R} {y0} H{x1 - R} A{R} {R} 0 0 1 {x1} {y0 + R} V{y1 + .5}'
+    return f'M{x0} {y0 - .5} V{y1 - R} A{R} {R} 0 0 0 {x0 + R} {y1} H{x1 - R} A{R} {R} 0 0 0 {x1} {y1 - R} V{y0 - .5}'
+
 def esc(s):
     return html.escape(s, quote=True)
 
@@ -72,7 +91,8 @@ def build(p):
         y += 6
     total = y + 14
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{total}" viewBox="0 0 {W} {total}" role="img" aria-label="Education and certification as a terminal listing">',
-           f'<rect width="{W}" height="{total}" fill="{p["bg"]}"/>',
+           f'<defs><clipPath id="win"><path d="{window_shape(W, total)}"/></clipPath></defs>',
+           f'<g clip-path="url(#win)"><rect width="{W}" height="{total}" fill="{p["bg"]}"/>',
            f'<path d="M.5 14.5 A14 14 0 0 1 14.5 .5 H{W-14.5} A14 14 0 0 1 {W-.5} 14.5 V28.5 H.5 Z" fill="{p["bar"]}"/>',
            f'<path d="M0 28.5H{W}" stroke="{p["line"]}"/>']
     for i, c in enumerate(p['dot']):
@@ -97,6 +117,8 @@ def build(p):
             out.append(f'<rect x="{bx}" y="{yy-BAR_H+1}" width="{BAR_W}" height="{BAR_H}" rx="2" fill="{p["track"]}"/>')
             out.append(f'<rect x="{bx}" y="{yy-BAR_H+1}" width="{round(BAR_W*prog,2)}" height="{BAR_H}" rx="2" fill="{p["fill"]}"/>')
             out.append(text(bx + BAR_W + 12, yy + 1, f'{round(prog*100)}%', 12, p['muted']))
+    out.append('</g>')
+    out.append(f'<path d="{window_shape(W, total)}" fill="none" stroke="{p["line"]}"/>')
     out.append('</svg>')
     return total, ''.join(out)
 

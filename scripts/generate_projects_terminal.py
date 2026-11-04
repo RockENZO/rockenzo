@@ -49,6 +49,25 @@ MORE = [
     ('flappy_bird_dqn-main', 'a DQN agent that learns to play Flappy Bird'),
 ]
 
+R = 14
+
+def window_shape(w, h, top=True, bottom=True):
+    """Closed outline of a window section; rounded only where it is an outer edge."""
+    x0, y0, x1, y1 = .5, .5, w - .5, h - .5
+    d = [f'M{x0} {y0 + R if top else y0}']
+    d.append(f'A{R} {R} 0 0 1 {x0 + R} {y0} H{x1 - R} A{R} {R} 0 0 1 {x1} {y0 + R}' if top else f'H{x1}')
+    d.append(f'V{y1 - R} A{R} {R} 0 0 1 {x1 - R} {y1} H{x0 + R} A{R} {R} 0 0 1 {x0} {y1 - R}' if bottom else f'V{y1} H{x0}')
+    return ' '.join(d) + ' Z'
+
+def window_border(w, h, top=True, bottom=True):
+    """Outline stroke that leaves seams between stacked images open."""
+    x0, y0, x1, y1 = .5, .5, w - .5, h - .5
+    if top and bottom:
+        return window_shape(w, h)
+    if top:
+        return f'M{x0} {y1 + .5} V{y0 + R} A{R} {R} 0 0 1 {x0 + R} {y0} H{x1 - R} A{R} {R} 0 0 1 {x1} {y0 + R} V{y1 + .5}'
+    return f'M{x0} {y0 - .5} V{y1 - R} A{R} {R} 0 0 0 {x0 + R} {y1} H{x1 - R} A{R} {R} 0 0 0 {x1} {y1 - R} V{y0 - .5}'
+
 def esc(s):
     return html.escape(s, quote=True)
 
@@ -82,7 +101,8 @@ def featured_svg(p):
     prompt_h = 40
     total = 28 + prompt_h + sum(heights) + 1
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{total}" viewBox="0 0 {W} {total}" role="img" aria-label="Featured projects, shown as split terminal panes">',
-           f'<rect width="{W}" height="{total}" fill="{p["bg"]}"/>',
+           f'<defs><clipPath id="win"><path d="{window_shape(W, total, bottom=False)}"/></clipPath></defs>',
+           f'<g clip-path="url(#win)"><rect width="{W}" height="{total}" fill="{p["bg"]}"/>',
            window_top(p, 'Projects — tmux 120×30'),
            text(16, 28 + 26, '~ $ ls projects/ --featured', 14, p['accent'])]
     y = 28 + prompt_h
@@ -102,17 +122,18 @@ def featured_svg(p):
                 ty += 17
         y += h
         out.append(f'<path d="M0 {y+.5}H{W}" stroke="{p["line"]}"/>')
+    out.append('</g>')
+    out.append(f'<path d="{window_border(W, total, bottom=False)}" fill="none" stroke="{p["line"]}"/>')
     out.append('</svg>')
     return ''.join(out)
 
 def summary_svg(p):
     h = 44
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{h}" viewBox="0 0 {W} {h}" role="img" aria-label="More projects, 5 hidden">',
-           f'<rect width="{W}" height="{h}" fill="{p["bg"]}"/>',
-           f'<path d="M0 .5H{W}" stroke="{p["line"]}"/>',
+           f'<path d="{window_shape(W, h, top=False)}" fill="{p["bg"]}"/>',
            text(16, 27, '▸ more projects', 14, p['accent']),
            text(16 + 14 * 0.6 * 17, 27, f'({len(MORE)})', 14, p['muted']),
-           f'<path d="M0 {h-.5}H{W}" stroke="{p["line"]}"/>',
+           f'<path d="{window_border(W, h, top=False)}" fill="none" stroke="{p["line"]}"/>',
            '</svg>']
     return ''.join(out)
 
@@ -124,13 +145,13 @@ def more_svg(p):
     body = 16 + len(lines) * row_h + 10
     total = body
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{total}" viewBox="0 0 {W} {total}" role="img" aria-label="Five more projects">',
-           f'<rect width="{W}" height="{total}" fill="{p["bg"]}"/>']
+           f'<path d="{window_shape(W, total)}" fill="{p["bg"]}"/>']
     y = 16 + 16
     for name, desc in lines:
         out.append(text(16, y, name, 13, p['label'], 600))
         out.append(text(16 + 14 * 0.6 * 30, y, desc, 12, p['fg']))
         y += row_h
-    out.append(f'<path d="M0 {total-.5}H{W}" stroke="{p["line"]}"/>')
+    out.append(f'<path d="{window_shape(W, total)}" fill="none" stroke="{p["line"]}"/>')
     out.append('</svg>')
     return ''.join(out)
 
