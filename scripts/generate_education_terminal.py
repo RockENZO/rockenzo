@@ -33,7 +33,7 @@ D = dict(bg='#0D1B33', bar='#16284B', line='#1E2D4D', fg='#E8EDF8', muted='#8B9B
 W = 880
 MONO = "Menlo,Consolas,ui-monospace,monospace"
 DATE_X, TITLE_X = 16, 170
-BAR_W, BAR_H = 220, 8
+DOTS, DOT_STEP, DOT_R = 24, 7.22, 2.6
 
 # (date, title, lines, progress or None). Progress is the share completed (0..1).
 ENTRIES = [
@@ -112,11 +112,12 @@ def build(p):
             out.append(text(TITLE_X, yy, line, 12, p['muted']))
         elif kind == 'bar':
             _, yy, prog = r
-            out.append(text(TITLE_X, yy + 1, 'progress', 12, p['muted']))
-            bx = TITLE_X + 78
-            out.append(f'<rect x="{bx}" y="{yy-BAR_H+1}" width="{BAR_W}" height="{BAR_H}" rx="2" fill="{p["track"]}"/>')
-            out.append(f'<rect x="{bx}" y="{yy-BAR_H+1}" width="{round(BAR_W*prog,2)}" height="{BAR_H}" rx="2" fill="{p["fill"]}"/>')
-            out.append(text(bx + BAR_W + 12, yy + 1, f'{round(prog*100)}%', 12, p['muted']))
+            # Dot meter drawn as circles so it aligns in any viewer font.
+            filled = round(DOTS * prog)
+            for i in range(DOTS):
+                c = p['fill'] if i < filled else p['track']
+                out.append(f'<circle cx="{round(TITLE_X + DOT_STEP * (i + .5), 2)}" cy="{yy - 3.5}" r="{DOT_R}" fill="{c}"/>')
+            out.append(text(round(TITLE_X + DOT_STEP * DOTS + 12, 2), yy + 1, f'{round(prog*100)}%', 12, p['muted']))
     out.append('</g>')
     out.append(f'<path d="{window_shape(W, total)}" fill="none" stroke="{p["line"]}"/>')
     out.append('</svg>')
