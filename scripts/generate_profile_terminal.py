@@ -309,9 +309,9 @@ for theme,pal in [('dark',D),('light',L)]:
   CARD_RADIUS=14
   TITLEBAR_H=28
   BODY_SHIFT=18
-  ys=[500,524,572,596,644,704,728,776,800,848,872] if mobile else [222,258,294,330,352,388,410,446,468]
+  ys=[500,524,572,596,644,704,728,776,800,848,872] if mobile else [245,277,309,341,362,394,415,447,468]
   compact_step=3 if mobile else 4
-  head_gap=34 if mobile else 22
+  head_gap=34 if mobile else 45
   rows=[yy - i*compact_step - head_gap for i,yy in enumerate(ys)]
   compact=(len(ys)-1)*compact_step + head_gap
   H -= BODY_SHIFT + compact
@@ -324,7 +324,7 @@ for theme,pal in [('dark',D),('light',L)]:
    out+=['<g transform="translate(28,-28) scale(.85)">'+mark+'</g>'];x,y=23,350
   else:
    cut=mark.index('<path d="M348 76V')
-   out+=['<g transform="translate(0,45)">'+mark[:cut]+'</g>','<path d="M348 76V536" stroke="{line}"/>'];x,y=382,94
+   out+=['<g transform="translate(0,45)">'+mark[:cut]+'</g>',f'<path d="M348 76V{H+6}" stroke="{{line}}"/>'];x,y=382,94
   out += [tx(x,y,'rockenzo@github',17,'accent'),typing_headline(x,y+67,32 if mobile else 40)]
   fields=[('STUDY','Master of IT (Applied AI) @ Adelaide University'),('GRADUATED','Bachelor of IT @ University of Adelaide (2025)'),('FOCUS','Web development / scalable apps / AI & ML'),('CORE','Python / React / Vue'),('','Elasticsearch / Docker / Streamlit'),('AI / ML','PyTorch / TensorFlow / scikit-learn'),('','Pandas / NumPy'),('LLM TOOLS','Codex / Claude Code / DeepSeek Harness'),('','Hugging Face / Ollama')]
   if mobile:
