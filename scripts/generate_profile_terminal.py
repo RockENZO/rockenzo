@@ -279,9 +279,9 @@ def command_area(x, y, cs, os):
     commands = ['cat about.txt', 'ls projects/', 'ls toolshed/']
     results = ['profile / skills / projects', 'agents/ research/ playground/ toolshed/', 'readme-reality/ demo-proof/']
     times = [i / 120 for i in range(121)]
-    parts = ['<g class="motion">']
+    parts = ['<g id="command-area"><g class="motion">']
     for j, (command, result) in enumerate(zip(commands, results)):
-        widths, visible, output_visible = [], [], []
+        widths, visible, output_visible, cursor_visible = [], [], [], []
         for i in range(121):
             t = (i / 10) % 12
             active, phase = int(t // 4), t % 4
@@ -289,12 +289,18 @@ def command_area(x, y, cs, os):
             widths.append(count * cw if active == j else 0)
             visible.append(1 if active == j else 0)
             output_visible.append(1 if active == j and 1.5 < phase < 3.2 else 0)
+            # Do not blink away while characters are entering or being deleted.
+            # Hold-only blinking uses the same sampled timeline as the reveal
+            # and cursor position, rather than an independent repeating clock.
+            holding = count == len(command) and phase < 3.2
+            blink_on = not holding or int(max(0, phase - (.2 + len(command)*.075)) / .6) % 2 == 0
+            cursor_visible.append(1 if active == j and blink_on else 0)
         parts += [f'<g opacity="{visible[0]}">' + anim('opacity', visible, times, 12, 'repeatCount="indefinite" calcMode="discrete"'),
                   f'<defs><clipPath id="command-{j}"><rect x="{x+off}" y="{y-cs-1}" width="0" height="{cs+8}">' + anim('width', widths, times, 12, 'repeatCount="indefinite" calcMode="discrete"') + '</rect></clipPath></defs>',
-                  tx(x, y, '~ $', cs, 'accent'), tx(x+off, y, command, cs, 'accent', f'clip-path="url(#command-{j})"'),
-                  f'<rect x="{x+off}" y="{y-cs*.92:.1f}" width="{cs*.55:.1f}" height="{cs*1.15:.1f}" fill="{{accent}}">' + anim('x', [x+off+w for w in widths], times, 12, 'repeatCount="indefinite" calcMode="discrete"') + anim('opacity', [1,0,1], [0,.5,1], 1.2, 'repeatCount="indefinite" calcMode="discrete"') + '</rect>',
+                  tx(x, y, '~ $', cs, 'accent'), tx(x+off, y, command, cs, 'accent', f'textLength="{len(command)*cw}" lengthAdjust="spacingAndGlyphs" clip-path="url(#command-{j})"'),
+                  f'<rect id="command-cursor-{j}" x="{x+off}" y="{y-cs*.92:.1f}" width="{cs*.55:.1f}" height="{cs*1.15:.1f}" fill="{{accent}}">' + anim('x', [x+off+w for w in widths], times, 12, 'repeatCount="indefinite" calcMode="discrete"') + anim('opacity', cursor_visible, times, 12, 'repeatCount="indefinite" calcMode="discrete"') + '</rect>',
                   '<g opacity="0">' + anim('opacity', output_visible, times, 12, 'repeatCount="indefinite" calcMode="discrete"') + tx(x, y+os*2.3, result, os, 'muted') + '</g></g>']
-    parts += ['</g>', '<g class="still">', tx(x,y,'~ $ cat about.txt',cs,'accent'), tx(x,y+os*2.3,results[0],os,'muted'), '</g>']
+    parts += ['</g>', '<g class="still">', tx(x,y,'~ $ cat about.txt',cs,'accent'), tx(x,y+os*2.3,results[0],os,'muted'), '</g></g>']
     return ''.join(parts)
 
 for theme,pal in [('dark',D),('light',L)]:

@@ -192,6 +192,41 @@ class ProfileTerminalTests(unittest.TestCase):
             self.assertEqual([dot.get('fill') for dot in dots], ['#FF5F57','#FEBC2E','#28C840'])
             self.assertNotIn('ROCK / FIELD NOTES', asset.read_text())
 
+    def test_command_cursor_stays_with_typing_and_deletion(self):
+        for asset in self.assets:
+            root = ET.parse(asset)
+            area = root.find('.//s:g[@id="command-area"]', NS)
+            self.assertIsNotNone(area)
+            saw_typing = saw_deleting = saw_hold_blink = False
+            for j in range(3):
+                clip = area.find(f'.//s:clipPath[@id="command-{j}"]/s:rect', NS)
+                reveal = clip.find('s:animate', NS)
+                widths = list(map(float, reveal.get('values').split(';')))
+                cursor = area.find(f'.//s:rect[@id="command-cursor-{j}"]', NS)
+                position = cursor.find('s:animate[@attributeName="x"]', NS)
+                opacity = cursor.find('s:animate[@attributeName="opacity"]', NS)
+                self.assertEqual(position.get('keyTimes'), reveal.get('keyTimes'))
+                self.assertEqual(opacity.get('keyTimes'), reveal.get('keyTimes'))
+                self.assertEqual(opacity.get('dur'), reveal.get('dur'))
+                positions = list(map(float, position.get('values').split(';')))
+                visible = list(map(float, opacity.get('values').split(';')))
+                text = area.find(f'.//s:text[@clip-path="url(#command-{j})"]', NS)
+                self.assertEqual(text.get('lengthAdjust'), 'spacingAndGlyphs')
+                self.assertAlmostEqual(float(text.get('textLength')), max(widths))
+                origin = float(clip.get('x'))
+                for i,(width,x) in enumerate(zip(widths,positions)):
+                    self.assertAlmostEqual(x-origin,width,places=4)
+                    local = i/10-j*4
+                    if not 0 <= local < 4: continue
+                    if local < 3.2 and width < max(widths) or local >= 3.2:
+                        self.assertEqual(visible[i],1)
+                    if i and width != widths[i-1]:
+                        self.assertEqual(visible[i],1)
+                        saw_typing |= width > widths[i-1]
+                        saw_deleting |= width < widths[i-1]
+                    saw_hold_blink |= width == max(widths) and visible[i] == 0
+            self.assertTrue(saw_typing and saw_deleting and saw_hold_blink)
+
     def test_requested_profile_copy(self):
         self.assertEqual(len(self.model["CAPTION_PHRASES"]),3)
         for asset in self.assets + list((ROOT/"assets").glob("profile-terminal-*-static.svg")):
