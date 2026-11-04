@@ -202,11 +202,16 @@ class ProfileTerminalTests(unittest.TestCase):
                 self.assertIsNotNone(titlebar)
                 self.assertNotEqual(background.get('fill'), titlebar.get('fill'))
                 self.assertEqual(titlebar.get('clip-path'), 'url(#window-clip)')
+                self.assertEqual(float(titlebar.get('height')), 31.5)
                 title = root.find('.//s:text[@id="window-title"]', NS)
                 self.assertIsNotNone(title)
-                expected = 'rockingmac — zsh' if '-mobile' in asset.stem else 'rockingmac — -zsh — 120×30'
+                expected = 'Profile — zsh' if '-mobile' in asset.stem else 'Profile — -zsh — 120×30'
                 self.assertEqual(title.text, expected)
                 self.assertEqual(title.get('text-anchor'), 'middle')
+                controls = root.find('.//s:g[@id="window-controls"]', NS)
+                dots = controls.findall('s:circle', NS)
+                self.assertEqual([dot.get('cy') for dot in dots], ['16', '16', '16'])
+                self.assertEqual([dot.get('cx') for dot in dots], ['24', '44', '64'])
 
     def test_command_cursor_stays_with_typing_and_deletion(self):
         for asset in self.assets:
