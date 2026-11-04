@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the featured-projects terminal panes as static SVGs.
 
-Writes assets/projects-*.svg in light and dark palettes. Run from any
+Writes assets/projects-*.svg in light and dark palettes, plus 360px -mobile variants. Run from any
 directory. --check verifies that tracked assets match this source.
 No network, fonts, scripts or animation are used.
 """
@@ -30,7 +30,6 @@ D = dict(bg='#0D1B33', bar='#16284B', line='#1E2D4D', pane='#0F2140', fg='#E8EDF
          muted='#8B9BB4', accent='#FF9F43', label='#A78BFA', dot=('#FF5F57', '#FEBC2E', '#28C840'))
 
 W = 880
-PANE_W = W // 2
 MONO = "Menlo,Consolas,ui-monospace,monospace"
 
 FEATURED = [
@@ -87,14 +86,17 @@ def window_top(p, title):
 def wrap(s, width):
     return textwrap.wrap(s, width=width, break_long_words=False)
 
-def featured_svg(p):
+def featured_svg(p, mobile=False):
+    cols = 1 if mobile else 2
+    pane_w = W // cols
+    chars = 44 if mobile else 52
     heights = []
     rows = []
-    for r in range(0, len(FEATURED), 2):
-        pair = FEATURED[r:r+2]
+    for r in range(0, len(FEATURED), cols):
+        pair = FEATURED[r:r+cols]
         h = 0
         for _, name, desc, link in pair:
-            lines = wrap(desc, 52)
+            lines = wrap(desc, chars)
             h = max(h, 26 + 14 + 20 + len(lines) * 17 + 24 + 14)
         rows.append((r, pair, h))
         heights.append(h)
@@ -103,21 +105,21 @@ def featured_svg(p):
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{total}" viewBox="0 0 {W} {total}" role="img" aria-label="Featured projects, shown as split terminal panes">',
            f'<defs><clipPath id="win"><path d="{window_shape(W, total, bottom=False)}"/></clipPath></defs>',
            f'<g clip-path="url(#win)"><rect width="{W}" height="{total}" fill="{p["bg"]}"/>',
-           window_top(p, 'Projects — tmux 120×30'),
+           window_top(p, 'Projects' if mobile else 'Projects — tmux 120×30'),
            text(16, 28 + 26, '~ $ ls projects/ --featured', 14, p['accent'])]
     y = 28 + prompt_h
     out.append(f'<path d="M0 {y+.5}H{W}" stroke="{p["line"]}"/>')
     for r, pair, h in rows:
         for col, (repo, name, desc, _) in enumerate(pair):
-            x = col * PANE_W
-            out.append(f'<rect x="{x}" y="{y}" width="{PANE_W}" height="{h}" fill="{p["bg"]}"/>')
-            out.append(f'<rect x="{x}" y="{y}" width="{PANE_W}" height="26" fill="{p["pane"]}"/>')
+            x = col * pane_w
+            out.append(f'<rect x="{x}" y="{y}" width="{pane_w}" height="{h}" fill="{p["bg"]}"/>')
+            out.append(f'<rect x="{x}" y="{y}" width="{pane_w}" height="26" fill="{p["pane"]}"/>')
             out.append(text(x + 14, y + 17, repo, 11, p['muted']))
-            out.append(f'<path d="M{x+PANE_W-.5} {y}V{y+h}" stroke="{p["line"]}"/>' if col == 0 else '')
-            out.append(f'<path d="M{x} {y+26.5}H{x+PANE_W}" stroke="{p["line"]}"/>')
+            out.append(f'<path d="M{x+pane_w-.5} {y}V{y+h}" stroke="{p["line"]}"/>' if col == 0 and cols > 1 else '')
+            out.append(f'<path d="M{x} {y+26.5}H{x+pane_w}" stroke="{p["line"]}"/>')
             out.append(text(x + 14, y + 26 + 24, name, 13, p['label']))
             ty = y + 26 + 24 + 20
-            for line in wrap(desc, 52):
+            for line in wrap(desc, chars):
                 out.append(text(x + 14, ty + 12, line, 12, p['fg']))
                 ty += 17
         y += h
@@ -137,7 +139,9 @@ def summary_svg(p):
            '</svg>']
     return ''.join(out)
 
-def more_svg(p):
+def more_svg(p, mobile=False):
+    if mobile:
+        return more_svg_mobile(p)
     lines = []
     for name, desc in MORE:
         lines.append((name, desc))
@@ -155,10 +159,31 @@ def more_svg(p):
     out.append('</svg>')
     return ''.join(out)
 
-for label, p in [('light', L), ('dark', D)]:
-    emit(f'projects-featured-{label}.svg', featured_svg(p))
-    emit(f'projects-more-summary-{label}.svg', summary_svg(p))
-    emit(f'projects-more-{label}.svg', more_svg(p))
+def more_svg_mobile(p):
+    """Narrow list: each name on its own line with the description wrapped below."""
+    rows = [(name, wrap(desc, 44)) for name, desc in MORE]
+    total = 16 + sum(20 + 17 * len(d) + 10 for _, d in rows) + 6
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{total}" viewBox="0 0 {W} {total}" role="img" aria-label="Five more projects">',
+           f'<path d="{window_shape(W, total)}" fill="{p["bg"]}"/>']
+    y = 16 + 16
+    for name, desc in rows:
+        out.append(text(16, y, name, 13, p['label'], 600))
+        y += 20
+        for line in desc:
+            out.append(text(16, y, line, 12, p['fg']))
+            y += 17
+        y += 10
+    out.append(f'<path d="{window_shape(W, total)}" fill="none" stroke="{p["line"]}"/>')
+    out.append('</svg>')
+    return ''.join(out)
+
+for mobile in (False, True):
+    W = 360 if mobile else 880
+    sfx = '-mobile' if mobile else ''
+    for label, p in [('light', L), ('dark', D)]:
+        emit(f'projects-featured-{label}{sfx}.svg', featured_svg(p, mobile))
+        emit(f'projects-more-summary-{label}{sfx}.svg', summary_svg(p))
+        emit(f'projects-more-{label}{sfx}.svg', more_svg(p, mobile))
 
 if mismatches:
     raise SystemExit('Generated assets differ: ' + ', '.join(mismatches))
