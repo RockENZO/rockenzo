@@ -305,18 +305,18 @@ def command_area(x, y, cs, os):
 
 for theme,pal in [('dark',D),('light',L)]:
  for mobile in [False,True]:
-  W,H=(360,1010) if mobile else (900,602)
+  W,H=(360,970) if mobile else (900,602)
   CARD_RADIUS=14
   TITLEBAR_H=28
   BODY_SHIFT=18
-  ys=[500,524,572,596,644,704,728,776,800,848,872] if mobile else [245,277,309,341,362,394,415,447,468]
+  ys=[500,524,572,632,656,704,728,776,800] if mobile else [277,309,341,362,394,415,447,468]
   compact_step=3 if mobile else 4
-  head_gap=34 if mobile else 45
+  head_gap=34 if mobile else 77
   rows=[yy - i*compact_step - head_gap for i,yy in enumerate(ys)]
   compact=(len(ys)-1)*compact_step + head_gap
   H -= BODY_SHIFT + compact
   window_title = 'Profile' if mobile else 'Profile — 120×30'
-  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII-filled geometric ROCK lettering over animated ASCII waves. Headline cycles through Praxis, Palimpsest and Autopoiesis. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker, Streamlit. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama. Asynchronously suspended geometric letters with an ASCII-text fill sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<defs><clipPath id="window-clip"><rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="{CARD_RADIUS}"/></clipPath></defs>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="{CARD_RADIUS}" fill="{{bg}}" stroke="{{line}}"/>',f'<rect id="titlebar" x=".5" y=".5" width="{W-1}" height="{TITLEBAR_H}" fill="{{titlebar}}" clip-path="url(#window-clip)"/>',f'<path d="M1 {TITLEBAR_H+0.5}H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">','<g id="window-controls" aria-hidden="true"><circle cx="14.5" cy="14.5" r="5.5" fill="#FF5F57" stroke="#000" stroke-opacity=".18" stroke-width="1"/><circle cx="34.5" cy="14.5" r="5.5" fill="#FEBC2E" stroke="#000" stroke-opacity=".18" stroke-width="1"/><circle cx="54.5" cy="14.5" r="5.5" fill="#28C840" stroke="#000" stroke-opacity=".18" stroke-width="1"/></g>',f'<text id="window-title" x="{W/2}" y="18.5" font-size="12" text-anchor="middle" fill="{{muted}}">{window_title}</text>',f'<g transform="translate(0,-{BODY_SHIFT})">']
+  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII-filled geometric ROCK lettering over animated ASCII waves. Headline cycles through Praxis, Palimpsest and Autopoiesis. Master of IT (Applied AI) at Adelaide University, in progress. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker, Streamlit. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama. Asynchronously suspended geometric letters with an ASCII-text fill sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<defs><clipPath id="window-clip"><rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="{CARD_RADIUS}"/></clipPath></defs>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="{CARD_RADIUS}" fill="{{bg}}" stroke="{{line}}"/>',f'<rect id="titlebar" x=".5" y=".5" width="{W-1}" height="{TITLEBAR_H}" fill="{{titlebar}}" clip-path="url(#window-clip)"/>',f'<path d="M1 {TITLEBAR_H+0.5}H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">','<g id="window-controls" aria-hidden="true"><circle cx="14.5" cy="14.5" r="5.5" fill="#FF5F57" stroke="#000" stroke-opacity=".18" stroke-width="1"/><circle cx="34.5" cy="14.5" r="5.5" fill="#FEBC2E" stroke="#000" stroke-opacity=".18" stroke-width="1"/><circle cx="54.5" cy="14.5" r="5.5" fill="#28C840" stroke="#000" stroke-opacity=".18" stroke-width="1"/></g>',f'<text id="window-title" x="{W/2}" y="18.5" font-size="12" text-anchor="middle" fill="{{muted}}">{window_title}</text>',f'<g transform="translate(0,-{BODY_SHIFT})">']
   mark=art
   for old,new in MARK_COLORS[theme].items():mark=mark.replace(old,new)
   if mobile:
@@ -326,9 +326,9 @@ for theme,pal in [('dark',D),('light',L)]:
    cut=mark.index('<path d="M348 76V')
    out+=['<g transform="translate(0,-40)">'+mark[:cut]+'</g>',f'<path d="M348 76V{H+6}" stroke="{{line}}"/>'];x,y=382,94
   out += [tx(x,y,'rockenzo@github',17,'accent'),typing_headline(x,y+67,32 if mobile else 40)]
-  fields=[('STUDY','Master of IT (Applied AI) @ Adelaide University'),('GRADUATED','Bachelor of IT @ University of Adelaide (2025)'),('FOCUS','Web development / scalable apps / AI & ML'),('CORE','Python / React / Vue'),('','Elasticsearch / Docker / Streamlit'),('AI / ML','PyTorch / TensorFlow / scikit-learn'),('','Pandas / NumPy'),('LLM TOOLS','Codex / Claude Code / DeepSeek Harness'),('','Hugging Face / Ollama')]
+  fields=[("STUDY","Master's in progress @ Adelaide University"),('FOCUS','Web development / scalable apps / AI & ML'),('CORE','Python / React / Vue'),('','Elasticsearch / Docker / Streamlit'),('AI / ML','PyTorch / TensorFlow / scikit-learn'),('','Pandas / NumPy'),('LLM TOOLS','Codex / Claude Code / DeepSeek Harness'),('','Hugging Face / Ollama')]
   if mobile:
-   fields=[('STUDY','Master of IT (Applied AI)'),('','@ Adelaide University'),('GRADUATED','Bachelor of IT (2025)'),('','@ University of Adelaide'),('FOCUS','Web development / scalable apps / AI & ML'),('CORE','Python / React / Vue'),('','Elasticsearch / Docker / Streamlit'),('AI / ML','PyTorch / TensorFlow / scikit-learn'),('','Pandas / NumPy'),('LLM TOOLS','Codex / Claude Code'),('','DeepSeek Harness / Hugging Face / Ollama')]
+   fields=[("STUDY","Master's in progress"),('','@ Adelaide University'),('FOCUS','Web development / scalable apps / AI & ML'),('CORE','Python / React / Vue'),('','Elasticsearch / Docker / Streamlit'),('AI / ML','PyTorch / TensorFlow / scikit-learn'),('','Pandas / NumPy'),('LLM TOOLS','Codex / Claude Code'),('','DeepSeek Harness / Hugging Face / Ollama')]
   value_x=23 if mobile else 462;size=13 if mobile else 14;hy=14 if mobile else 17;cw=size*.603
   out += ['<g class="motion" opacity=".8"><rect x="'+str(x-8)+'" y="'+str(rows[0]-hy)+'" width="'+str(332 if mobile else 497)+'" height="'+str(43 if mobile else 27)+'" rx="3" fill="{active}">'+anim('y',[v-hy for v in rows]+[rows[0]-hy],[i/len(rows) for i in range(len(rows)+1)],len(rows)*2,'begin="5s" repeatCount="indefinite" calcMode="discrete"')+'</rect></g>']
   for i,((label,value),yy) in enumerate(zip(fields,rows)):
@@ -340,7 +340,7 @@ for theme,pal in [('dark',D),('light',L)]:
    out += [f'<defs><clipPath id="about-{i}"><rect x="{value_x}" y="{vy-hy}" width="{width}" height="{hy+6}">'+anim('width',vals,times,duration,'fill="freeze" calcMode="discrete"')+'</rect></clipPath></defs>',tx(value_x,vy,value,size,extra=f'class="motion" clip-path="url(#about-{i})"'),tx(value_x,vy,value,size,extra='class="still"')]
   # A quiet line pointer cycles after the one-time boot; factual values stay fully readable.
   out += ['<g class="motion"><rect x="'+str(8 if mobile else 365)+'" y="'+str(rows[0]-8)+'" width="3" height="9" fill="{label}" opacity="0">'+anim('opacity',[0,0,1],[0,.999,1],5,'fill="freeze"')+anim('y',[v-8 for v in rows]+[rows[0]-8],[i/len(rows) for i in range(len(rows)+1)],len(rows)*2,'begin="5s" repeatCount="indefinite" calcMode="discrete"')+'</rect></g>']
-  fy=(952 if mobile else 528) - compact
+  fy=(912 if mobile else 528) - compact
   out += [f'<path d="M{x} {fy-24}H{344 if mobile else 870}" stroke="{{line}}"/>', command_area(x,fy,14 if mobile else 15,13 if mobile else 15), '</g></g></svg>']
   s=''.join(out)
   for k,v in pal.items():s=s.replace('{'+k+'}',v)
@@ -363,7 +363,7 @@ for theme,pal in [('dark',D),('light',L)]:
 # Quiet chapter markers balance the animated terminal card. Transparent SVGs
 # use explicit light/dark picture sources and a 360px intrinsic width, so type
 # remains readable on narrow screens rather than shrinking a desktop banner.
-SECTION_PATHS = ['projects', 'playground', 'toolshed', 'agents', 'education', 'activity', 'elsewhere']
+SECTION_PATHS = ['education', 'projects', 'playground', 'toolshed', 'agents', 'activity', 'elsewhere']
 for theme, palette in [('dark', D), ('light', L)]:
  for number, path in enumerate(SECTION_PATHS, 1):
   rule_start = round(60 + len(path)*22*.603 + 20, 2)
