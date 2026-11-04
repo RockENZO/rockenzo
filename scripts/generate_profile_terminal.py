@@ -358,7 +358,9 @@ SECTION_PATHS = ['projects', 'playground', 'toolshed', 'agents', 'education', 'a
 for theme, palette in [('dark', D), ('light', L)]:
  for number, path in enumerate(SECTION_PATHS, 1):
   rule_start = round(60 + len(path)*22*.603 + 20, 2)
-  wordmark = f'<svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40" role="img" aria-labelledby="section-title"><title id="section-title">{number:02d} / {path}</title><g font-family="Menlo,Consolas,monospace"><text x="0" y="28" font-size="14" letter-spacing="1" fill="{palette["accent"]}">{number:02d}</text><text x="35" y="28" font-size="19" fill="{palette["muted"]}">/</text><text x="60" y="28" font-size="22" font-weight="500" fill="{palette["label"]}">{path}</text></g><path d="M{rule_start} 22H359" fill="none" stroke="{palette["line"]}"/></svg>'
+  # A quiet terminal rule: a rounded 2.5px accent-coloured line rather than the
+  # old hairline, closed by a small accent block like a terminal cursor.
+  wordmark = f'<svg xmlns="http://www.w3.org/2000/svg" width="360" height="40" viewBox="0 0 360 40" role="img" aria-labelledby="section-title"><title id="section-title">{number:02d} / {path}</title><g font-family="Menlo,Consolas,monospace"><text x="0" y="28" font-size="14" letter-spacing="1" fill="{palette["accent"]}">{number:02d}</text><text x="35" y="28" font-size="19" fill="{palette["muted"]}">/</text><text x="60" y="28" font-size="22" font-weight="500" fill="{palette["label"]}">{path}</text></g><path d="M{rule_start} 22H347" fill="none" stroke="{palette["label"]}" stroke-width="2.5" stroke-linecap="round"/><rect x="351" y="18.5" width="7" height="7" rx="1.5" fill="{palette["accent"]}"/></svg>'
   emit(p/f'section-{path}-{theme}.svg', wordmark)
 
 if mismatches:
