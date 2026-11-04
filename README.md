@@ -27,6 +27,8 @@
   </picture>
 </h3>
 <picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/education-terminal-dark-mobile.svg" />
+  <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/education-terminal-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/education-terminal-dark.svg" />
   <img src="assets/education-terminal-light.svg" width="100%" alt="Education: Master of Information Technology (Applied AI) at Adelaide University, 50% complete. Bachelor of Information Technology at University of Adelaide, 2023 to 2025, complete, with High Distinction in Applied Programming and in Computer Systems, Networks and Security, and Distinction in AI Technologies, Web and Database Computing, and Programming for IT Specialists. HackerRank Software Engineer, September 2024: problem solving, Python, SQL and REST APIs." />
 </picture>
@@ -40,6 +42,8 @@
 </h3>
 
 <picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/projects-featured-dark-mobile.svg" />
+  <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/projects-featured-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/projects-featured-dark.svg" />
   <img src="assets/projects-featured-light.svg" width="100%" alt="Featured projects in terminal panes: datapipeline-etl, NLP Cyber Harm Detection, Fraud dataset, LLM web scraper, MyWeather and Football match analysis." />
 </picture>
@@ -54,9 +58,11 @@
 </sub></p>
 
 <details>
-<summary><picture><source media="(prefers-color-scheme: dark)" srcset="assets/projects-more-summary-dark.svg" /><img src="assets/projects-more-summary-light.svg" width="100%" alt="More projects (5)" /></picture></summary>
+<summary><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/projects-more-summary-dark-mobile.svg" /><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/projects-more-summary-light-mobile.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/projects-more-summary-dark.svg" /><img src="assets/projects-more-summary-light.svg" width="100%" alt="More projects (5)" /></picture></summary>
 
 <picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/projects-more-dark-mobile.svg" />
+  <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/projects-more-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/projects-more-dark.svg" />
   <img src="assets/projects-more-light.svg" width="100%" alt="More projects: odyssey, MagicTrick, ControllerMouse, Road_Semantic_Segmentation_CV and flappy_bird_dqn-main." />
 </picture>

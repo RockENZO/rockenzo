@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Generate the education section as a static terminal-style SVG.
 
-Writes assets/education-terminal-{light,dark}.svg. Run from any directory.
+Writes assets/education-terminal-{light,dark}[-mobile].svg. Run from any directory.
 --check verifies that tracked assets match this source. No network, fonts,
 scripts or animation are used. Progress values are data in PROGRESS below.
 """
 from pathlib import Path
 import argparse
 import html
+import textwrap
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--check', action='store_true', help='verify assets without writing')
@@ -30,7 +31,6 @@ D = dict(bg='#0D1B33', bar='#16284B', line='#1E2D4D', fg='#E8EDF8', muted='#8B9B
          accent='#FF9F43', label='#A78BFA', track='#1E2D4D', fill='#A78BFA',
          dot=('#FF5F57', '#FEBC2E', '#28C840'))
 
-W = 880
 MONO = "Menlo,Consolas,ui-monospace,monospace"
 DATE_X, TITLE_X = 16, 170
 DOTS, DOT_STEP, DOT_R = 24, 7.22, 2.6
@@ -73,15 +73,30 @@ def text(x, y, s, size, fill, weight=None):
     w = f' font-weight="{weight}"' if weight else ''
     return f'<text x="{x}" y="{y}" font-family="{MONO}" font-size="{size}" fill="{fill}"{w} xml:space="preserve">{esc(s)}</text>'
 
-def build(p):
+def wrap(s, width):
+    return textwrap.wrap(s, width=width, break_long_words=False)
+
+def build(p, mobile=False):
+    W = 360 if mobile else 880
+    tx = 16 if mobile else TITLE_X
     rows = []
     y = 28 + 44  # title bar plus prompt line
     rows.append(('prompt', y))
     y += 34
     for date, title, lines, prog in ENTRIES:
         y += 8
-        rows.append(('entry', y, date, title))
-        y += 22
+        if mobile:
+            # Narrow layout: date above a wrapped title, details wrapped below.
+            rows.append(('date', y, date))
+            y += 21
+            for part in wrap(title, 40):
+                rows.append(('title', y, part))
+                y += 19
+            y += 3
+            lines = [part for line in lines for part in wrap(line, 44)]
+        else:
+            rows.append(('entry', y, date, title))
+            y += 22
         for line in lines:
             rows.append(('line', y, line))
             y += 19
@@ -97,7 +112,7 @@ def build(p):
            f'<path d="M0 28.5H{W}" stroke="{p["line"]}"/>']
     for i, c in enumerate(p['dot']):
         out.append(f'<circle cx="{14.5+20*i}" cy="14.5" r="5.5" fill="{c}"/>')
-    out.append(text(W/2, 18.5, 'Education — 120×30', 12, p['muted']).replace('<text ', '<text text-anchor="middle" '))
+    out.append(text(W/2, 18.5, 'Education' if mobile else 'Education — 120×30', 12, p['muted']).replace('<text ', '<text text-anchor="middle" '))
     for r in rows:
         kind = r[0]
         if kind == 'prompt':
@@ -107,25 +122,30 @@ def build(p):
             _, yy, date, title = r
             out.append(text(DATE_X, yy, date, 13, p['label']))
             out.append(text(TITLE_X, yy, title, 13, p['fg'], 600))
+        elif kind == 'date':
+            out.append(text(tx, r[1], r[2], 12, p['label']))
+        elif kind == 'title':
+            out.append(text(tx, r[1], r[2], 13, p['fg'], 600))
         elif kind == 'line':
             _, yy, line = r
-            out.append(text(TITLE_X, yy, line, 12, p['muted']))
+            out.append(text(tx, yy, line, 12, p['muted']))
         elif kind == 'bar':
             _, yy, prog = r
             # Dot meter drawn as circles so it aligns in any viewer font.
             filled = round(DOTS * prog)
             for i in range(DOTS):
                 c = p['fill'] if i < filled else p['track']
-                out.append(f'<circle cx="{round(TITLE_X + DOT_STEP * (i + .5), 2)}" cy="{yy - 3.5}" r="{DOT_R}" fill="{c}"/>')
-            out.append(text(round(TITLE_X + DOT_STEP * DOTS + 12, 2), yy + 1, f'{round(prog*100)}%', 12, p['muted']))
+                out.append(f'<circle cx="{round(tx + DOT_STEP * (i + .5), 2)}" cy="{yy - 3.5}" r="{DOT_R}" fill="{c}"/>')
+            out.append(text(round(tx + DOT_STEP * DOTS + 12, 2), yy + 1, f'{round(prog*100)}%', 12, p['muted']))
     out.append('</g>')
     out.append(f'<path d="{window_shape(W, total)}" fill="none" stroke="{p["line"]}"/>')
     out.append('</svg>')
     return total, ''.join(out)
 
 for label, p in [('light', L), ('dark', D)]:
-    _, svg = build(p)
-    emit(f'education-terminal-{label}.svg', svg)
+    for mobile in (False, True):
+        _, svg = build(p, mobile)
+        emit(f'education-terminal-{label}{"-mobile" if mobile else ""}.svg', svg)
 
 if mismatches:
     raise SystemExit('Generated assets differ: ' + ', '.join(mismatches))
