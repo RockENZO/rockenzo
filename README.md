@@ -201,10 +201,11 @@
     <img src="assets/section-education-light.svg" width="360" alt="05 / education" />
   </picture>
 </h3>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/education-terminal-dark.svg" />
+  <img src="assets/education-terminal-light.svg" width="100%" alt="Education: Master of Information Technology (Applied AI) at Adelaide University, 50% complete; Bachelor of Information Technology at University of Adelaide, 2023 to 2025, complete; HackerRank Software Engineer, September 2024." />
+</picture>
 
-- **Master of Information Technology (Applied Artificial Intelligence)**, Adelaide University (2026 to present).
-- **Bachelor of Information Technology**, University of Adelaide (2023 to 2025). High Distinctions in Applied Programming and in Computer Systems, Networks &amp; Security; Distinctions in AI Technologies, Web &amp; Database Computing and Programming for IT Specialists.
-- **HackerRank Software Engineer** (Sep 2024): problem solving, Python, SQL, REST APIs. <a href="https://www.hackerrank.com/certificates/iframe/1d18ed03135b"><img src="https://img.shields.io/badge/Verify%20certificate-FF9F43?style=flat-square&logoColor=0D1B33" alt="Verify certificate" /></a>
 
 <h3 id="-development-activity">
   <picture>
