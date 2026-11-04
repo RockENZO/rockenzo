@@ -202,7 +202,7 @@ class ProfileTerminalTests(unittest.TestCase):
                 self.assertIsNotNone(titlebar)
                 self.assertNotEqual(background.get('fill'), titlebar.get('fill'))
                 self.assertEqual(titlebar.get('clip-path'), 'url(#window-clip)')
-                self.assertEqual(float(titlebar.get('height')), 31.5)
+                self.assertEqual(float(titlebar.get('height')), 28)
                 title = root.find('.//s:text[@id="window-title"]', NS)
                 self.assertIsNotNone(title)
                 expected = 'Profile' if '-mobile' in asset.stem else 'Profile — 120×30'
@@ -210,10 +210,10 @@ class ProfileTerminalTests(unittest.TestCase):
                 self.assertEqual(title.get('text-anchor'), 'middle')
                 controls = root.find('.//s:g[@id="window-controls"]', NS)
                 dots = controls.findall('s:circle', NS)
-                self.assertEqual([dot.get('cy') for dot in dots], ['12.5'] * 3)
-                self.assertEqual([dot.get('cx') for dot in dots], ['12.5', '32.5', '52.5'])
+                self.assertEqual([dot.get('cy') for dot in dots], ['14.5'] * 3)
+                self.assertEqual([dot.get('cx') for dot in dots], ['14.5', '34.5', '54.5'])
                 # The red lamp's centre coincides with the window's top-left corner-radius centre.
-                self.assertEqual((dots[0].get('cx'), dots[0].get('cy')), ('12.5', '12.5'))
+                self.assertEqual((dots[0].get('cx'), dots[0].get('cy')), ('14.5', '14.5'))
 
     def test_command_cursor_stays_with_typing_and_deletion(self):
         for asset in self.assets:
