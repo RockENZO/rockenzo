@@ -59,3 +59,9 @@ The card uses the same palette as the rest of the README: navy `#0D1B33` backgro
 ## GitHub Pages dark theme
 
 `_includes/head-custom.html` is the Jekyll Primer theme's head hook for the published page (https://rockenzo.github.io/rockenzo/), which renders `README.md`. It sets a navy page background and palette-matched links, tables and code, and a small script rewrites the README's light/dark `<picture>` sources so the always-dark page always shows the dark card. github.com is unaffected: it ignores this file and keeps following the viewer's colour scheme.
+
+## Cycling headline
+
+The headline types `Praxis.`, `Palimpsest.` and `Autopoiesis.` in order, with 100 ms character entry, a two-second completed-word hold, 50 ms character deletion and a 300 ms blank handoff. A shared blinking underscore cursor follows the current character boundary. SVG clip widths and explicit text advances keep the layout fixed; the longest word fits both desktop and mobile cards. This is decorative text animation. The SVG description names all three words; reduced-motion and explicit static images show `Praxis.` immediately. Without SMIL support the first word remains visible.
+
+The upper-left title bar uses three decorative macOS-style red, yellow and green circles. They are hidden from the accessibility tree and do not imply working window controls.

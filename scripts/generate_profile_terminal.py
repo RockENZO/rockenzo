@@ -236,6 +236,43 @@ def tx(x,y,v,size=11,c='fg',extra=''):
  return f'<text x="{x}" y="{y}" font-size="{size}" fill="{{{c}}}" {extra}>{html.escape(v)}</text>'
 def anim(attr,values,times,dur,extra=''):
  return f'<animate attributeName="{attr}" values="'+ ';'.join(str(round(v,5)) if isinstance(v,(float,int)) else v for v in values)+'" keyTimes="'+';'.join(str(round(t,6)) for t in times)+f'" dur="{dur}s" {extra}/>'
+HEADLINE_WORDS = ['Praxis.', 'Palimpsest.', 'Autopoiesis.']
+
+def headline_timeline():
+    # Events occur only when a character changes; a two-second hold costs no
+    # extra keyframes. The final blank state matches the start of the loop.
+    t = 0.
+    events = [(t, 0, 0)]
+    for active, word in enumerate(HEADLINE_WORDS):
+        for count in range(1, len(word) + 1):
+            t = round(t + .1, 5)
+            events.append((t, active, count))
+        t = round(t + 2., 5)
+        for count in range(len(word) - 1, -1, -1):
+            t = round(t + .05, 5)
+            events.append((t, active, count))
+        t = round(t + .3, 5)
+        events.append((t, (active + 1) % len(HEADLINE_WORDS), 0))
+    return events, t
+
+def typing_headline(x, y, size):
+    events, duration = headline_timeline()
+    times = [t / duration for t, _, _ in events]
+    advance = size * .603
+    repeat = 'repeatCount="indefinite" calcMode="discrete"'
+    parts = ['<g id="profile-headline" aria-label="'+html.escape(' '.join(HEADLINE_WORDS))+'"><g class="motion">']
+    for active, word in enumerate(HEADLINE_WORDS):
+        widths = [count * advance if current == active else 0 for _, current, count in events]
+        visible = [1 if current == active else 0 for _, current, _ in events]
+        # First word remains visible if declarative animation is unsupported.
+        base_width = len(word) * advance if active == 0 else 0
+        parts += [f'<g opacity="{1 if active == 0 else 0}">'+anim('opacity', visible, times, duration, repeat),
+                  f'<defs><clipPath id="headline-{active}"><rect x="{x}" y="{y-size}" width="{base_width}" height="{size+10}">'+anim('width', widths, times, duration, repeat)+'</rect></clipPath></defs>',
+                  tx(x,y,word,size,extra=f'textLength="{len(word)*advance}" lengthAdjust="spacingAndGlyphs" clip-path="url(#headline-{active})"'), '</g>']
+    parts += [f'<rect x="{x+len(HEADLINE_WORDS[0])*advance}" y="{y+5}" width="{advance*.85}" height="2" fill="{{accent}}">'+anim('x',[x+count*advance for _,_,count in events],times,duration,repeat)+anim('opacity',[1,0,1],[0,.5,1],1.2,repeat)+'</rect></g>',
+              '<g class="still">'+tx(x,y,HEADLINE_WORDS[0],size)+'</g></g>']
+    return ''.join(parts)
+
 def command_area(x, y, cs, os):
     cw = cs * .603
     off = round(4 * cw)
@@ -263,7 +300,7 @@ def command_area(x, y, cs, os):
 for theme,pal in [('dark',D),('light',L)]:
  for mobile in [False,True]:
   W,H=(360,1010) if mobile else (900,602)
-  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII-filled geometric ROCK lettering over animated ASCII waves. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker, Streamlit. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama. Asynchronously suspended geometric letters with an ASCII-text fill sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">',tx(22,29,'ROCK / FIELD NOTES',15,'muted'),tx(W-130,29,'PROFILE 01',14,'label')]
+  out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">','<title id="title">RockENZO — animated terminal profile</title>','<desc id="desc">Original ASCII-filled geometric ROCK lettering over animated ASCII waves. Headline cycles through Praxis, Palimpsest and Autopoiesis. Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide, 2025. Focus: web development, scalable apps, AI and ML. Core: Python, React, Vue, Elasticsearch, Docker, Streamlit. AI and ML: PyTorch, TensorFlow, scikit-learn, Pandas, NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama. Asynchronously suspended geometric letters with an ASCII-text fill sit over a decorative, multi-source ASCII interference background. Reveal and cursor effects do not execute commands or represent live system activity.</desc>','<style>.still{display:none}@media(prefers-reduced-motion:reduce){.motion{display:none}.still{display:inline}}</style>',f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="12" fill="{{bg}}" stroke="{{line}}"/>',f'<path d="M1 46H{W-1}" stroke="{{line}}"/>','<g font-family="Menlo,Consolas,monospace">','<g id="window-controls" aria-hidden="true"><circle cx="23" cy="24" r="5.5" fill="#FF5F57"/><circle cx="41" cy="24" r="5.5" fill="#FEBC2E"/><circle cx="59" cy="24" r="5.5" fill="#28C840"/></g>',tx(W-130,29,'PROFILE 01',14,'label')]
   mark=art
   for old,new in MARK_COLORS[theme].items():mark=mark.replace(old,new)
   if mobile:
@@ -272,7 +309,7 @@ for theme,pal in [('dark',D),('light',L)]:
   else:
    cut=mark.index('<path d="M348 76V')
    out+=['<g transform="translate(0,45)">'+mark[:cut]+'</g>','<path d="M348 76V536" stroke="{line}"/>'];x,y=382,94
-  out += [tx(x,y,'rockenzo@github',17,'accent'),tx(x,y+49,'Build. Verify.',28 if mobile else 34),tx(x,y+88,'Make it tangible.',25 if mobile else 29)]
+  out += [tx(x,y,'rockenzo@github',17,'accent'),typing_headline(x,y+67,32 if mobile else 40)]
   fields=[('STUDY','Master of IT (Applied AI) @ Adelaide University'),('GRADUATED','Bachelor of IT @ University of Adelaide (2025)'),('FOCUS','Web development / scalable apps / AI & ML'),('CORE','Python / React / Vue'),('','Elasticsearch / Docker / Streamlit'),('AI / ML','PyTorch / TensorFlow / scikit-learn'),('','Pandas / NumPy'),('LLM TOOLS','Codex / Claude Code / DeepSeek Harness'),('','Hugging Face / Ollama')]
   if mobile:
    fields=[('STUDY','Master of IT (Applied AI)'),('','@ Adelaide University'),('GRADUATED','Bachelor of IT (2025)'),('','@ University of Adelaide'),('FOCUS','Web development / scalable apps / AI & ML'),('CORE','Python / React / Vue'),('','Elasticsearch / Docker / Streamlit'),('AI / ML','PyTorch / TensorFlow / scikit-learn'),('','Pandas / NumPy'),('LLM TOOLS','Codex / Claude Code'),('','DeepSeek Harness / Hugging Face / Ollama')]
