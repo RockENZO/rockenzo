@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Rock Wang">
+  <title>Rock Wang</title>
+  <rect width="64" height="64" rx="14" fill="#0D1B33"/>
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#1E2D4D" stroke-width="2"/>
+  <path d="M17 21l12 11-12 11" fill="none" stroke="#A78BFA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="34" y="41" width="15" height="6" rx="3" fill="#FF9F43"/>
+</svg>
