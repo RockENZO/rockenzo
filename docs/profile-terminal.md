@@ -65,3 +65,7 @@ The card uses the same palette as the rest of the README: navy `#0D1B33` backgro
 The headline types `Praxis.`, `Palimpsest.` and `Autopoiesis.` in order, with 100 ms character entry, a two-second completed-word hold, 50 ms character deletion and a 300 ms blank handoff. A shared blinking underscore cursor follows the current character boundary. SVG clip widths and explicit text advances keep the layout fixed; the longest word fits both desktop and mobile cards. This is decorative text animation. The SVG description names all three words; reduced-motion and explicit static images show `Praxis.` immediately. Without SMIL support the first word remains visible.
 
 The upper-left title bar uses three decorative macOS-style red, yellow and green circles. They are hidden from the accessibility tree and do not imply working window controls.
+
+## Command cursor synchronization
+
+The command line below LLM tools keeps its cursor visible throughout typing and deletion. It blinks only while a completed command holds. Reveal width, cursor position and cursor opacity use the same twelve-second sampled timeline; explicit `textLength` and `spacingAndGlyphs` pin the text advance to that cursor grid across fallback fonts. The prompt, command cycle, output text and static fallback remain the same.
