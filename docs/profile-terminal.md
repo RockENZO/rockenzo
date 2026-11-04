@@ -69,3 +69,7 @@ The upper-left title bar uses three decorative macOS-style red, yellow and green
 ## Command cursor synchronization
 
 The command line below LLM tools keeps its cursor visible throughout typing and deletion. It blinks only while a completed command holds. Reveal width, cursor position and cursor opacity use the same twelve-second sampled timeline; explicit `textLength` and `spacingAndGlyphs` pin the text advance to that cursor grid across fallback fonts. The prompt, command cycle, output text and static fallback remain the same.
+
+## Static section wordmarks
+
+Seven numbered section headings use quiet `01 / projects` through `07 / elsewhere` wordmarks, generated as fourteen lightweight theme-specific `assets/section-*.svg` files by the same script. They use the card's gold, lavender and neutral palette, transparent backgrounds, system monospace fonts and a short rule, with no animation or network resources. Their 360 by 40 intrinsic size keeps the type readable on mobile. Native h3 headings retain their previous fragment IDs and image alt text supplies the visible heading name; explicit picture sources select light/dark artwork. Project content and order are unchanged.

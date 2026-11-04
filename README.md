@@ -22,7 +22,12 @@
 
 ---
 
-### 🚀 Featured projects
+<h3 id="-featured-projects">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/section-projects-dark.svg" />
+    <img src="assets/section-projects-light.svg" width="360" alt="01 / projects" />
+  </picture>
+</h3>
 
 <table>
   <tr>
@@ -88,7 +93,12 @@
 
 ---
 
-### 🎮 Live playground
+<h3 id="-live-playground">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/section-playground-dark.svg" />
+    <img src="assets/section-playground-light.svg" width="360" alt="02 / playground" />
+  </picture>
+</h3>
 
 <p align="center"><i>Browser demos you can open live. Click a recording to play it.</i></p>
 
@@ -147,7 +157,12 @@
 
 ---
 
-### 🧰 Toolshed Collection
+<h3 id="-toolshed-collection">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/section-toolshed-dark.svg" />
+    <img src="assets/section-toolshed-light.svg" width="360" alt="03 / toolshed" />
+  </picture>
+</h3>
 
 <p align="center">
   <b>Small tools. Inspectable evidence.</b><br/>
@@ -177,7 +192,12 @@
 
 ---
 
-### 🤖 Agent engineering
+<h3 id="-agent-engineering">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/section-agents-dark.svg" />
+    <img src="assets/section-agents-light.svg" width="360" alt="04 / agents" />
+  </picture>
+</h3>
 
 <p align="center">
   <b>Resumable, verified, measurable.</b><br/>
@@ -215,7 +235,12 @@
 
 ---
 
-### 🎓 Education &amp; certification
+<h3 id="-education--certification">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/section-education-dark.svg" />
+    <img src="assets/section-education-light.svg" width="360" alt="05 / education" />
+  </picture>
+</h3>
 
 - **Master of Information Technology (Applied Artificial Intelligence)**, Adelaide University (2026 to present).
 - **Bachelor of Information Technology**, University of Adelaide (2023 to 2025). High Distinctions in Applied Programming and in Computer Systems, Networks &amp; Security; Distinctions in AI Technologies, Web &amp; Database Computing and Programming for IT Specialists.
@@ -223,7 +248,12 @@
 
 ---
 
-### 📊 Development activity
+<h3 id="-development-activity">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/section-activity-dark.svg" />
+    <img src="assets/section-activity-light.svg" width="360" alt="06 / activity" />
+  </picture>
+</h3>
 
 
 <p align="center">
@@ -252,7 +282,12 @@
 
 ---
 
-### 🤝 Let's connect
+<h3 id="-lets-connect">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/section-elsewhere-dark.svg" />
+    <img src="assets/section-elsewhere-light.svg" width="360" alt="07 / elsewhere" />
+  </picture>
+</h3>
 
 <p align="center">
   <a href="https://github.com/RockENZO"><img src="https://img.shields.io/badge/GitHub-0D1B33?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
