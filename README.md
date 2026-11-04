@@ -27,65 +27,35 @@
   </picture>
 </h3>
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/datapipeline-etl"><img src="https://opengraph.githubassets.com/1/RockENZO/datapipeline-etl" alt="datapipeline-etl" /></a>
-      <br/><b>Knia Maps.</b> Geospatial ETL for Sydney accessibility mapping, combining Elasticsearch search, PostgreSQL storage and Docker services with reproducible integration tests.
-      <br/><br/>
-      <a href="https://github.com/RockENZO/datapipeline-etl"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection"><img src="https://opengraph.githubassets.com/1/RockENZO/NLP-Cyber-Harm-Detection" alt="NLP Cyber Harm Detection" /></a>
-      <br/><b>CSIRO's Data61.</b> Nine-class scam detection using word and character features, with <b>macro F1 0.948</b> on an <b>18,261-record, template-grouped internal test</b>.
-      <br/><br/>
-      <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection/blob/397e103aa0be418320d4e9ae7b2d824da0227625/evaluation/reports/nine_class_test_20260930.json"><img src="https://img.shields.io/badge/Evaluation-FF9F43?style=flat-square&logoColor=0D1B33" alt="Evaluation report" /></a>
-      <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/data"><img src="https://opengraph.githubassets.com/1/RockENZO/data" alt="Fraud dataset" /></a>
-      <br/><b>CSIRO's Data61.</b> A reproducible corpus of <b>194,913</b> scam and legitimate samples from 19 retained source datasets, with verified hashes and traceable provenance.
-      <br/><br/>
-      <a href="https://github.com/RockENZO/data"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing"><img src="https://opengraph.githubassets.com/1/RockENZO/Automatic-web-scraper-with-LLM-parsing" alt="LLM web scraper" /></a>
-      <br/>Structured webpage extraction with local LLMs and traceable source evidence. <b>Field exact-match F1 0.938</b> with Qwen on <b>16 synthetic regression fixtures</b>.
-      <br/><br/>
-      <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing/blob/a979dff2076a3637ef4003a7742cbe28666b8f3c/evaluation/reports/structured_benchmark_20260930.json"><img src="https://img.shields.io/badge/Evaluation-FF9F43?style=flat-square&logoColor=0D1B33" alt="Evaluation report" /></a>
-      <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/MyWeather"><img src="https://opengraph.githubassets.com/1/RockENZO/MyWeather" alt="MyWeather" /></a>
-      <br/>SwiftUI weather app with location-based OpenWeatherMap forecasts, animated transitions and Liquid Glass cards, bringing current conditions and forecast trends into one interface.
-      <br/><br/>
-      <a href="https://github.com/RockENZO/MyWeather"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://opengraph.githubassets.com/1/RockENZO/ML-object-detection-project" alt="Football match analysis" /></a>
-      <br/><b>Experimental</b> YOLOv8s football detection, player tracking and pitch mapping, with a match viewer for one 30-second clip.
-      <br/><br/>
-      <a href="https://rockenzo.github.io/ML-object-detection-project/"><img src="https://img.shields.io/badge/%E2%96%B6%20Open%20live-FF9F43?style=flat-square&logoColor=0D1B33" alt="Open live" /></a>
-      <a href="https://github.com/RockENZO/ML-object-detection-project/blob/ee5b2562597aca442629372871f305cf04ce39f7/docs/MATCH_ANALYSIS.md"><img src="https://img.shields.io/badge/Results%20%26%20limitations-FF9F43?style=flat-square&logoColor=0D1B33" alt="Results and limitations" /></a>
-      <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
-    </td>
-  </tr>
-</table>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/projects-featured-dark.svg" />
+  <img src="assets/projects-featured-light.svg" width="100%" alt="Featured projects in terminal panes: datapipeline-etl, NLP Cyber Harm Detection, Fraud dataset, LLM web scraper, MyWeather and Football match analysis." />
+</picture>
+
+<p align="center"><sub>
+  <a href="https://github.com/RockENZO/datapipeline-etl">datapipeline-etl</a> ·
+  <a href="https://github.com/RockENZO/NLP-Cyber-Harm-Detection">NLP-Cyber-Harm-Detection</a> ·
+  <a href="https://github.com/RockENZO/data">data</a> ·
+  <a href="https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing">Automatic-web-scraper-with-LLM-parsing</a> ·
+  <a href="https://github.com/RockENZO/MyWeather">MyWeather</a> ·
+  <a href="https://github.com/RockENZO/ML-object-detection-project">ML-object-detection-project</a>
+</sub></p>
 
 <details>
-<summary><b>More projects</b></summary>
-<br/>
+<summary><picture><source media="(prefers-color-scheme: dark)" srcset="assets/projects-more-summary-dark.svg" /><img src="assets/projects-more-summary-light.svg" width="100%" alt="More projects (5)" /></picture></summary>
 
-- [Odyssey](https://github.com/RockENZO/odyssey): a terminal coding agent with 17 tools and local Ollama inference, with a resumable LangGraph engine (see Agent engineering below)
-- [MagicTrick](https://github.com/RockENZO/MagicTrick): an iOS card trick with no buttons, only rotate, shake and a secret tap
-- [ControllerMouse](https://github.com/RockENZO/ControllerMouse): drive your Mac's cursor with a game controller from the menu bar
-- [Road semantic segmentation](https://github.com/RockENZO/Road_Semantic_Segmentation_CV): PyTorch segmentation for driving scenes, with mIoU and FLOPs ablations
-- [Flappy Bird DQN](https://github.com/RockENZO/flappy_bird_dqn-main): a DQN agent that learns to play Flappy Bird
-- [Feed the World](https://github.com/RockENZO/Feed-the-world-web-app): volunteer-group web app (team project)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/projects-more-dark.svg" />
+  <img src="assets/projects-more-light.svg" width="100%" alt="More projects: odyssey, MagicTrick, ControllerMouse, Road_Semantic_Segmentation_CV and flappy_bird_dqn-main." />
+</picture>
+
+<p align="center"><sub>
+  <a href="https://github.com/RockENZO/odyssey">odyssey</a> ·
+  <a href="https://github.com/RockENZO/MagicTrick">MagicTrick</a> ·
+  <a href="https://github.com/RockENZO/ControllerMouse">ControllerMouse</a> ·
+  <a href="https://github.com/RockENZO/Road_Semantic_Segmentation_CV">Road_Semantic_Segmentation_CV</a> ·
+  <a href="https://github.com/RockENZO/flappy_bird_dqn-main">flappy_bird_dqn-main</a>
+</sub></p>
 
 </details>
 
