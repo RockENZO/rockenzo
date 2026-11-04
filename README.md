@@ -17,8 +17,20 @@
   <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/profile-terminal-dark-mobile.svg" />
   <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/profile-terminal-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile-terminal-dark.svg" />
-  <img src="assets/profile-terminal-light.svg" width="100%" alt="About RockENZO: Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide (2025). Core: Python, React, Vue, Elasticsearch, Docker and Streamlit. AI/ML: PyTorch, TensorFlow, scikit-learn, Pandas and NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama." />
+  <img src="assets/profile-terminal-light.svg" width="100%" alt="About RockENZO: Master of IT (Applied AI) at Adelaide University, in progress. Core: Python, React, Vue, Elasticsearch, Docker and Streamlit. AI/ML: PyTorch, TensorFlow, scikit-learn, Pandas and NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama." />
 </picture>
+
+<h3 id="-education--certification">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/section-education-dark.svg" />
+    <img src="assets/section-education-light.svg" width="360" alt="05 / education" />
+  </picture>
+</h3>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/education-terminal-dark.svg" />
+  <img src="assets/education-terminal-light.svg" width="100%" alt="Education: Master of Information Technology (Applied AI) at Adelaide University, 50% complete. Bachelor of Information Technology at University of Adelaide, 2023 to 2025, complete, with High Distinction in Applied Programming and in Computer Systems, Networks and Security, and Distinction in AI Technologies, Web and Database Computing, and Programming for IT Specialists. HackerRank Software Engineer, September 2024: problem solving, Python, SQL and REST APIs." />
+</picture>
+
 
 <h3 id="-featured-projects">
   <picture>
@@ -194,17 +206,6 @@
     </td>
   </tr>
 </table>
-
-<h3 id="-education--certification">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/section-education-dark.svg" />
-    <img src="assets/section-education-light.svg" width="360" alt="05 / education" />
-  </picture>
-</h3>
-
-- **Master of Information Technology (Applied Artificial Intelligence)**, Adelaide University (2026 to present).
-- **Bachelor of Information Technology**, University of Adelaide (2023 to 2025). High Distinctions in Applied Programming and in Computer Systems, Networks &amp; Security; Distinctions in AI Technologies, Web &amp; Database Computing and Programming for IT Specialists.
-- **HackerRank Software Engineer** (Sep 2024): problem solving, Python, SQL, REST APIs. <a href="https://www.hackerrank.com/certificates/iframe/1d18ed03135b"><img src="https://img.shields.io/badge/Verify%20certificate-FF9F43?style=flat-square&logoColor=0D1B33" alt="Verify certificate" /></a>
 
 <h3 id="-development-activity">
   <picture>
