@@ -20,8 +20,6 @@
   <img src="assets/profile-terminal-light.svg" width="100%" alt="About RockENZO: Master of IT (Applied AI) at Adelaide University; Bachelor of IT at University of Adelaide (2025). Core: Python, React, Vue, Elasticsearch, Docker and Streamlit. AI/ML: PyTorch, TensorFlow, scikit-learn, Pandas and NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama." />
 </picture>
 
----
-
 <h3 id="-featured-projects">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/section-projects-dark.svg" />
@@ -91,8 +89,6 @@
 
 </details>
 
----
-
 <h3 id="-live-playground">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/section-playground-dark.svg" />
@@ -155,8 +151,6 @@
   </tr>
 </table>
 
----
-
 <h3 id="-toolshed-collection">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/section-toolshed-dark.svg" />
@@ -189,8 +183,6 @@
     </td>
   </tr>
 </table>
-
----
 
 <h3 id="-agent-engineering">
   <picture>
@@ -233,8 +225,6 @@
   </tr>
 </table>
 
----
-
 <h3 id="-education--certification">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/section-education-dark.svg" />
@@ -245,8 +235,6 @@
 - **Master of Information Technology (Applied Artificial Intelligence)**, Adelaide University (2026 to present).
 - **Bachelor of Information Technology**, University of Adelaide (2023 to 2025). High Distinctions in Applied Programming and in Computer Systems, Networks &amp; Security; Distinctions in AI Technologies, Web &amp; Database Computing and Programming for IT Specialists.
 - **HackerRank Software Engineer** (Sep 2024): problem solving, Python, SQL, REST APIs. <a href="https://www.hackerrank.com/certificates/iframe/1d18ed03135b"><img src="https://img.shields.io/badge/Verify%20certificate-FF9F43?style=flat-square&logoColor=0D1B33" alt="Verify certificate" /></a>
-
----
 
 <h3 id="-development-activity">
   <picture>
@@ -279,8 +267,6 @@
     <img width="100%" src="https://raw.githubusercontent.com/RockENZO/RockENZO/output/github-contribution-grid-snake.svg" alt="Contribution snake" />
   </picture>
 </p>
-
----
 
 <h3 id="-lets-connect">
   <picture>
