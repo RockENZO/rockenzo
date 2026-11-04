@@ -104,11 +104,12 @@ def ascii_fill():
 
 # Periodic steady-state responses to a multi-harmonic drive of the same
 # mass/spring/damper equation. Units are visual design units, not material data.
+# x/y/tilt are peak excursions (SVG units, degrees), about 1.75x the original float.
 SUSPENSION = {
- 'R': dict(period=7.4, mass=1.4, stiffness=2.2, damping=.3, phase=.1, x=.9, y=2.7, tilt=.7),
- 'O': dict(period=5.8, mass=.85, stiffness=2.5, damping=.22, phase=1.8, x=1.1, y=3.8, tilt=.9),
- 'C': dict(period=8.6, mass=1.1, stiffness=1.8, damping=.27, phase=3.2, x=2.1, y=2.6, tilt=.8),
- 'K': dict(period=6.6, mass=1., stiffness=3.2, damping=.2, phase=4.6, x=.8, y=2., tilt=1.0),
+ 'R': dict(period=7.4, mass=1.4, stiffness=2.2, damping=.3, phase=.1, x=1.6, y=4.7, tilt=1.2),
+ 'O': dict(period=5.8, mass=.85, stiffness=2.5, damping=.22, phase=1.8, x=1.9, y=6.6, tilt=1.6),
+ 'C': dict(period=8.6, mass=1.1, stiffness=1.8, damping=.27, phase=3.2, x=3.7, y=4.5, tilt=1.4),
+ 'K': dict(period=6.6, mass=1., stiffness=3.2, damping=.2, phase=4.6, x=1.4, y=3.5, tilt=1.75),
 }
 
 def spring_response(phase, config, offset):
