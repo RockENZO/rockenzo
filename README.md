@@ -84,8 +84,8 @@
   <tr>
     <td width="50%" valign="top" align="center">
       <a href="https://rockenzo.github.io/Roadster-and-Beyond/"><img src="assets/roadster-and-beyond.gif" alt="Roadster and Beyond: event mode stunts and laps of Spa" width="100%" /></a>
-      <br/><b>Roadster and Beyond</b>
-      <br/>A fan-made recreation of the Tesla Roadster launch night, with rigid-body physics, a broadcast-style HUD, the four highlight stunts and a day or night track day at Spa-Francorchamps. Keyboard and gamepad.
+      <h3><a href="https://github.com/RockENZO/Roadster-and-Beyond">Roadster and Beyond</a></h3>
+      A fan-made recreation of the Tesla Roadster launch night, with rigid-body physics, a broadcast-style HUD, the four highlight stunts and a day or night track day at Spa-Francorchamps. Keyboard and gamepad.
       <br/><br/>
       <a href="https://rockenzo.github.io/Roadster-and-Beyond/"><img src="https://img.shields.io/badge/%E2%96%B6%20Play%20live-FF9F43?style=flat-square&logoColor=0D1B33" alt="Play live" /></a>
       <a href="https://github.com/RockENZO/Roadster-and-Beyond"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
@@ -95,8 +95,8 @@
     </td>
     <td width="50%" valign="top" align="center">
       <a href="https://rockenzo.github.io/touch-grass/"><img src="assets/touch-grass.gif" alt="Touch Grass: moving a hand through the meadow" width="340" /></a>
-      <br/><b>Touch Grass</b>
-      <br/>An interactive 3D meadow: run your hand through 260k instanced blades of grass, then switch between Morning, Golden hour and Night.
+      <h3><a href="https://github.com/RockENZO/touch-grass">Touch Grass</a></h3>
+      An interactive 3D meadow: run your hand through 260k instanced blades of grass, then switch between Morning, Golden hour and Night.
       <br/><br/>
       <a href="https://rockenzo.github.io/touch-grass/"><img src="https://img.shields.io/badge/%E2%96%B6%20Play%20live-FF9F43?style=flat-square&logoColor=0D1B33" alt="Play live" /></a>
       <a href="https://github.com/RockENZO/touch-grass"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
@@ -108,8 +108,8 @@
   <tr>
     <td colspan="2" valign="top" align="center">
       <a href="https://rockenzo.github.io/ML-object-detection-project/"><img src="assets/football-analysis.gif" alt="Football match viewer: video with detections, calibrated pitch, space control, momentum timeline and a players table" width="560" /></a>
-      <br/><b>Football match analysis</b>
-      <br/>YOLOv8s detection and tracking with automatic pitch mapping, replayed as a static viewer: momentum timeline, critical moments, tactic notes, per-player speed and space control. Experimental, from one 30 s clip.
+      <h3><a href="https://github.com/RockENZO/ML-object-detection-project">Football match analysis</a></h3>
+      YOLOv8s detection and tracking with automatic pitch mapping, replayed as a static viewer: momentum timeline, critical moments, tactic notes, per-player speed and space control. Experimental, from one 30 s clip.
       <br/><br/>
       <a href="https://rockenzo.github.io/ML-object-detection-project/"><img src="https://img.shields.io/badge/%E2%96%B6%20Open%20live-FF9F43?style=flat-square&logoColor=0D1B33" alt="Open live" /></a>
       <a href="https://github.com/RockENZO/ML-object-detection-project"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
@@ -121,8 +121,8 @@
   <tr>
     <td colspan="2" valign="top" align="center">
       <a href="https://rockenzo.github.io/datapipeline-etl/"><img src="assets/datapipeline-etl.gif" alt="Sydney spatial ETL: the pipeline runs in the browser, then searches open data and follows a live bus on the map" width="560" /></a>
-      <br/><b>Sydney spatial ETL</b>
-      <br/>Explore Sydney’s address data and live NSW bus locations on an interactive map.
+      <h3><a href="https://github.com/RockENZO/datapipeline-etl">Sydney spatial ETL</a></h3>
+      Explore Sydney’s address data and live NSW bus locations on an interactive map.
       <br/><br/>
       <a href="https://rockenzo.github.io/datapipeline-etl/"><img src="https://img.shields.io/badge/%E2%96%B6%20Open%20live-FF9F43?style=flat-square&logoColor=0D1B33" alt="Open live" /></a>
       <a href="https://github.com/RockENZO/datapipeline-etl"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
@@ -149,16 +149,16 @@
   <tr>
     <td width="50%" valign="top" align="center">
       <a href="https://rockenzo.github.io/readme-reality/"><img src="assets/readme-reality.gif" alt="Readme Reality: real browser walkthrough of example README findings, repository evidence and corrected snapshots" width="100%" /></a>
-      <br/><b>Readme Reality</b>
-      <br/>Offline checks for README links, package scripts and Python paths.
+      <h3><a href="https://github.com/RockENZO/readme-reality">Readme Reality</a></h3>
+      Offline checks for README links, package scripts and Python paths.
       <br/><br/>
       <a href="https://rockenzo.github.io/readme-reality/"><img src="https://img.shields.io/badge/%E2%96%B6%20Try%20examples-FF9F43?style=flat-square&logoColor=0D1B33" alt="Try examples" /></a>
       <a href="https://github.com/RockENZO/readme-reality"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
     <td width="50%" valign="top" align="center">
       <a href="https://rockenzo.github.io/demo-proof/"><img src="assets/demo-proof.gif" alt="DemoProof: recorded replay of a fictional weather snapshot with temperature toggle and refresh" width="100%" /></a>
-      <br/><b>DemoProof</b>
-      <br/>An experimental tool for turning approved demo snapshots into replay-verified videos, GIFs and evidence reports.
+      <h3><a href="https://github.com/RockENZO/demo-proof">DemoProof</a></h3>
+      An experimental tool for turning approved demo snapshots into replay-verified videos, GIFs and evidence reports.
       <br/><br/>
       <a href="https://rockenzo.github.io/demo-proof/"><img src="https://img.shields.io/badge/%E2%96%B6%20View%20recording-FF9F43?style=flat-square&logoColor=0D1B33" alt="View recording" /></a>
       <a href="https://github.com/RockENZO/demo-proof"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
@@ -187,20 +187,20 @@
   </tr>
   <tr>
     <td width="33%" valign="top" align="center">
-      <b>Odyssey</b>
-      <br/>Terminal coding agent. LangGraph engine with SQLite checkpoints, approvals and a completion gate. First real run: qwen3.8:27b-mlx passed 10 of 10 tasks of a frozen suite, a pipeline check rather than a capability claim.
+      <h3><a href="https://github.com/RockENZO/odyssey">Odyssey</a></h3>
+      Terminal coding agent. LangGraph engine with SQLite checkpoints, approvals and a completion gate. First real run: qwen3.8:27b-mlx passed 10 of 10 tasks of a frozen suite, a pipeline check rather than a capability claim.
       <br/><br/>
       <a href="https://github.com/RockENZO/odyssey"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
     <td width="33%" valign="top" align="center">
-      <b>Transactional agent ledger</b>
-      <br/>SQLite ledger of claims. A step only counts once a verifier, such as the project's test command, accepts it.
+      <h3><a href="https://github.com/RockENZO/transactional-agent-ledger">Transactional agent ledger</a></h3>
+      SQLite ledger of claims. A step only counts once a verifier, such as the project's test command, accepts it.
       <br/><br/>
       <a href="https://github.com/RockENZO/transactional-agent-ledger"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
     <td width="33%" valign="top" align="center">
-      <b>Trajectory replay</b>
-      <br/>Record a run's tool calls as a cassette, replay it without a model and score trajectories.
+      <h3><a href="https://github.com/RockENZO/trajectory-replay">Trajectory replay</a></h3>
+      Record a run's tool calls as a cassette, replay it without a model and score trajectories.
       <br/><br/>
       <a href="https://github.com/RockENZO/trajectory-replay"><img src="https://img.shields.io/badge/Source-0D1B33?style=flat-square&logo=github&logoColor=white" alt="Source" /></a>
     </td>
