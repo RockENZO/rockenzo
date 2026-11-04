@@ -192,6 +192,22 @@ class ProfileTerminalTests(unittest.TestCase):
             self.assertEqual([dot.get('fill') for dot in dots], ['#FF5F57','#FEBC2E','#28C840'])
             self.assertNotIn('ROCK / FIELD NOTES', asset.read_text())
 
+    def test_terminal_titlebar_differs_from_body_and_has_window_title(self):
+        for asset in self.assets + list((ROOT/'assets').glob('profile-terminal-*-static.svg')):
+            with self.subTest(asset=asset.name):
+                root = ET.parse(asset)
+                background = root.find('s:rect', NS)
+                titlebar = root.find('.//s:rect[@id="titlebar"]', NS)
+                self.assertIsNotNone(background)
+                self.assertIsNotNone(titlebar)
+                self.assertNotEqual(background.get('fill'), titlebar.get('fill'))
+                self.assertEqual(titlebar.get('clip-path'), 'url(#window-clip)')
+                title = root.find('.//s:text[@id="window-title"]', NS)
+                self.assertIsNotNone(title)
+                expected = 'rockingmac — zsh' if '-mobile' in asset.stem else 'rockingmac — -zsh — 120×30'
+                self.assertEqual(title.text, expected)
+                self.assertEqual(title.get('text-anchor'), 'middle')
+
     def test_command_cursor_stays_with_typing_and_deletion(self):
         for asset in self.assets:
             root = ET.parse(asset)
