@@ -277,6 +277,8 @@
 
 <p align="center">
   <a href="https://github.com/RockENZO"><img src="https://img.shields.io/badge/GitHub-0D1B33?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
+  <a href="https://au.pinterest.com/RockENZO88/_profile/"><img src="https://img.shields.io/badge/Pinterest-E60023?style=flat-square&logo=pinterest&logoColor=white" alt="Pinterest" /></a>
+  <a href="https://tokens.ci/u/RockENZO"><img src="https://img.shields.io/badge/tokens.ci-RockENZO-A78BFA?style=flat-square&labelColor=0D1B33" alt="tokens.ci profile" /></a>
 </p>
 
 <p align="center">
