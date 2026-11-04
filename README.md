@@ -203,7 +203,7 @@
 </h3>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/education-terminal-dark.svg" />
-  <img src="assets/education-terminal-light.svg" width="100%" alt="Education: Master of Information Technology (Applied AI) at Adelaide University, 50% complete; Bachelor of Information Technology at University of Adelaide, 2023 to 2025, complete; HackerRank Software Engineer, September 2024." />
+  <img src="assets/education-terminal-light.svg" width="100%" alt="Education: Master of Information Technology (Applied AI) at Adelaide University, 50% complete. Bachelor of Information Technology at University of Adelaide, 2023 to 2025, complete, with High Distinction in Applied Programming and in Computer Systems, Networks and Security, and Distinction in AI Technologies, Web and Database Computing, and Programming for IT Specialists. HackerRank Software Engineer, September 2024: problem solving, Python, SQL and REST APIs." />
 </picture>
 
 
