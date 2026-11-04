@@ -159,6 +159,39 @@ class ProfileTerminalTests(unittest.TestCase):
             self.assertIsNotNone(root.find('.//s:g[@id="fixed-rock-letters"]',NS))
             self.assertLess(asset.stat().st_size,50_000)
 
+    def test_headline_types_holds_deletes_and_closes(self):
+        words = self.model['HEADLINE_WORDS']
+        self.assertEqual(words, ['Praxis.', 'Palimpsest.', 'Autopoiesis.'])
+        events, duration = self.model['headline_timeline']()
+        self.assertEqual(events[0][1:], events[-1][1:])
+        self.assertEqual(events[-1][0], duration)
+        self.assertEqual([t for t,_,_ in events], sorted(set(t for t,_,_ in events)))
+        for active, word in enumerate(words):
+            samples = [(t,count) for t,current,count in events if current == active]
+            full_index = next(i for i,(_,current,count) in enumerate(events) if current == active and count == len(word))
+            self.assertAlmostEqual(events[full_index+1][0]-events[full_index][0], 2.05)
+            self.assertTrue(all(0 <= count <= len(word) for _,count in samples))
+            self.assertTrue(any(count == 0 for _,count in samples))
+        for asset in self.assets:
+            root = ET.parse(asset)
+            headline = root.find('.//s:g[@id="profile-headline"]', NS)
+            self.assertIsNotNone(headline)
+            for text in headline.findall('.//s:text', NS):
+                right = float(text.get('x')) + len(text.text)*float(text.get('font-size'))*.603
+                self.assertLess(right+float(text.get('font-size'))*.603, float(root.getroot().get('width'))-12)
+            self.assertNotIn('Make it tangible.', asset.read_text())
+        for asset in (ROOT/'assets').glob('profile-terminal-*-static.svg'):
+            headline = ET.parse(asset).find('.//s:g[@id="profile-headline"]', NS)
+            self.assertEqual([text.text for text in headline.findall('.//s:text', NS)], ['Praxis.'])
+
+    def test_decorative_macos_window_controls(self):
+        for asset in self.assets + list((ROOT/'assets').glob('profile-terminal-*-static.svg')):
+            controls = ET.parse(asset).find('.//s:g[@id="window-controls"]', NS)
+            self.assertEqual(controls.get('aria-hidden'), 'true')
+            dots = controls.findall('s:circle', NS)
+            self.assertEqual([dot.get('fill') for dot in dots], ['#FF5F57','#FEBC2E','#28C840'])
+            self.assertNotIn('ROCK / FIELD NOTES', asset.read_text())
+
     def test_requested_profile_copy(self):
         self.assertEqual(len(self.model["CAPTION_PHRASES"]),3)
         for asset in self.assets + list((ROOT/"assets").glob("profile-terminal-*-static.svg")):
