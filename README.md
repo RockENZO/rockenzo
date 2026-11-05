@@ -27,6 +27,10 @@
   </picture>
 </h3>
 <picture>
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/education-terminal-dark-mobile-static.svg" />
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/education-terminal-light-mobile-static.svg" />
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/education-terminal-dark-static.svg" />
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/education-terminal-light-static.svg" />
   <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/education-terminal-dark-mobile.svg" />
   <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/education-terminal-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/education-terminal-dark.svg" />

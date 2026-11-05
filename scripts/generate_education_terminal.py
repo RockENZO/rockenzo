@@ -25,15 +25,17 @@ def emit(name, content):
         path.write_text(content)
 
 L = dict(bg='#F7F6FC', bar='#ECE8FB', line='#D9D5EC', fg='#1B2340', muted='#59627F',
-         accent='#B45F06', label='#6B4FD3', track='#E4E0F3', fill='#6B4FD3',
+         accent='#B45F06', label='#6B4FD3', track='#E4E0F3', fill='#6B4FD3', glow='#B3A1FF',
          dot=('#FF5F57', '#FEBC2E', '#28C840'))
 D = dict(bg='#0D1B33', bar='#16284B', line='#1E2D4D', fg='#E8EDF8', muted='#8B9BB4',
-         accent='#FF9F43', label='#A78BFA', track='#1E2D4D', fill='#A78BFA',
+         accent='#FF9F43', label='#A78BFA', track='#1E2D4D', fill='#A78BFA', glow='#EDE7FF',
          dot=('#FF5F57', '#FEBC2E', '#28C840'))
 
 MONO = "Menlo,Consolas,ui-monospace,monospace"
 DATE_X, TITLE_X = 16, 170
 DOTS, DOT_STEP, DOT_R = 24, 7.22, 2.6
+# Pulse on in-progress meters: a highlight sweeps the lit dots, then rests.
+PULSE_CYCLE, PULSE_SWEEP, PULSE_WIDTH = 5.0, 1.5, .45
 
 # (date, title, lines, progress or None). Progress is the share completed (0..1).
 ENTRIES = [
@@ -76,7 +78,14 @@ def text(x, y, s, size, fill, weight=None):
 def wrap(s, width):
     return textwrap.wrap(s, width=width, break_long_words=False)
 
-def build(p, mobile=False):
+def pulse(cx, cy, i, filled, p):
+    peak = PULSE_SWEEP * i / max(filled - 1, 1)
+    keys = [0, max(peak - PULSE_WIDTH / 2, 0), peak, peak + PULSE_WIDTH / 2, PULSE_CYCLE]
+    times = ';'.join(f'{k / PULSE_CYCLE:.4f}' for k in keys)
+    return (f'<circle class="motion" cx="{cx}" cy="{cy}" r="{DOT_R + .5}" fill="{p["glow"]}" opacity="0">'
+            f'<animate attributeName="opacity" values="0;0;1;0;0" keyTimes="{times}" dur="{PULSE_CYCLE}s" begin="1s" repeatCount="indefinite"/></circle>')
+
+def build(p, mobile=False, animated=True):
     W = 360 if mobile else 880
     tx = 16 if mobile else TITLE_X
     rows = []
@@ -106,6 +115,7 @@ def build(p, mobile=False):
         y += 6
     total = y + 14
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{total}" viewBox="0 0 {W} {total}" role="img" aria-label="Education and certification as a terminal listing">',
+           '<style>@media(prefers-reduced-motion:reduce){.motion{display:none}}</style>' if animated else '',
            f'<defs><clipPath id="win"><path d="{window_shape(W, total)}"/></clipPath></defs>',
            f'<g clip-path="url(#win)"><rect width="{W}" height="{total}" fill="{p["bg"]}"/>',
            f'<path d="M.5 14.5 A14 14 0 0 1 14.5 .5 H{W-14.5} A14 14 0 0 1 {W-.5} 14.5 V28.5 H.5 Z" fill="{p["bar"]}"/>',
@@ -135,7 +145,10 @@ def build(p, mobile=False):
             filled = round(DOTS * prog)
             for i in range(DOTS):
                 c = p['fill'] if i < filled else p['track']
-                out.append(f'<circle cx="{round(tx + DOT_STEP * (i + .5), 2)}" cy="{yy - 3.5}" r="{DOT_R}" fill="{c}"/>')
+                cx = round(tx + DOT_STEP * (i + .5), 2)
+                out.append(f'<circle cx="{cx}" cy="{yy - 3.5}" r="{DOT_R}" fill="{c}"/>')
+                if animated and 0 < prog < 1 and i < filled:
+                    out.append(pulse(cx, yy - 3.5, i, filled, p))
             out.append(text(round(tx + DOT_STEP * DOTS + 12, 2), yy + 1, f'{round(prog*100)}%', 12, p['muted']))
     out.append('</g>')
     out.append(f'<path d="{window_shape(W, total)}" fill="none" stroke="{p["line"]}"/>')
@@ -144,8 +157,10 @@ def build(p, mobile=False):
 
 for label, p in [('light', L), ('dark', D)]:
     for mobile in (False, True):
-        _, svg = build(p, mobile)
-        emit(f'education-terminal-{label}{"-mobile" if mobile else ""}.svg', svg)
+        stem = f'education-terminal-{label}{"-mobile" if mobile else ""}'
+        emit(f'{stem}.svg', build(p, mobile)[1])
+        # Picture sources choose this one under reduced motion, as the profile card does.
+        emit(f'{stem}-static.svg', build(p, mobile, animated=False)[1])
 
 if mismatches:
     raise SystemExit('Generated assets differ: ' + ', '.join(mismatches))

@@ -149,7 +149,8 @@ class ProfileTerminalTests(unittest.TestCase):
         assets = list((ROOT / "assets").glob("profile-terminal-*-static.svg"))
         self.assertEqual(len(assets),4)
         readme = (ROOT / "README.md").read_text()
-        self.assertEqual(readme.count("prefers-reduced-motion: reduce"),4)
+        # Four reduced-motion sources each for the profile and education pictures.
+        self.assertEqual(readme.count("prefers-reduced-motion: reduce"),8)
         for asset in assets:
             self.assertIn("assets/"+asset.name,readme)
             root=ET.parse(asset)
@@ -158,6 +159,17 @@ class ProfileTerminalTests(unittest.TestCase):
             self.assertFalse(root.findall('.//s:g[@class="wave-frame"]',NS))
             self.assertIsNotNone(root.find('.//s:g[@id="fixed-rock-letters"]',NS))
             self.assertLess(asset.stat().st_size,50_000)
+
+    def test_education_pulse_has_static_fallback(self):
+        statics = list((ROOT / "assets").glob("education-terminal-*-static.svg"))
+        self.assertEqual(len(statics),4)
+        readme = (ROOT / "README.md").read_text()
+        for asset in statics:
+            self.assertIn("assets/"+asset.name,readme)
+            self.assertFalse(ET.parse(asset).findall('.//s:animate',NS))
+            animated = ROOT / "assets" / asset.name.replace("-static","")
+            # Only the in-progress meter pulses: twelve lit dots, one animation each.
+            self.assertEqual(len(ET.parse(animated).findall('.//s:animate',NS)),12)
 
     def test_headline_types_holds_deletes_and_closes(self):
         words = self.model['HEADLINE_WORDS']
