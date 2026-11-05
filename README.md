@@ -263,11 +263,13 @@
 </p>
 
 <p align="center">
+  <picture><source media="(max-width: 1199px)" srcset="assets/elsewhere-blank.svg" /><img src="assets/elsewhere-airpods.svg" alt="Pixel-art wireless earbuds" /></picture>
   <picture><source media="(max-width: 600px)" srcset="assets/elsewhere-blank.svg" /><img src="assets/elsewhere-vinyl.svg" alt="Pixel-art vinyl turntable" /></picture>
   <a href="https://spotify-github-profile.kittinanx.com/api/view?uid=31fxyxpn2nphks7upu5gtfwptfl4&redirect=true">
     <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=31fxyxpn2nphks7upu5gtfwptfl4&cover_image=false&theme=default&show_offline=false&background_color=0D1B33&interchange=false&bar_color=a78bfa&bar_color_cover=true" alt="Now playing on Spotify">
   </a>
   <picture><source media="(max-width: 600px)" srcset="assets/elsewhere-blank.svg" /><img src="assets/elsewhere-cassette.svg" alt="Pixel-art cassette player" /></picture>
+  <picture><source media="(max-width: 1199px)" srcset="assets/elsewhere-blank.svg" /><img src="assets/elsewhere-macmini.svg" alt="Pixel-art small desktop computer" /></picture>
 </p>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1B33,50:3b2f7a,100:FF9F43&height=110&section=footer" />
