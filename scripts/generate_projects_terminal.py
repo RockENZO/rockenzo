@@ -36,7 +36,7 @@ FEATURED = [
     ('datapipeline-etl', 'Knia Maps', 'Geospatial ETL for Sydney accessibility mapping, with Elasticsearch, PostgreSQL and Docker, plus reproducible integration tests.', 'https://github.com/RockENZO/datapipeline-etl'),
     ('NLP-Cyber-Harm-Detection', "CSIRO's Data61", 'Nine-class scam detection with macro F1 0.948 on an 18,261-record, template-grouped internal test.', 'https://github.com/RockENZO/NLP-Cyber-Harm-Detection'),
     ('data', 'Fraud dataset', 'A reproducible corpus of 194,913 scam and legitimate samples from 19 retained source datasets, with verified hashes.', 'https://github.com/RockENZO/data'),
-    ('Automatic-web-scraper-with-LLM-parsing', 'LLM web scraper', 'Structured webpage extraction with local LLMs and traceable source evidence. Field exact-match F1 0.938 on 16 fixtures.', 'https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing'),
+    ('Automatic-web-scraper-with-LLM-parsing', 'LLM web scraper', 'Local LLMs extract structured webpage data with traceable source evidence. Field exact-match F1 0.938 on 16 synthetic HTML fixtures.', 'https://github.com/RockENZO/Automatic-web-scraper-with-LLM-parsing'),
     ('MyWeather', 'MyWeather', 'SwiftUI weather app with location-based OpenWeatherMap forecasts, animated transitions and Liquid Glass cards.', 'https://github.com/RockENZO/MyWeather'),
     ('ML-object-detection-project', 'Football match analysis', 'Experimental YOLOv8s football detection, player tracking and pitch mapping, with a match viewer for one 30-second clip.', 'https://github.com/RockENZO/ML-object-detection-project'),
 ]
