@@ -17,7 +17,7 @@
   <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/profile-terminal-dark-mobile.svg" />
   <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/profile-terminal-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile-terminal-dark.svg" />
-  <img src="assets/profile-terminal-light.svg" width="100%" alt="About RockENZO: Core: Python, React, Vue, Elasticsearch, Docker and Streamlit. AI/ML: PyTorch, TensorFlow, scikit-learn, Pandas and NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama." />
+  <img src="assets/profile-terminal-light.svg" width="100%" alt="About RockENZO: Core: Python, React, Vue, Elasticsearch, Docker and Streamlit. AI/ML: LangChain, LangGraph, Deep Agents, PyTorch, TensorFlow, scikit-learn, Pandas and NumPy. LLM tools: Codex, Claude Code, DeepSeek Harness, Hugging Face and Ollama." />
 </picture>
 
 <h3 id="-education--certification">
