@@ -185,7 +185,10 @@
 
 <p align="center">
   <b>Resumable, verified, measurable.</b><br/>
-  A local coding agent and two small libraries, kept as three independent repos.
+  A local coding agent and two small libraries, kept as three independent repos.<br/><br/>
+  <img src="https://img.shields.io/badge/LangChain-A78BFA?style=flat-square&logoColor=0D1B33" alt="LangChain" />
+  <img src="https://img.shields.io/badge/LangGraph-A78BFA?style=flat-square&logoColor=0D1B33" alt="LangGraph" />
+  <img src="https://img.shields.io/badge/Deep%20Agents-A78BFA?style=flat-square&logoColor=0D1B33" alt="Deep Agents" />
 </p>
 
 <table>
