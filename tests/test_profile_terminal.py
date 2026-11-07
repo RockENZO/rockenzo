@@ -217,7 +217,9 @@ class ProfileTerminalTests(unittest.TestCase):
                 self.assertEqual(float(titlebar.get('height')), 28)
                 title = root.find('.//s:text[@id="window-title"]', NS)
                 self.assertIsNotNone(title)
-                expected = 'Profile' if '-mobile' in asset.stem else 'Profile — 120×30'
+                # Desktop label is cols×rows: size in pixels over a 7.5 x 17 px cell.
+                size = f"{round(float(root.getroot().get('width')) / 7.5)}×{round((float(root.getroot().get('height')) - 28) / 17)}"
+                expected = 'Profile' if '-mobile' in asset.stem else f'Profile — {size}'
                 self.assertEqual(title.text, expected)
                 self.assertEqual(title.get('text-anchor'), 'middle')
                 controls = root.find('.//s:g[@id="window-controls"]', NS)

@@ -50,6 +50,13 @@ MORE = [
 
 R = 14
 
+# Title-bar size label: pixels divided by one character cell (7.5 x 17 px).
+CELL_W, CELL_H = 7.5, 17
+SUMMARY_H = 44
+
+def term_size(w, h):
+    return f'{round(w / CELL_W)}×{round((h - 28) / CELL_H)}'
+
 def window_shape(w, h, top=True, bottom=True):
     """Closed outline of a window section; rounded only where it is an outer edge."""
     x0, y0, x1, y1 = .5, .5, w - .5, h - .5
@@ -105,7 +112,7 @@ def featured_svg(p, mobile=False):
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{total}" viewBox="0 0 {W} {total}" role="img" aria-label="Featured projects, shown as split terminal panes">',
            f'<defs><clipPath id="win"><path d="{window_shape(W, total, bottom=False)}"/></clipPath></defs>',
            f'<g clip-path="url(#win)"><rect width="{W}" height="{total}" fill="{p["bg"]}"/>',
-           window_top(p, 'Projects' if mobile else 'Projects — tmux 120×30'),
+           window_top(p, 'Projects' if mobile else f'Projects — tmux {term_size(W, total + SUMMARY_H)}'),
            text(16, 28 + 26, '~ $ ls projects/ --featured', 14, p['accent'])]
     y = 28 + prompt_h
     out.append(f'<path d="M0 {y+.5}H{W}" stroke="{p["line"]}"/>')
@@ -130,7 +137,7 @@ def featured_svg(p, mobile=False):
     return ''.join(out)
 
 def summary_svg(p):
-    h = 44
+    h = SUMMARY_H
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{h}" viewBox="0 0 {W} {h}" role="img" aria-label="More projects, 5 hidden">',
            f'<path d="{window_shape(W, h, top=False)}" fill="{p["bg"]}"/>',
            text(16, 27, '▸ more projects', 14, p['accent']),

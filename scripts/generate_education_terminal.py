@@ -51,6 +51,12 @@ ENTRIES = [
 
 R = 14
 
+# Title-bar size label: pixels divided by one character cell (7.5 x 17 px).
+CELL_W, CELL_H = 7.5, 17
+
+def term_size(w, h):
+    return f'{round(w / CELL_W)}×{round((h - 28) / CELL_H)}'
+
 def window_shape(w, h, top=True, bottom=True):
     """Closed outline of a window section; rounded only where it is an outer edge."""
     x0, y0, x1, y1 = .5, .5, w - .5, h - .5
@@ -122,7 +128,7 @@ def build(p, mobile=False, animated=True):
            f'<path d="M0 28.5H{W}" stroke="{p["line"]}"/>']
     for i, c in enumerate(p['dot']):
         out.append(f'<circle cx="{14.5+20*i}" cy="14.5" r="5.5" fill="{c}"/>')
-    out.append(text(W/2, 18.5, 'Education' if mobile else 'Education — 120×30', 12, p['muted']).replace('<text ', '<text text-anchor="middle" '))
+    out.append(text(W/2, 18.5, 'Education' if mobile else f'Education — {term_size(W, total)}', 12, p['muted']).replace('<text ', '<text text-anchor="middle" '))
     for r in rows:
         kind = r[0]
         if kind == 'prompt':
